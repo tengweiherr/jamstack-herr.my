@@ -1,63 +1,46 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import gsap from 'gsap'
-import { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID } from '@/utils/const'
 import Header from '@/components/Layout/Header'
 import SotmAward from '@/components/SotmAward'
 import Footer from '@/components/Layout/Footer'
 import Body from '@/components/Layout/Body'
 import Banner from '@/components/Banner'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import Quote1 from '@/components/Quote1'
+import Highlight from '@/components/Highlight'
+import { fetchProjects } from '@/utils/api/contentful'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const query = `{
-  experienceCollection {
-    items {
-        role
-        company
-        startTime
-        endTime
-        description {
-          json
-        }
-    }
+type Project = {
+  title: string
+  role: string
+  tools: string
+  description: string
+  githubLink: string
+  projectLink?: string
+  awardWinning: boolean
+  highlighted: boolean
+  image: {
+    url: string
+    width: number
+    height: number
   }
-}`
+}
 
-// Here are our options to use with fetch
-const fetchOptions = {
-  spaceID: CONTENTFUL_SPACE_ID,
-  accessToken: CONTENTFUL_ACCESS_TOKEN,
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${CONTENTFUL_ACCESS_TOKEN}`,
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ query })
+type HomeProps = {
+  projects: Array<Project>
 }
 
 // This function gets called at build time
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts
 
-  const res = await fetch("https://graphql.contentful.com/content/v1/spaces/9tnwp5z6xqrq", fetchOptions)
-  const data = await res.json()
+  const projects = await fetchProjects()
 
-  // console.log(data.data.experienceCollection.items)
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
-      data,
+      projects,
     },
   }
 }
 
-gsap.registerPlugin(ScrollTrigger); 
-
-export default function Home() {
+export default function Home({projects}:HomeProps) {
 
   return (
     <>
@@ -70,6 +53,8 @@ export default function Home() {
       <Header />
       <Body>
         <Banner />
+        <Quote1 />
+        <Highlight projects={projects}/>
       </Body>
       <Footer />
       <SotmAward />

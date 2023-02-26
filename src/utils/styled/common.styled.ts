@@ -1,8 +1,9 @@
+import { ReactNode } from "react"
 import styled from "styled-components"
 import COLOR from "./color"
 
 export const TextContainer = styled.div.attrs(props=>({
-    className: `text-center justify-content-center pb-2 w-100 ${props}`
+    className: 'text-center justify-content-center pb-2 w-100 ' + props.className
 }))`
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -13,7 +14,7 @@ export const TextContainer = styled.div.attrs(props=>({
     overflow: hidden;
 `
 
-export const Button = styled.div.attrs(props=>({
+export const Button = styled.a.attrs(props=>({
     className: props
 }))`
     border: solid 2px ${COLOR.BLACK};
@@ -44,5 +45,35 @@ export const Button = styled.div.attrs(props=>({
     &.cyan:hover {
         color: white !important;
         background: -webkit-linear-gradient(45deg, ${COLOR.GRADIENT_1} 30%, ${COLOR.GRADIENT_2} 100%);
+    }
+`
+
+export const ButtonContainer = styled.div`
+    display: flex;
+
+    & a {
+        margin-right: 1rem;
+    }
+
+    & a:last-child {
+        margin-right: 0;
+    }
+`
+
+export const SeperateLineContainer = styled.div.attrs(props=>({
+    width: props.style?.width || '25%'
+}))`
+    width: 100%;
+
+    span {
+        display: inline;
+    }
+
+    hr {
+        width: ${props=>props.style?.width||'25%'};
+        height: 3px !important;
+        color: #e8ece6;
+        background-color: #e8ece6;
+        opacity: 1;
     }
 `

@@ -2,16 +2,18 @@ import COLOR from "@/utils/styled/color"
 import styled from "styled-components"
 
 export const BannerSection = styled.section.attrs(props=>({
-    className: 'banner'
+    className: props.className
 }))`
+    width: 100%;   
     background-size: cover;
+
     @media only screen and (max-width: 480px) {
       height: 100%;
     }
 `
 
 export const BannerContainer = styled.div.attrs(props=>({
-    className: 'container banner-container'
+    className: 'container banner-container banner'
 }))`
     display: -webkit-box;
     display: -ms-flexbox;
