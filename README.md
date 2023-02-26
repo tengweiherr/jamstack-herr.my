@@ -11,7 +11,7 @@ Revamping [first version of the website](https://github.com/tengweiherr/herr.my)
 3. security enhancement
 4. scalability in the future (adding more pages and content)
 
-## :computer: Infrastructure
+## :bricks: Infrastructure
 ### Jamstack (Headless CMS) with:
 - NextJS
 - Contentful API
