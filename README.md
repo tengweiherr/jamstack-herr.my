@@ -5,7 +5,7 @@
 1. **MWA - Site of the Month (Personal category, Feb 2022)** <sub>*Issued by Malaysia Website Award (MWA) by Exabytes 2022*</sub>
 
 ## :rocket: Project Background
-Revamping first version of the website into Jamstack fullstack webapp for a few reasons:
+Revamping [first version of the website](https://github.com/tengweiherr/herr.my) into Jamstack fullstack webapp for a few reasons:
 1. connecting to a CMS for updating content easily
 2. optimal performance
 3. security enhancement
