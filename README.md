@@ -14,7 +14,7 @@ Revamping [first version of the website](https://github.com/tengweiherr/herr.my)
 ## :bricks: Infrastructure
 ### Jamstack (Headless CMS) with:
 - NextJS
-- Contentful API
+- Contentful API with GraphQL
 - Medium RSS Feed
 
 #### Frontend:
