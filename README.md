@@ -30,3 +30,6 @@ Revamping [first version of the website](https://github.com/tengweiherr/herr.my)
 
 #### Hosting
 - Vercel
+
+### CI/CD
+- Github Actions
