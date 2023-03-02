@@ -118,12 +118,10 @@ export const Slide = styled.div.attrs(props=>({
      
     &#item-last {
         min-width: 400px;
-        background: rgba(255,255,255,0.);
+        background: rgba(255,255,255,0.4);
         justify-content: center;
         align-items: center;
     }
-
-
 
 `
 
@@ -271,6 +269,10 @@ export const SlideInner = styled.div.attrs(props=>({
         flex-basis: 40%;
         text-align: justify;
         font-size: 0.9rem;
+
+        strong {
+            color: ${COLOR.ORANGE};
+        }
     }
 
     @media only screen and (max-width: 768px) {
