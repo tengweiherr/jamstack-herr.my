@@ -7,4 +7,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -X POST -d {} https://api.vercel.com/v1/integrations/deploy/sample_deploy_hook
+      - run: curl -X POST -d {} https://api.vercel.com/v1/integrations/deploy/prj_EE0rPgGL75qF8C61YNeU0t78M8i2/RbWHoBk9IR
