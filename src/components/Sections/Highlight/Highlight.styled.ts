@@ -1,3 +1,4 @@
+import COLOR from "@/utils/styled/color"
 import styled from "styled-components"
 
 export const HighlightSection = styled.section.attrs(props=>({
@@ -36,7 +37,7 @@ export const SliderContainer = styled.div.attrs(props=>({
 `
 
 export const HorizontalContainer = styled.div.attrs(props=>({
-    className: 'horizontal-container desktop ipad ' + props.className
+    className: 'horizontal-container desktop ipad ' + ( props.className ? props.className : '' )
 }))`
     display: -webkit-box;
     display: -ms-flexbox;
@@ -59,7 +60,7 @@ export const HorizontalContainer = styled.div.attrs(props=>({
 `
 
 export const Slide = styled.div.attrs(props=>({
-    className: 'item',
+    className: 'item ' + ( props.className ? props.className : '' ),
     id: props.id
 }))`
     display: -webkit-box;
@@ -114,7 +115,15 @@ export const Slide = styled.div.attrs(props=>({
         -webkit-transform: scale(1.05) !important;
         transform: scale(1.05) !important;
     }
-      
+     
+    &#item-last {
+        min-width: 400px;
+        background: rgba(255,255,255,0.);
+        justify-content: center;
+        align-items: center;
+    }
+
+
 
 `
 
@@ -234,7 +243,7 @@ export const HoverIconBG = styled.div.attrs(props=>({
 `
 
 export const SlideInner = styled.div.attrs(props=>({
-    className: 'item-inner'
+    className: 'item-inner ' + ( props.className ? props.className : '' )
 }))`
     display: -webkit-box;
     display: -ms-flexbox;
@@ -281,6 +290,16 @@ export const SlideInner = styled.div.attrs(props=>({
     .read-more {
         font-size: 0.8rem;
         padding: 6px 18px !important;
+    }
+
+    #item-last &{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h4 {
+            margin-bottom: 1rem;
+        }
     }
 `
 

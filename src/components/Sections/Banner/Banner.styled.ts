@@ -2,7 +2,7 @@ import COLOR from "@/utils/styled/color"
 import styled from "styled-components"
 
 export const BannerSection = styled.section.attrs(props=>({
-    className: props.className
+    className: ( props.className ? props.className : '' )
 }))`
     width: 100%;   
     background-size: cover;

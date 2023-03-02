@@ -1,21 +1,23 @@
 import gsap from "gsap"
 import { MutableRefObject } from "react";
 
-const bannerAnimating = (sliderTL:MutableRefObject<gsap.core.Timeline | undefined>) => {
+const animateBanner = (bannerTL:MutableRefObject<gsap.core.Timeline | undefined>) => {
 
     const scrollTriggerConfig = {
         trigger: '.ani-container',
         start: 'top 20%',
-        end: '+=350',
+        end: '+=450',
         scrub: 1,
         toggleActions: 'play complete complete complete'
     }
 
-    sliderTL.current = gsap.timeline({
-        scrollTrigger: {
+    const scrollTriggerConfigForBannerTL = {
         trigger: ".banner",
         start: "top bottom"
-        }
+    }
+
+    bannerTL.current = gsap.timeline({
+        scrollTrigger: scrollTriggerConfigForBannerTL
     })
     .from(".banner h1.name", {
         y: 200
@@ -125,7 +127,7 @@ const bannerAnimating = (sliderTL:MutableRefObject<gsap.core.Timeline | undefine
 
 }
 
-export default bannerAnimating
+export default animateBanner
 
 
 

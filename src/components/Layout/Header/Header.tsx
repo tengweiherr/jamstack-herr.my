@@ -1,8 +1,9 @@
-import Logo from "@/components/Logo"
-import { BEHANCE_LINK, EMAIL_LINK, RESUME_LINK } from "@/utils/const"
+import Logo from "@/components/Molecules/Logo"
+import { BEHANCE_LINK, EMAIL_LINK, MEDIUM_LINK, RESUME_LINK } from "@/utils/const"
+import animateNavbar from "@/utils/gsap/navbar"
 import { Button } from "@/utils/styled/common.styled"
 import gsap from "gsap"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const Header = () => {
 
@@ -10,27 +11,13 @@ const Header = () => {
     const [togglerClass, setTogglerClass] = useState<string>('collapsed')
     const [collapseClass, setCollapseClass] = useState<string>('collapse')
     const aniRef = useRef<HTMLDivElement>(null)
-    const tl = useRef<GSAPTimeline>()
+    const navbarTL = useRef<GSAPTimeline>()
 
     useEffect(()=>{
 
         let ctx = gsap.context(()=>{
 
-            tl.current = gsap.timeline({
-                scrollTrigger: {
-                  trigger: ".navbar",
-                  start: "top bottom"
-                }
-            })
-            .from(".nav-item", {
-                y: -100,
-                opacity: 0,
-                stagger: 0.1
-            })
-            .from("a.logo", {
-                y: -100,
-                opacity: 0
-            }, "-=0.2");
+            animateNavbar(navbarTL)
 
         }, aniRef)
 
@@ -80,14 +67,20 @@ const Header = () => {
                     <div className={`navbar-collapse ${collapseClass}`} id="navbarToggler">
                         <ul className="navbar-nav mx-auto justify-content-around align-items-center w-100 py-3 px-5">
                             <li className="nav-item">
-                                <a className="nav-link active" href="#" aria-label="Software Eng">Home</a>
+                                <a className="nav-link active" aria-label="Software Eng">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={BEHANCE_LINK} target="_blank" aria-label="HERR Studio">HERR Studio</a>
+                                <a className="nav-link" href="#" aria-label="Projects">Projects</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href={MEDIUM_LINK} target="_blank" aria-label="Tech blog">Tech blog</a>
                             </li>
                             <a className="d-none d-lg-block text-center logo" href="#" aria-label="Logo">
                                 <Logo />
                             </a>
+                            <li className="nav-item">
+                                <a className="nav-link" href={BEHANCE_LINK} target="_blank" aria-label="HERR Studio">HERR Studio</a>
+                            </li>
                             <li className="nav-item">
                                 <a className="nav-link" href={`mailto:${EMAIL_LINK}`} aria-label="Contact">Contact</a>
                             </li>

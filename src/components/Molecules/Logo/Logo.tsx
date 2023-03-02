@@ -1,5 +1,5 @@
 import Image from "next/image"
-import LogoSVG from "../../../public/logo-dark.svg"
+import LogoSVG from "../../../../public/logo-dark.svg"
 
 const Logo = () => {
     return (
@@ -8,6 +8,7 @@ const Logo = () => {
             alt="HERR Studio"
             width={60}
             height={60}
+            priority
         />
     )
 }

@@ -1,20 +1,20 @@
-import bannerAnimating from "@/utils/gsap/banner"
+import animateBanner from "@/utils/gsap/banner"
 import gsap from "gsap"
 import { useEffect, useLayoutEffect, useRef } from "react"
-import Animation from "./Animation"
+import BannerAnimation from "../../Molecules/BannerAnimation"
 import { AniContainer, BannerContainer, BannerSection, IntroContainer } from "./Banner.styled"
 import { TextContainer } from "@/utils/styled/common"
 
 const Banner = () => {
 
     const aniRef = useRef<HTMLDivElement>(null)
-    const sliderTL = useRef<GSAPTimeline>()
+    const bannerTL = useRef<GSAPTimeline>()
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
 
         let ctx = gsap.context(()=>{
 
-            bannerAnimating(sliderTL)
+            animateBanner(bannerTL)
 
         },aniRef)
 
@@ -26,12 +26,12 @@ const Banner = () => {
             <BannerSection ref={aniRef}>
                 <BannerContainer>
                     <IntroContainer>
-                        <TextContainer>
+                        <TextContainer className='text-center'>
                             <h1 className="name">Teng Wei Herr</h1>
                         </TextContainer>
                     </IntroContainer>
                         <AniContainer>
-                            <Animation />
+                            <BannerAnimation />
                         </AniContainer>  
                 </BannerContainer>
             </BannerSection>

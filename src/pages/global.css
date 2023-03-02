@@ -37,6 +37,15 @@ body {
   color: #7fffd4;
 }
 
+.gradient {
+  font-size: 4rem;
+  font-weight: 600;
+  background: -webkit-linear-gradient(45deg, #659999 30%, #f4791f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .font-1 {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -76,8 +85,8 @@ section {
 }
 
 .navbar .logo {
-  -ms-flex-preferred-size: 60%;
-  flex-basis: 60%;
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -171,169 +180,19 @@ section {
   }
 }
 
-section.introducing {
-  padding-top: 120px;
-}
 
-section.introducing h2 {
-  font-size: 60px;
-  font-weight: 600;
-}
 
-@media only screen and (max-width: 768px) {
-  section.introducing h2 {
-    padding-bottom: 12px;
-  }
-}
 
-@media only screen and (max-width: 480px) {
-  section.introducing h2 {
-    text-align: center;
-    padding-bottom: 0px;
-  }
-}
 
-section.about-me {
-  background-color: #e8ece6;
-  padding: 0 0 80px 0;
-}
 
-section.about-me .parallax {
-  position: relative;
-}
 
-section.about-me .parallax img {
-  width: 300px;
-  height: 400px;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  position: absolute;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
 
-@media only screen and (max-width: 768px) {
-  section.about-me .parallax img {
-    position: relative;
-    width: 100%;
-  }
-}
 
-section.about-me .parallax .layer-1 img {
-  top: 0px;
-  right: 20px;
-}
 
-@media only screen and (max-width: 768px) {
-  section.about-me .parallax .layer-1 img {
-    display: none;
-  }
-}
 
-section.about-me .parallax .layer-2 img {
-  top: 100px;
-  left: 0px;
-}
 
-@media only screen and (max-width: 768px) {
-  section.about-me .parallax .layer-2 img {
-    display: none;
-  }
-}
 
-@media only screen and (max-width: 768px) {
-  section.about-me .parallax .mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    width: 100%;
-  }
-}
 
-@media only screen and (max-width: 480px) {
-  section.about-me .parallax .mobile {
-    display: block;
-  }
-}
-
-section.about-me .parallax .mobile img {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  section.about-me .parallax .mobile img {
-    display: block;
-    width: 49%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  section.about-me .parallax .mobile img {
-    display: block;
-    width: 100%;
-  }
-}
-
-section.about-me .parallax .mobile img.ipad {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  section.about-me .parallax .mobile img.ipad {
-    display: block;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  section.about-me .parallax .mobile img.ipad {
-    display: none;
-  }
-}
-
-section.about-me .parallax .intro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-@media only screen and (max-width: 768px) {
-  section.about-me .container .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  section.about-me .row.description {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-}
 
 .experience {
   background: #e8ece6;
@@ -538,97 +397,19 @@ section.about-me .parallax .intro {
   }
 }
 
-section.more {
-  background-color: #e8ece6;
-  padding: 80px 0 40px;
-}
 
-@media only screen and (max-width: 768px) {
-  section.more {
-    padding: 80px 0 0 0;
-  }
-}
 
-section.more .row {
-  margin-bottom: 0.5rem;
-}
 
-@media only screen and (max-width: 480px) {
-  section.more .row {
-    margin-bottom: 0;
-  }
-}
 
-section.more .col-md-4 .more-single {
-  height: 300px;
-  overflow: hidden !important;
-  background-color: rgba(0, 0, 0, 0.9);
-  border-radius: 10px;
-}
 
-section.more .col-md-4 .more-single .more-bg {
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 20;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
 
-section.more .col-md-4 .more-single img {
-  -o-object-fit: cover;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 
-section.more .col-md-4 .more-single .description {
-  z-index: 30;
-  height: inherit;
-}
 
-section.more .col-md-4 .more-single .description h3 {
-  top: 0;
-  right: 15px;
-  font-weight: 700;
-  opacity: 0.1;
-  font-size: 7rem;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
 
-section.more .col-md-4 .more-single .description h4 {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
 
-section.more .col-md-4 .more-single .description p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
 
-section.more .col-md-4 .more-single .description span {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
-  margin-right: 10px;
-}
 
-section.more .col-md-4 .more-single.active .more-bg {
-  background: rgba(0, 0, 0, 0.5);
-}
 
-section.more .col-md-4 .more-single.active img {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-section.more .col-md-4 .more-single.active h4 {
-  color: white;
-}
-
-section.more .col-md-4 .more-single.active h3 {
-  opacity: 0.8;
-}
 
 section.contact {
   padding: 40px 0 100px 0;

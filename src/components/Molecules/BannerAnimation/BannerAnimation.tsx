@@ -1,4 +1,4 @@
-const Animation = () => {
+const BannerAnimation = () => {
     return (
         <svg aria-label="Banner Animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.47 439.47" className="position-relative svg-ani">
           <defs>
@@ -189,4 +189,4 @@ const Animation = () => {
     )
 }
 
-export default Animation
+export default BannerAnimation

@@ -1,8 +1,26 @@
-import gsap from "gsap/all";
+import gsap, { Power2 } from "gsap/all";
 import Draggable from "gsap/Draggable";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, MutableRefObject, SetStateAction } from "react";
 
-export default function animateSlider (setWrapperClass:Dispatch<SetStateAction<string>>, setLineWidth:Dispatch<SetStateAction<string>>) {
+export default function animateSlider (sliderTL:MutableRefObject<gsap.core.Timeline | undefined>, setWrapperClass:Dispatch<SetStateAction<string>>, setLineWidth:Dispatch<SetStateAction<string>>) {
+
+    const scrollTriggerConfig = {
+        trigger: ".highlight-inner",
+        start: "top 80%"
+    }
+
+    sliderTL.current = gsap.timeline({
+        scrollTrigger: scrollTriggerConfig
+    })
+    .from(".highlight .text-container h2", {
+        y: 50
+    })
+    .from(".highlight .seperate-line span hr", {
+        width: 0,
+        ease: Power2.easeOut
+    }, "-=0.5");
+
+    sliderTL.current.duration(1);
 
     gsap.registerPlugin(Draggable)
 
@@ -27,7 +45,7 @@ export default function animateSlider (setWrapperClass:Dispatch<SetStateAction<s
             var fullwidth = getMatrix(horizontal_container); //1167 in desktop
             var fullwidthPer = 0.039;
 
-            setLineWidth((25 + (fullwidth * fullwidthPer)) + '%')
+            setLineWidth((36 + (fullwidth * fullwidthPer)) + '%')
 
             //changeFactor for seperate line width in responsive
             // var windowWidth = window.innerWidth;

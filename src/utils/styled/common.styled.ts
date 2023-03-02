@@ -1,9 +1,8 @@
-import { ReactNode } from "react"
 import styled from "styled-components"
 import COLOR from "./color"
 
 export const TextContainer = styled.div.attrs(props=>({
-    className: 'text-center justify-content-center pb-2 w-100 ' + props.className
+    className: 'text-container justify-content-center pb-2 w-100 ' + ( props.className ? props.className : '' )
 }))`
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -32,7 +31,8 @@ export const Button = styled.a.attrs(props=>({
     &:hover {
         border: solid 2px ${COLOR.WHITE};
         color: ${COLOR.WHITE};
-        background: rgba(255, 255, 255, 0.2);
+        color: white !important;
+        background: -webkit-linear-gradient(45deg, ${COLOR.GRADIENT_1} 30%, ${COLOR.GRADIENT_2} 100%);
     }
 
     &.cyan {
@@ -61,6 +61,7 @@ export const ButtonContainer = styled.div`
 `
 
 export const SeperateLineContainer = styled.div.attrs(props=>({
+    className: 'seperate-line',
     width: props.style?.width || '25%'
 }))`
     width: 100%;

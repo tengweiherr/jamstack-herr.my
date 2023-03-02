@@ -1,46 +1,41 @@
 import Head from 'next/head'
+import { fetchExp, fetchMyData, fetchProjects } from '@/utils/api/contentful'
 import Header from '@/components/Layout/Header'
-import SotmAward from '@/components/SotmAward'
+import SotmAward from '@/components/Molecules/SotmAward'
 import Footer from '@/components/Layout/Footer'
 import Body from '@/components/Layout/Body'
-import Banner from '@/components/Banner'
-import Quote1 from '@/components/Quote1'
-import Highlight from '@/components/Highlight'
-import { fetchProjects } from '@/utils/api/contentful'
-
-type Project = {
-  title: string
-  role: string
-  tools: string
-  description: string
-  githubLink: string
-  projectLink?: string
-  awardWinning: boolean
-  highlighted: boolean
-  image: {
-    url: string
-    width: number
-    height: number
-  }
-}
+import Banner from '@/components/Sections/Banner'
+import Quote1 from '@/components/Sections/Quote1'
+import Highlight from '@/components/Sections/Highlight'
+import Introduction from '@/components/Sections/Introduction'
+import { Experience as Exp, MyData, Project } from '@/utils/types'
+import Experience from '@/components/Sections/Experience'
+import More from '@/components/Sections/More'
+import Contact from '@/components/Sections/Contact'
 
 type HomeProps = {
   projects: Array<Project>
+  myData: MyData
+  exps: Array<Exp>
 }
 
 // This function gets called at build time
 export async function getStaticProps() {
 
   const projects = await fetchProjects()
+  const myData = await fetchMyData()
+  const exps = await fetchExp()
 
   return {
     props: {
       projects,
+      myData,
+      exps
     },
   }
 }
 
-export default function Home({projects}:HomeProps) {
+export default function Home({projects,myData,exps}:HomeProps) {
 
   return (
     <>
@@ -55,6 +50,10 @@ export default function Home({projects}:HomeProps) {
         <Banner />
         <Quote1 />
         <Highlight projects={projects}/>
+        <Introduction myData={myData}/>
+        <Experience exps={exps}/>
+        <More />
+        <Contact />
       </Body>
       <Footer />
       <SotmAward />
