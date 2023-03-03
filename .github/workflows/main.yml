@@ -1,5 +1,5 @@
 name: Deploy to Vercel
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+run-name: Deploy to Vercel by @${{ github.actor }}
 
 on:
   release:
