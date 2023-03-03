@@ -1,6 +1,4 @@
 import Image from "next/image"
-import PortraitPhoto from '../../../static/portrait-compressed.jpg'
-import LinkedInPhoto from '../../../static/linked-photo.jpg'
 import { TextContainer } from "@/utils/styled/common.styled"
 import { AboutMe, DescriptionContainer, IntroContainer, IntroductionSection, Parallax } from "./Introduction.styled"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"

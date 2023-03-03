@@ -1,8 +1,6 @@
 import { Button } from "@/utils/styled/common.styled"
 import Image from "next/image"
 import { BlackOverlapped, H4, MoreCardContent, MoreCardOuter, MoreContainer, MoreInnerContainer, SingleMoreCard } from "./More.styled"
-import pgcnySVG from '../../../static/pgcny.jpg'
-import travelogSVG from '../../../static/travelog.jpg'
 import { AWS_S3_PREFIX, MEDIUM_LINK } from "@/utils/const"
 
 const renderImage = {
@@ -20,7 +18,7 @@ const More = () => {
                         <BlackOverlapped/>
                             <Image className="position-absolute" src={renderImage.more_bg_1} alt="My other works" width={200} height={200}/>
                             <MoreCardContent>
-                                <H4>My other works</H4>
+                                <H4>My other projects</H4>
                                 <Button>Visit more</Button>
                                 <h3 className="display-1 white position-absolute">01</h3>
                             </MoreCardContent>

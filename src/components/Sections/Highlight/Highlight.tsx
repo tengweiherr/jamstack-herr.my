@@ -6,7 +6,6 @@ import { Project } from "@/utils/types"
 import gsap from "gsap/all"
 import Image from "next/image"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
-import GithubSVG from '../../../static/github.svg'
 import { AwardInner, AwardWrapper, H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
 
 type HighlightProps = {

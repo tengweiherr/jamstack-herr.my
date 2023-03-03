@@ -1,15 +1,10 @@
 import ContactAnimation from "@/components/Molecules/ContactAnimation"
 import Image from "next/image"
-import LinkedInSVG from "../../../static/linked.svg"
-import GithubSVG from "../../../static/github.svg"
-import BehanceSVG from "../../../static/behance.svg"
-import FacebookSVG from "../../../static/facebook.svg"
-import InstagramSVG from "../../../static/ig.svg"
 import { Button, TextContainer } from "@/utils/styled/common.styled"
 import { useLayoutEffect, useRef } from "react"
 import animateContact from "@/utils/gsap/contact"
 import gsap from "gsap/all"
-import { AWS_S3_PREFIX, ICON } from "@/utils/const"
+import { ICON } from "@/utils/const"
 
 const Contact = () => {
 

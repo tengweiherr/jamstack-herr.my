@@ -27,6 +27,3 @@ export type Experience = {
     endTime: string
     description: string
 }
-
-
-  
