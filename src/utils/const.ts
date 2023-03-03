@@ -3,7 +3,7 @@ const CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 const CONTENTFUL_PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
 const CONTENTFUL_PREVIEW_SECRET = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
 
-const AWS_S3_PREFIX = 'https://s3.ap-southeast-1.amazonaws.com/herr.my/'
+const AWS_S3_PREFIX = 'https://s3.amazonaws.com/assets.herr.my/'
 
 const ICON = {
     linkedIn: AWS_S3_PREFIX + 'linked.svg',
