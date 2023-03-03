@@ -18,9 +18,9 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 's3.ap-southeast-1.amazonaws.com',
+        hostname: 's3.amazonaws.com',
         port: '',
-        pathname: '/**',
+        pathname: '/assets.herr.my/**',
       }
     ]
   },
