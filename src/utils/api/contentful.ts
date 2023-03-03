@@ -22,9 +22,9 @@ async function fetchMyData () {
             paragraph2
             paragraph3
             techStack
-            resume {
-                url
-            }
+            resume
+            image1
+            image2
           }
         }
     }`
@@ -49,11 +49,7 @@ async function fetchProjects () {
             projectLink
             awardWinning
             highlighted
-            image {
-                url
-                width
-                height
-            }
+            image
           }
         }
     }`

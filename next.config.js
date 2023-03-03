@@ -15,6 +15,12 @@ const nextConfig = {
         hostname: 'www.mwa.my',
         port: '',
         pathname: '/ribbon/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 's3.ap-southeast-1.amazonaws.com',
+        port: '',
+        pathname: '/**',
       }
     ]
   },

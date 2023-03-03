@@ -9,6 +9,7 @@ import { Button, TextContainer } from "@/utils/styled/common.styled"
 import { useLayoutEffect, useRef } from "react"
 import animateContact from "@/utils/gsap/contact"
 import gsap from "gsap/all"
+import { AWS_S3_PREFIX, ICON } from "@/utils/const"
 
 const Contact = () => {
 
@@ -52,11 +53,11 @@ const Contact = () => {
                 </TextContainer>
                 <Button href="mailto:herrartwork@gmail.com" className="button text-center cyan mt-2" aria-label="Contact">Say Hello</Button>
                 <div className="social-media-icon row d-flex flex-row justify-content-between align-items-center mt-4">
-                    <a href="https://www.linkedin.com/in/teng-wei-herr-15a7891a9/" target="_blank" aria-label="LinkedIn"><Image src={LinkedInSVG} alt="LinkedIn" width={20} height={20}/></a>
-                    <a href="https://github.com/tengweiherr" target="_blank" aria-label="Github"><Image src={GithubSVG} alt="Github" width={20} height={20} /></a>
-                    <a href="https://www.behance.net/herrstudio" target="_blank" aria-label="Behance"><Image src={BehanceSVG} alt="Behance" width={20} height={20}/></a>
-                    <a href="https://www.facebook.com/weiherrteng" target="_blank" aria-label="Facebook"><Image src={FacebookSVG} alt="Facebook" width={20} height={20} /></a>
-                    <a href="https://www.instagram.com/herr_studio/" target="_blank" aria-label="Instagram"><Image src={InstagramSVG} alt="Instagram" width={20} height={20}/></a>
+                    <a href="https://www.linkedin.com/in/teng-wei-herr-15a7891a9/" target="_blank" aria-label="LinkedIn"><Image src={ICON.linkedIn} alt="LinkedIn" width={20} height={20}/></a>
+                    <a href="https://github.com/tengweiherr" target="_blank" aria-label="Github"><Image src={ICON.github} alt="Github" width={20} height={20} /></a>
+                    <a href="https://www.behance.net/herrstudio" target="_blank" aria-label="Behance"><Image src={ICON.behance} alt="Behance" width={20} height={20}/></a>
+                    <a href="https://www.facebook.com/weiherrteng" target="_blank" aria-label="Facebook"><Image src={ICON.facebook} alt="Facebook" width={20} height={20} /></a>
+                    <a href="https://www.instagram.com/herr_studio/" target="_blank" aria-label="Instagram"><Image src={ICON.instagram} alt="Instagram" width={20} height={20}/></a>
                 </div>
                 </div>
             </div>

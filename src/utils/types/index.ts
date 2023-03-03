@@ -1,15 +1,11 @@
-export type Asset = {
-    url: string
-    width?: number
-    height?: number
-}
-
 export type MyData = {
     paragraph1: string
     paragraph2?: string
     paragraph3?: string
     techStack?: Array<string>
-    resume?: Asset
+    resume: string
+    image1: string
+    image2: string
 }
   
 export type Project = {
@@ -21,7 +17,7 @@ export type Project = {
     projectLink?: string
     awardWinning: boolean
     highlighted: boolean
-    image: Asset
+    image: string
 }
 
 export type Experience = {

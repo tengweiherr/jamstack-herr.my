@@ -5,7 +5,11 @@ import { Button } from "@/utils/styled/common.styled"
 import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
 
-const Header = () => {
+type HeaderProps = {
+    resume: string
+}
+
+const Header = ({resume}:HeaderProps) => {
 
     const [navClass, setNavClass] = useState<string>('')
     const [togglerClass, setTogglerClass] = useState<string>('collapsed')

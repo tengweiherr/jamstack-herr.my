@@ -7,6 +7,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import animateIntroduction from "@/utils/gsap/introduction"
 import gsap from "gsap/all"
 import { MyData } from "@/utils/types"
+import { AWS_S3_PREFIX } from "@/utils/const"
 
 type IntroductionProps = {
     myData: MyData
@@ -15,6 +16,13 @@ type IntroductionProps = {
 type Skills = {
     part_1?: Array<string>,
     part_2?: Array<string>
+}
+
+const renderImage = (myData: MyData) => {
+    return {
+        image1: AWS_S3_PREFIX + myData.image1,
+        image2: AWS_S3_PREFIX + myData.image2
+    }
 }
 
 const Introduction = ({myData}:IntroductionProps) => {
@@ -97,14 +105,14 @@ const Introduction = ({myData}:IntroductionProps) => {
                             
                             <Parallax>
                                 <div className="layer layer-1">
-                                    <Image src={PortraitPhoto} alt="Teng Wei Herr" />
+                                    <Image src={renderImage(myData).image1} width={200} height={200} alt="Teng Wei Herr" />
                                 </div>
                                 <div className="layer layer-2">
-                                    <Image src={LinkedInPhoto} alt="Teng Wei Herr" />
+                                    <Image src={renderImage(myData).image2} width={200} height={200} alt="Teng Wei Herr" />
                                 </div>
                                 <div className="mobile">
-                                    <Image src={LinkedInPhoto} alt="Teng Wei Herr" />
-                                    <Image className="ipad" src={PortraitPhoto} alt="Teng Wei Herr" />
+                                    <Image src={renderImage(myData).image2} width={200} height={200} alt="Teng Wei Herr" />
+                                    <Image className="ipad" src={renderImage(myData).image1} width={200} height={200} alt="Teng Wei Herr" />
                                 </div>
 
                             </Parallax>

@@ -1,3 +1,4 @@
+import { ICON } from "@/utils/const"
 import animateSlider from "@/utils/gsap/slider"
 import { Button, SeperateLine, TextContainer } from "@/utils/styled/common"
 import { ButtonContainer } from "@/utils/styled/common.styled"
@@ -79,10 +80,10 @@ const Highlight = ({projects}:HighlightProps) => {
                       </AwardInner>
                     </AwardWrapper>
                   }
-                  <HighlightImgContainer aria-label={item.image.url}>
+                  <HighlightImgContainer aria-label={item.image}>
                       <HoverIconContainer>
                         <a href={item.githubLink} target="_blank" aria-label="Github">
-                          <Image src={GithubSVG} alt="Github" width={20} height={20} />
+                          <Image src={ICON.github} alt="Github" width={20} height={20} />
                         </a>
                       </HoverIconContainer>
                       <HoverIconBG />

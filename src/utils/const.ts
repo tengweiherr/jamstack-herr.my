@@ -3,6 +3,16 @@ const CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 const CONTENTFUL_PREVIEW_ACCESS_TOKEN = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
 const CONTENTFUL_PREVIEW_SECRET = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
 
+const AWS_S3_PREFIX = 'https://s3.ap-southeast-1.amazonaws.com/herr.my/'
+
+const ICON = {
+    linkedIn: AWS_S3_PREFIX + 'linked.svg',
+    github: AWS_S3_PREFIX + 'github.svg',
+    behance: AWS_S3_PREFIX + 'behance.svg',
+    facebook: AWS_S3_PREFIX + 'facebook.svg',
+    instagram: AWS_S3_PREFIX + 'ig.svg'
+}
+
 const EMAIL_LINK = 'weiherrteng@gmail.com'
 const BEHANCE_LINK = 'https://www.behance.net/herrstudio'
 const MEDIUM_LINK = 'https://medium.com/@tengweiherr'
@@ -14,6 +24,8 @@ export {
     CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_PREVIEW_ACCESS_TOKEN,
     CONTENTFUL_PREVIEW_SECRET,
+    AWS_S3_PREFIX,
+    ICON,
     EMAIL_LINK,
     BEHANCE_LINK,
     MEDIUM_LINK,
