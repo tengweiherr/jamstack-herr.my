@@ -3,11 +3,14 @@ import { BEHANCE_LINK, EMAIL_LINK, MEDIUM_LINK, RESUME_LINK } from "@/utils/cons
 import animateNavbar from "@/utils/gsap/navbar"
 import { Button } from "@/utils/styled/common.styled"
 import gsap from "gsap"
+import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 type HeaderProps = {
-    resume: string
+    resume?: string
 }
+
+type Tabs = 'Home' | 'Projects' | 'Tech blog'
 
 const Header = ({resume}:HeaderProps) => {
 
@@ -16,6 +19,8 @@ const Header = ({resume}:HeaderProps) => {
     const [collapseClass, setCollapseClass] = useState<string>('collapse')
     const aniRef = useRef<HTMLDivElement>(null)
     const navbarTL = useRef<GSAPTimeline>()
+
+    const [activeTab, setActiveTab] = useState<Tabs>('Home')
 
     useEffect(()=>{
 
@@ -58,9 +63,14 @@ const Header = ({resume}:HeaderProps) => {
         <header ref={aniRef}>
             <nav className={`navbar navbar-expand-lg ${navClass}`}>
                 <div className="container-fluid">
-                    <a className="navbar-brand d-lg-none px-2 logo">
+                    <Link 
+                        href="/" 
+                        onClick={()=>setActiveTab('Home')}
+                        className="navbar-brand d-lg-none px-2 logo" 
+                        aria-label="Logo"
+                    >
                         <Logo />
-                    </a>
+                    </Link>
                     <button onClick={handleNavClick} className={`navbar-toggler ${togglerClass}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded={togglerClass!=='collapsed'} aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon">
                             <svg aria-label="Expand" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
@@ -71,17 +81,40 @@ const Header = ({resume}:HeaderProps) => {
                     <div className={`navbar-collapse ${collapseClass}`} id="navbarToggler">
                         <ul className="navbar-nav mx-auto justify-content-around align-items-center w-100 py-3 px-5">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-label="Software Eng">Home</a>
+                                <Link 
+                                    className={`nav-link ${activeTab==='Home' ? 'active' : ''}`} 
+                                    onClick={()=>setActiveTab('Home')}
+                                    href="/" 
+                                    aria-label="Software Eng"
+                                >Home
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" aria-label="Projects">Projects</a>
+                                <Link 
+                                    className={`nav-link ${activeTab==='Projects' ? 'active' : ''}`} 
+                                    onClick={()=>setActiveTab('Projects')}
+                                    href="/projects" 
+                                    aria-label="Projects"
+                                >Projects
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href={MEDIUM_LINK} target="_blank" aria-label="Tech blog">Tech blog</a>
+                                <Link 
+                                    className={`nav-link ${activeTab==='Tech blog' ? 'active' : ''}`} 
+                                    onClick={()=>setActiveTab('Tech blog')}
+                                    href="/techblog"
+                                    aria-label="Tech blog"
+                                >Tech blog
+                                </Link>
                             </li>
-                            <a className="d-none d-lg-block text-center logo" href="#" aria-label="Logo">
+                            <Link 
+                                href="/" 
+                                onClick={()=>setActiveTab('Home')}
+                                className="d-none d-lg-block text-center logo" 
+                                aria-label="Logo"
+                            >
                                 <Logo />
-                            </a>
+                            </Link>
                             <li className="nav-item">
                                 <a className="nav-link" href={BEHANCE_LINK} target="_blank" aria-label="HERR Studio">HERR Studio</a>
                             </li>

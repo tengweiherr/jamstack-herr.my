@@ -1,19 +1,19 @@
-import animateQuote1 from "@/utils/gsap/quote1"
+import animateQuote from "@/utils/gsap/quote"
 import { TextContainer } from "@/utils/styled/common"
 import gsap from "gsap/all"
 import { useEffect, useLayoutEffect, useRef } from "react"
-import { QuoteSection } from "./Quote1.styled"
+import { QuoteSection } from "./Quote.styled"
 
-const Quote1 = () => {
+const Quote = () => {
 
     const aniRef = useRef<HTMLDivElement>(null)
-    const quote1TL = useRef<GSAPTimeline>()
+    const quoteTL = useRef<GSAPTimeline>()
 
     useLayoutEffect(()=>{
 
         let ctx = gsap.context(()=>{
   
-          animateQuote1(quote1TL)
+          animateQuote(quoteTL)
   
         },aniRef)
   
@@ -35,4 +35,4 @@ const Quote1 = () => {
     )
 }
 
-export default Quote1
+export default Quote

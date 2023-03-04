@@ -126,41 +126,6 @@ export const Slide = styled.div.attrs(props=>({
 
 `
 
-export const AwardWrapper = styled.div`
-    position: absolute; 
-    top: 45px;
-    right: -60px;
-    z-index: 99999;
-`
-
-export const AwardInner = styled.div.attrs(props=>({
-    className: 'award-winning'
-}))`
-    width: 250px;
-    height: 50px;
-    background: #e3852d;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-
-    h6 {
-        margin-bottom: 0;
-        font-weight: 700;
-        font-size: 1.2rem;
-    }
-`
-
 export const HighlightImgContainer = styled.div.attrs(props=>({
     className: 'highlight-img-div'
 }))`

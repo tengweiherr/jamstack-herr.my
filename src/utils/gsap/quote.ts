@@ -1,7 +1,7 @@
 import gsap from "gsap"
 import { MutableRefObject } from "react";
 
-const animateQuote1 = (quote1TL:MutableRefObject<gsap.core.Timeline | undefined>) => {
+const animateQuote = (quoteTL:MutableRefObject<gsap.core.Timeline | undefined>) => {
 
     const scrollTriggerConfig = {
         trigger: ".quote-1",
@@ -11,7 +11,7 @@ const animateQuote1 = (quote1TL:MutableRefObject<gsap.core.Timeline | undefined>
         toggleActions: "play complete complete complete"
     }
 
-    quote1TL.current = gsap.timeline({
+    quoteTL.current = gsap.timeline({
         scrollTrigger: scrollTriggerConfig
     })
     .from(".quote-1 h2", {
@@ -24,7 +24,7 @@ const animateQuote1 = (quote1TL:MutableRefObject<gsap.core.Timeline | undefined>
 
 }
 
-export default animateQuote1
+export default animateQuote
 
 
 

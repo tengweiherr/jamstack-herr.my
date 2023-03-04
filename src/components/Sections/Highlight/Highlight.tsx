@@ -1,3 +1,4 @@
+import AwardWinningBanner from "@/components/Molecules/AwardWinningBanner"
 import { ICON } from "@/utils/const"
 import animateSlider from "@/utils/gsap/slider"
 import { Button, SeperateLine, TextContainer } from "@/utils/styled/common"
@@ -6,7 +7,7 @@ import { Project } from "@/utils/types"
 import gsap from "gsap/all"
 import Image from "next/image"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
-import { AwardInner, AwardWrapper, H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
+import { H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
 
 type HighlightProps = {
   projects?: Array<Project>
@@ -27,9 +28,7 @@ const Highlight = ({projects}:HighlightProps) => {
       if(projects && projects?.length !== 0){
 
         projects?.sort(function(a,b){
-          const aIndex:number = a.awardWinning ? 1 : 0
-          const bIndex:number = b.awardWinning ? 1 : 0
-          return bIndex - aIndex;
+          return a.priority - b.priority;
         });
 
         setHighlightedProjects(projects)
@@ -73,11 +72,7 @@ const Highlight = ({projects}:HighlightProps) => {
               {highlightedProjects?.map((item, index)=>(
                 <Slide id={`item-${index}`} key={`item-${index}`}>
                   {item.awardWinning && 
-                    <AwardWrapper>
-                      <AwardInner>
-                        <h6 className="white">Award Winning</h6>
-                      </AwardInner>
-                    </AwardWrapper>
+                    <AwardWinningBanner size='md'/>
                   }
                   <HighlightImgContainer aria-label={item.image}>
                       <HoverIconContainer>
@@ -105,8 +100,8 @@ const Highlight = ({projects}:HighlightProps) => {
               ))}
                 <Slide id='item-last' key='item-last'>
                     <SlideInner className='m-0'>
-                      <h4>View more at</h4>
-                      <Button aria-label="My projects" className="cyan read-more">My projects</Button>
+                      <h4>My other projects</h4>
+                      <Button aria-label="My projects" className="cyan read-more">Visit more</Button>
                     </SlideInner>
                 </Slide>
               </>

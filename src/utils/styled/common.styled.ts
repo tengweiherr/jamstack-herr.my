@@ -14,7 +14,7 @@ export const TextContainer = styled.div.attrs(props=>({
 `
 
 export const Button = styled.a.attrs(props=>({
-    className: props
+    className: '' + ( props.className ? props.className : '' )
 }))`
     border: solid 2px ${COLOR.BLACK};
     padding: 8px 20px !important;
@@ -77,4 +77,25 @@ export const SeperateLineContainer = styled.div.attrs(props=>({
         background-color: #e8ece6;
         opacity: 1;
     }
+`
+
+export const Section = styled.section.attrs(props=>({
+    className: 'container ' + (props.className ? props.className : '')
+}))`
+`
+
+export const PageTitle = styled.h3.attrs(props=>({
+    className: 'display-3' + (props.className ? props.className : '')
+}))`
+    font-weight: 600;
+    background: -webkit-linear-gradient(45deg, ${COLOR.GRADIENT_1} 0%, ${COLOR.GRADIENT_2} 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+`
+
+export const PageSubtitle = styled.h6.attrs(props=>({
+    className: 'pt-2' + (props.className ? props.className : '')
+}))`
+    font-weight: 400;
+    color: ${COLOR.DARK_GREY};
 `

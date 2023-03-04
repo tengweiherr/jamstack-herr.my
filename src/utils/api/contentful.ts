@@ -36,7 +36,7 @@ async function fetchMyData () {
     return myDataData
 }
 
-async function fetchProjects () {
+async function fetchAllProjects () {
 
     const query = `{
         projectsCollection {
@@ -48,8 +48,33 @@ async function fetchProjects () {
             githubLink
             projectLink
             awardWinning
+            priority
+          }
+        }
+    }`
+
+    const fetchOptions = getOptions(query)
+    const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
+    const resInJSON = await res.json()
+    const projects = await resInJSON.data.projectsCollection.items
+    return projects
+}
+
+async function fetchHighlightedProjects () {
+
+    const query = `{
+        projectsCollection (where:{highlighted:true}) {
+          items {
+            title
+            role
+            tools
+            description
+            githubLink
+            projectLink
+            awardWinning
             highlighted
             image
+            priority
           }
         }
     }`
@@ -83,7 +108,8 @@ async function fetchExp () {
 }
 
 export {
-    fetchProjects,
+    fetchAllProjects,
+    fetchHighlightedProjects,
     fetchMyData,
     fetchExp
 }
