@@ -1,3 +1,3 @@
-import TechblogCardList from "./techblogCardList"
+import TechblogCardList from "./TechblogCardList"
 
 export default TechblogCardList
