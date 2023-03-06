@@ -1,4 +1,5 @@
 import AwardWinningBanner from "@/components/Molecules/AwardWinningBanner"
+import { NoContentWrapper } from "@/utils/styled/common.styled"
 import { Project } from "@/utils/types"
 import { useEffect, useState } from "react"
 import { DescriptionBox, ProjectCard, ProjectsWrapper, ToolsBox } from "./ProjectsCardList.styled"
@@ -24,10 +25,22 @@ const ProjectsCardList = ({projectsFromAPI}:ProjectsProps) => {
 
     },[projectsFromAPI])
 
+
+    if(projects.length === 0) return (
+        <NoContentWrapper>
+            <span>No projects found.</span>
+        </NoContentWrapper>
+    )
+
     return (
         <ProjectsWrapper>
             {projects.map((item,index)=>(
-                <ProjectCard key={`project-${index}`} onClick={()=>window.open(item.githubLink || item.projectLink, '_blank')}>
+                <ProjectCard 
+                    id={`project-${item.sys.id}`} 
+                    key={`project-${index}`} 
+                    // onClick={()=>window.open(`/projects/${item.sys.id}`, '_blank')}
+                    onClick={()=>window.open(item.githubLink || item.projectLink, '_blank')}
+                >
                     {item.awardWinning && 
                         <AwardWinningBanner size='sm'/>
                     }
@@ -40,7 +53,6 @@ const ProjectsCardList = ({projectsFromAPI}:ProjectsProps) => {
                         <span className='tool' key={`tool-${index}`}>{tool}</span>
                     ))}
                     </ToolsBox>
-
                 </ProjectCard>
             ))}
         </ProjectsWrapper>

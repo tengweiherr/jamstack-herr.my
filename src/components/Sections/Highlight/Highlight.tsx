@@ -101,7 +101,7 @@ const Highlight = ({projects}:HighlightProps) => {
                 <Slide id='item-last' key='item-last'>
                     <SlideInner className='m-0'>
                       <h4>My other projects</h4>
-                      <Button aria-label="My projects" className="cyan read-more">Visit more</Button>
+                      <Button href="/projects" aria-label="My projects" className="cyan read-more">Visit more</Button>
                     </SlideInner>
                 </Slide>
               </>

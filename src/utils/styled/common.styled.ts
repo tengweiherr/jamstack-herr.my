@@ -1,3 +1,4 @@
+import Link from "next/link"
 import styled from "styled-components"
 import COLOR from "./color"
 
@@ -13,7 +14,7 @@ export const TextContainer = styled.div.attrs(props=>({
     overflow: hidden;
 `
 
-export const Button = styled.a.attrs(props=>({
+export const Button = styled(Link).attrs(props=>({
     className: '' + ( props.className ? props.className : '' )
 }))`
     border: solid 2px ${COLOR.BLACK};
@@ -27,6 +28,13 @@ export const Button = styled.a.attrs(props=>({
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
+
+    a {
+        background: none;
+        color: white;
+        border: none;
+        text-decoration: none;
+    }
 
     &:hover {
         border: solid 2px ${COLOR.WHITE};
@@ -84,11 +92,27 @@ export const Section = styled.section.attrs(props=>({
 }))`
 `
 
-export const PageTitle = styled.h3.attrs(props=>({
+export const FullpageSection = styled.section.attrs(props=>({
+    className: 'container d-flex flex-column justify-content-center align-items-center w-100' + (props.className ? props.className : '')
+}))`
+    padding: 4rem 2rem 0px 2rem;
+    height: 100%;
+`
+
+export const PageTitle = styled.h1.attrs(props=>({
     className: 'display-3' + (props.className ? props.className : '')
 }))`
     font-weight: 600;
     background: -webkit-linear-gradient(45deg, ${COLOR.GRADIENT_1} 0%, ${COLOR.GRADIENT_2} 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+`
+
+export const PageTitleSmaller = styled.h2.attrs(props=>({
+    className: 'display-5' + (props.className ? props.className : '')
+}))`
+    font-weight: 600;
+    background: -webkit-linear-gradient(45deg, ${COLOR.GRADIENT_1} 0%, ${COLOR.GRADIENT_2} 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `
@@ -98,4 +122,13 @@ export const PageSubtitle = styled.h6.attrs(props=>({
 }))`
     font-weight: 400;
     color: ${COLOR.DARK_GREY};
+`
+
+export const NoContentWrapper = styled.div.attrs(props=>({
+    className: 'text-center d-flex justify-content-center align-items-center'
+}))`
+    margin-top: 4rem;
+    padding: 4rem;
+    border-radius: 0.4rem;
+    background: ${COLOR.LIGHT_GREY};
 `

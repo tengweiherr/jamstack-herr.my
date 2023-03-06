@@ -1,5 +1,5 @@
 import Logo from "@/components/Molecules/Logo"
-import { BEHANCE_LINK, EMAIL_LINK, MEDIUM_LINK, RESUME_LINK } from "@/utils/const"
+import { BEHANCE_LINK, EMAIL_LINK, RESUME_LINK } from "@/utils/const"
 import animateNavbar from "@/utils/gsap/navbar"
 import { Button } from "@/utils/styled/common.styled"
 import gsap from "gsap"

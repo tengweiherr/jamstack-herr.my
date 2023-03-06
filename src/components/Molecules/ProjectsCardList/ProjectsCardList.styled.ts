@@ -5,6 +5,7 @@ export const ProjectsWrapper = styled.div.attrs(props=>({
     className: 'd-flex flex-row w-100 mt-5'
 }))`
     flex-wrap: wrap;
+    justify-content: space-between;
 `
 
 export const ProjectCard = styled.div.attrs(props=>({
@@ -13,7 +14,8 @@ export const ProjectCard = styled.div.attrs(props=>({
     padding: 2rem;
     position: relative;
     overflow: hidden;
-    flex: 30%;
+    flex: 1 1 30.5%;
+    max-width: 30.5%;
     background: ${COLOR.LIGHT_GREY};
     border-radius: 0.4rem;
     transition: all 0.3s ease;

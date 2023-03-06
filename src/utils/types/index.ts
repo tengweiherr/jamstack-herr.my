@@ -7,8 +7,13 @@ export type MyData = {
     image1: string
     image2: string
 }
+
+export type Sys = {
+    id: string
+}
   
 export type Project = {
+    sys: Sys
     title: string
     role: string
     tools: string

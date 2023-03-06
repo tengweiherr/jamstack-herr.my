@@ -1,6 +1,7 @@
-import TechblogCardList from "@/components/Molecules/TechblogCardList"
+import Loading from "@/components/Molecules/Loading"
 import { fetchAllStories } from "@/utils/api/medium"
 import { PageSubtitle, PageTitle, Section, TextContainer } from "@/utils/styled/common.styled"
+import dynamic from "next/dynamic"
 
 type TechblogProps = {
     mediumRSSResInString: string
@@ -16,6 +17,10 @@ export async function getStaticProps() {
       },
     }
 }
+
+const TechblogCardList = dynamic(() => import('../../components/Molecules/TechblogCardList'), {
+    loading: () => <Loading />,
+})
 
 const Techblog = ({mediumRSSResInString}:TechblogProps) => {
     

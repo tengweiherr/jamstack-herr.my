@@ -1,5 +1,7 @@
+import { NoContentWrapper } from "@/utils/styled/common.styled"
 import { MediumRSSRes, MediumStory } from "@/utils/types"
 import { useEffect, useState } from "react"
+import Loading from "../Loading"
 import { StoriesWrapper, StoryBottomLine, StoryLeftColumn, StoryRightColumn, StoryRow } from "./TechblogCardList.styled"
 
 type TechblogProps = {
@@ -33,27 +35,33 @@ const TechblogCardList = ({mediumRSSResInString}:TechblogProps) => {
         }
     
     }, [mediumRSSResInString, stories])
+
+    if(stories.length === 0) return (
+        <NoContentWrapper>
+            <span>No blogs found.</span>
+        </NoContentWrapper>
+    )
     
     return (
         <StoriesWrapper>
             {stories.map((item,index)=>(
-                <>
-                <StoryRow key={`medium-story-${item.id}`} onClick={()=>window.open(item.link,'_blank')}>
-                    <StoryLeftColumn>
-                        <span>{renderDate(item.published)}</span>
-                    </StoryLeftColumn>
-                    <StoryRightColumn>
-                        <h5>{item.title}</h5>
-                        <p>{renderSubtitle(item.content)}</p>
-                        {item.category.map((tool,index)=>(
-                            <span className='tool' key={`tool-${index}`}>{tool}</span>
-                        ))}
-                    </StoryRightColumn>
-                </StoryRow>
-                {stories.length !== (index+1) && 
-                    <StoryBottomLine />
-                }
-                </>
+                <div key={`medium-story-${index}`} >
+                    <StoryRow id={`medium-story-${item.id}`} onClick={()=>window.open(item.link,'_blank')}>
+                        <StoryLeftColumn>
+                            <span>{renderDate(item.published)}</span>
+                        </StoryLeftColumn>
+                        <StoryRightColumn>
+                            <h5>{item.title}</h5>
+                            <p>{renderSubtitle(item.content)}</p>
+                            {item.category.map((tool,index)=>(
+                                <span className='tool' key={`tool-${index}`}>{tool}</span>
+                            ))}
+                        </StoryRightColumn>
+                    </StoryRow>
+                    {stories.length !== (index+1) && 
+                        <StoryBottomLine />
+                    }
+                </div>
             ))}
         </StoriesWrapper>
     )
