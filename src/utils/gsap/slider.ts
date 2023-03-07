@@ -2,7 +2,7 @@ import gsap, { Power2 } from "gsap/all";
 import Draggable from "gsap/Draggable";
 import { Dispatch, MutableRefObject, SetStateAction } from "react";
 
-export default function animateSlider (sliderTL:MutableRefObject<gsap.core.Timeline | undefined>, setWrapperClass:Dispatch<SetStateAction<string>>, setLineWidth:Dispatch<SetStateAction<string>>) {
+export default function animateSlider (sliderTL:MutableRefObject<gsap.core.Timeline | undefined>, setWrapperClass:Dispatch<SetStateAction<string>>, lineWidth:string, setLineWidth:Dispatch<SetStateAction<string>>) {
 
     const scrollTriggerConfig = {
         trigger: ".highlight-inner",
@@ -12,11 +12,16 @@ export default function animateSlider (sliderTL:MutableRefObject<gsap.core.Timel
     sliderTL.current = gsap.timeline({
         scrollTrigger: scrollTriggerConfig
     })
-    .from(".highlight .text-container h2", {
+    .fromTo(".highlight .text-container h2", {
         y: 50
+    },{
+        y: 0
     })
-    .from(".highlight .seperate-line span hr", {
+    .fromTo(".highlight .seperate-line span hr", {
         width: 0,
+        ease: Power2.easeOut
+    },{
+        width: lineWidth,
         ease: Power2.easeOut
     }, "-=0.5");
 

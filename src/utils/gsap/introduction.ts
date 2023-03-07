@@ -3,37 +3,45 @@ import { MutableRefObject } from "react";
 
 const animateIntroduction = (introTL:MutableRefObject<gsap.core.Timeline | undefined>, skillsTL:MutableRefObject<gsap.core.Timeline | undefined>) => {
 
-    gsap.from(".layer-1 img", {
-        scrollTrigger: { 
-            trigger: ".about-me", 
-            start: "top 70%", 
-            end: "bottom top", 
-            scrub: 1, 
-            toggleActions: "play complete complete complete" 
-        },
+
+    const scrollTriggerConfigForImg = { 
+        trigger: ".about-me", 
+        start: "top 70%", 
+        end: "bottom top", 
+        scrub: 1, 
+        toggleActions: "play complete complete complete" 
+    }
+
+    gsap.fromTo(".layer-1 img", {
+        scrollTrigger: scrollTriggerConfigForImg,
         y: 120
+    },{
+        scrollTrigger: scrollTriggerConfigForImg,
+        y: 0
     });
 
-    gsap.from(".layer-2 img", {
-        scrollTrigger: { 
-            trigger: ".about-me", 
-            start: "top 70%", 
-            end: "bottom top", 
-            scrub: 1, 
-            toggleActions: "play complete complete complete" 
-        },
+    gsap.fromTo(".layer-2 img", {
+        scrollTrigger: scrollTriggerConfigForImg,
         y: 250
+    },{
+        scrollTrigger: scrollTriggerConfigForImg,
+        y: 0
     });
 
-    gsap.from(".introducing h2.display-1", {
-        scrollTrigger: { 
-            trigger: ".introducing h2.display-1", 
-            start: "top bottom", 
-            end: "+=200", 
-            scrub: 1, 
-            toggleActions: "play complete complete complete" 
-        },
+    const scrollTriggerConfigForHeading = { 
+        trigger: ".introducing h2.display-1", 
+        start: "top bottom", 
+        end: "+=200", 
+        scrub: 1, 
+        toggleActions: "play complete complete complete" 
+    }
+
+    gsap.fromTo(".introducing h2.display-1", {
+        scrollTrigger: scrollTriggerConfigForHeading,
         y: 50
+    },{
+        scrollTrigger: scrollTriggerConfigForHeading,
+        y: 0
     });
 
     introTL.current = gsap.timeline({
@@ -42,11 +50,16 @@ const animateIntroduction = (introTL:MutableRefObject<gsap.core.Timeline | undef
             start: "top 70%"
         }
     })
-    .from(".about-me .text-container h5", {
+    .fromTo(".about-me .text-container h5", {
         y: 120
+    },{
+        y: 0
     }, "-=0.2")
-    .from(".about-me .text-container p", {
+    .fromTo(".about-me .text-container p", {
         y: 120,
+        stagger: 0.3
+    },{
+        y: 0,
         stagger: 0.3
     }, "-=0.4");
 
@@ -57,10 +70,16 @@ const animateIntroduction = (introTL:MutableRefObject<gsap.core.Timeline | undef
             start: "top 80%"
         }
     })
-    .from(".skills .description li", 0.2, {
+    .fromTo(".skills .description li", {
         x: 50,
         opacity: 0,
-        stagger: 0.08
+        stagger: 0.08,
+        duration: 0.2
+    },{
+        x: 0,
+        opacity: 1,
+        stagger: 0.08,
+        duration: 0.2
     }, "-=0.4");
 
 }

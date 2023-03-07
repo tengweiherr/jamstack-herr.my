@@ -14,12 +14,13 @@ const animateQuote = (quoteTL:MutableRefObject<gsap.core.Timeline | undefined>) 
     quoteTL.current = gsap.timeline({
         scrollTrigger: scrollTriggerConfig
     })
-    .from(".quote-1 h2", {
-      y: 50
+    .to(".quote-1 h2", {
+      y: -50,
+      opacity: 1
     })
-    .from(".quote-1 p", {
-      y: 20,
-      opacity: 0
+    .to(".quote-1 p", {
+      y: -20,
+      opacity: 1
     })
 
 }

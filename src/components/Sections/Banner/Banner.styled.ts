@@ -45,6 +45,9 @@ export const IntroContainer = styled.div.attrs(props=>({
         background: -webkit-linear-gradient(45deg, ${COLOR.GRADIENT_1} 30%, ${COLOR.GRADIENT_2} 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        position: relative;
+        bottom: -200px;
+        opacity: 0;
     }
 
     @media only screen and (max-width: 1200px) {

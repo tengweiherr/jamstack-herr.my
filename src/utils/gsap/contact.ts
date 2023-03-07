@@ -30,17 +30,21 @@ const animateContact = (catTL:MutableRefObject<gsap.core.Timeline | undefined>) 
         },
         repeat: -1, yoyo: true
     })
-    .from("#tail", { rotate: 10, transformOrigin: "bottom center", ease: Power1.easeInOut, duration: 1 })
-    .from("#cat-nose", { y: -3, x: -1, duration: 1 })
-    .from("#body", { scale: 1.05, transformOrigin: "start bottom", duration: 1 }, "-=1")
-    .from(".cat-eyes", { y: -2, duration: 1 }, "-=1")
-    .from("#cat-head", { rotate: 1, duration: 1 }, "-=1")
-    .from(".bulu-right", { x: 3, duration: 1 }, "-=1")
-    .from(".bulu-left", { x: -3, duration: 1 }, "-=1")
+    .to("#tail", { rotate: 10, transformOrigin: "bottom center", ease: Power1.easeInOut, duration: 1 })
+    .to("#cat-nose", { y: -3, x: -1, duration: 1 })
+    .to("#body", { scale: 1.05, transformOrigin: "start bottom", duration: 1 }, "-=1")
+    .to(".cat-eyes", { y: -2, duration: 1 }, "-=1")
+    .to("#cat-head", { rotate: 1, duration: 1 }, "-=1")
+    .to(".bulu-right", { x: 3, duration: 1 }, "-=1")
+    .to(".bulu-left", { x: -3, duration: 1 }, "-=1")
 
-    gsap.from(".cat-sleeping-2", {
+    gsap.fromTo(".cat-sleeping-2", {
         scrollTrigger: { trigger: ".cat-ani", start: "top bottom", end: "+=600", scrub: 2, toggleActions: "play complete complete complete" },
         scale: 0.7,
+        transformOrigin: "45 center"
+    },{
+        scrollTrigger: { trigger: ".cat-ani", start: "top bottom", end: "+=600", scrub: 2, toggleActions: "play complete complete complete" },
+        scale: 1,
         transformOrigin: "45 center"
     });
 

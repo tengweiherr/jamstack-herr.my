@@ -19,110 +19,211 @@ const animateBanner = (bannerTL:MutableRefObject<gsap.core.Timeline | undefined>
     bannerTL.current = gsap.timeline({
         scrollTrigger: scrollTriggerConfigForBannerTL
     })
-    .from(".banner h1.name", {
-        y: 200
+    .to(".banner h1.name", {
+        y: -200,
+        opacity: 1
     });
     
-    gsap.from("#background", {
+    gsap.fromTo("#background", {
         scrollTrigger: scrollTriggerConfig,
         scale: 1.16,
         transformOrigin: "bottom center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        scale: 1,
+        transformOrigin: "bottom center"
     });
-    gsap.from("#hair", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -645,
-    rotation: 8,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#hair", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -645,
+        rotation: 8,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#basketball", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -170,
-    rotation: -80,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#basketball", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -170,
+        rotation: -80,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#camera", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -80,
-    rotation: 20,
-    transformOrigin: "center center"
+    
+    gsap.fromTo("#camera", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -80,
+        rotation: 20,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#music", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -100,
-    x: 70,
-    rotation: 30,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#music", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -100,
+        x: 70,
+        rotation: 30,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0,
+        x: 0,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#_1001", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -150,
-    x: 75,
-    rotation: -10,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#_1001", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -150,
+        x: 75,
+        rotation: -10,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0,
+        x: 0,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#eth", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -100,
-    x: -65,
-    rotation: -30,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#eth", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -100,
+        x: -65,
+        rotation: -30,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0,
+        x: 0,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#ae", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -160,
-    x: -70,
-    rotation: -40,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#ae", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -160,
+        x: -70,
+        rotation: -40,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0,
+        x: 0,
+        rotation: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#left-eye", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -9
+
+    gsap.fromTo("#left-eye", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -10
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0
     });
-    gsap.from("#right-eye", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -9
+
+    gsap.fromTo("#right-eye", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -10
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0
     });
-    gsap.from("#left-eye-brow", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -453
+    
+    gsap.fromTo("#left-eye-brow", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -453
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#right-eye-brow", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -453
+
+    gsap.fromTo("#right-eye-brow", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -453
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#nose", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -446
+
+    gsap.fromTo("#nose", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -446
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#left-ear", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -430
+    
+    gsap.fromTo("#left-ear", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -430
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#left-ear-inner", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -430
+    
+    gsap.fromTo("#left-ear-inner", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -430
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#right-ear", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -430
+
+    gsap.fromTo("#right-ear", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -430
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#right-ear-inner", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -430
+
+    gsap.fromTo("#right-ear-inner", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -430
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: -437.96
     });
-    gsap.from("#mouth", {
-    scrollTrigger: scrollTriggerConfig,
-    scale: 1.4,
-    y: -5,
-    transformOrigin: "center center"
+
+    gsap.fromTo("#mouth", {
+        scrollTrigger: scrollTriggerConfig,
+        scale: 1.4,
+        y: -5,
+        transformOrigin: "center center"
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        scale: 1,
+        y: 0,
+        transformOrigin: "center center"
     });
-    gsap.from("#glass", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -6
+
+    gsap.fromTo("#glass", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -6
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0
     });
-    gsap.from("#neck", {
-    scrollTrigger: scrollTriggerConfig,
-    y: -8
+
+    gsap.fromTo("#neck", {
+        scrollTrigger: scrollTriggerConfig,
+        y: -8
+    },{
+        scrollTrigger: scrollTriggerConfig,
+        y: 0
     });
 
 }

@@ -89,10 +89,15 @@ section {
   flex-basis: 40%;
 }
 
+.navbar .logo img{
+  position: relative;
+  bottom: 100px;
+}
+
 @media only screen and (max-width: 768px) {
   .logo img {
     width: 40px;
-    height: auto
+    height: auto;
   }
 }
 
@@ -106,6 +111,8 @@ section {
   cursor: pointer;
   text-align: center;
   padding: 0 1rem;
+  position: relative;
+  bottom: 100px;
 }
 
 .navbar .nav-item a.nav-link.resume {
@@ -193,7 +200,6 @@ section {
 
 
 
-
 .experience {
   background: #e8ece6;
   padding: 60px 0;
@@ -202,6 +208,8 @@ section {
 .experience h2.display-1 {
   font-size: 60px;
   font-weight: 600;
+  position: relative;
+  bottom: -100px;
 }
 
 .experience .vertical-line {

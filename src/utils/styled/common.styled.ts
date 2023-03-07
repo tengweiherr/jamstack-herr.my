@@ -70,7 +70,7 @@ export const ButtonContainer = styled.div`
 
 export const SeperateLineContainer = styled.div.attrs(props=>({
     className: 'seperate-line',
-    width: props.style?.width || '25%'
+    width: props.style?.width || '36%'
 }))`
     width: 100%;
 
@@ -79,7 +79,7 @@ export const SeperateLineContainer = styled.div.attrs(props=>({
     }
 
     hr {
-        width: ${props=>props.style?.width||'25%'};
+        width: ${props=>props.style?.width||'36%'};
         height: 3px !important;
         color: #e8ece6;
         background-color: #e8ece6;

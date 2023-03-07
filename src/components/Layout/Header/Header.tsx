@@ -4,7 +4,8 @@ import animateNavbar from "@/utils/gsap/navbar"
 import { Button } from "@/utils/styled/common.styled"
 import gsap from "gsap"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { HeaderContainer } from "./Header.styled"
 
 type HeaderProps = {
     resume?: string
@@ -22,7 +23,7 @@ const Header = ({resume}:HeaderProps) => {
 
     const [activeTab, setActiveTab] = useState<Tabs>('Home')
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
 
         let ctx = gsap.context(()=>{
 
@@ -60,7 +61,7 @@ const Header = ({resume}:HeaderProps) => {
 
     return (
         <>
-        <header ref={aniRef}>
+        <HeaderContainer ref={aniRef}>
             <nav className={`navbar navbar-expand-lg ${navClass}`}>
                 <div className="container-fluid">
                     <Link 
@@ -128,7 +129,7 @@ const Header = ({resume}:HeaderProps) => {
                     </div>
                 </div>
             </nav>
-        </header>
+        </HeaderContainer>
         </>
     )
 }

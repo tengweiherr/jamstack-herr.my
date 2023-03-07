@@ -22,6 +22,8 @@ export const QuoteSection = styled.section`
     & h2 {
         font-weight: 600;
         font-size: 2.5rem;
+        position: relative;
+        bottom: -50px;
       }
       
       @media only screen and (max-width: 480px) {
@@ -32,6 +34,8 @@ export const QuoteSection = styled.section`
       
       & p {
         font-size: 1.2rem;
+        position: relative;
+        bottom: -20px;
       }
       
       @media only screen and (max-width: 480px) {

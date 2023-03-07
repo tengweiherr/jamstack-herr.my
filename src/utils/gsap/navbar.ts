@@ -11,14 +11,14 @@ const animateNavbar = (navbarTL:MutableRefObject<gsap.core.Timeline | undefined>
     navbarTL.current = gsap.timeline({
       scrollTrigger: scrollTriggerConfig
     })
-    .from(".nav-item", {
-        y: -100,
-        opacity: 0,
+    .to(".nav-item", {
+        y: 100,
+        opacity: 1,
         stagger: 0.1
     })
-    .from("a.logo", {
-        y: -100,
-        opacity: 0
+    .to("a.logo", {
+        y: 100,
+        opacity: 1
     }, "-=0.2");
 
 }

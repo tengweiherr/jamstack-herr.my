@@ -46,7 +46,7 @@ const Highlight = ({projects}:HighlightProps) => {
       if(shouldStartAnimation){
       
           ctx = gsap.context(()=>{
-            animateSlider(sliderTL, setWrapperClass, setLineWidth)
+            animateSlider(sliderTL, setWrapperClass, lineWidth, setLineWidth)
           },aniRef)
 
       }
@@ -64,7 +64,7 @@ const Highlight = ({projects}:HighlightProps) => {
             <H2>
               <span>Works I&apos;m proud of</span>
             </H2>
-            <SeperateLine width={lineWidth||'25%'}/>
+            <SeperateLine width={lineWidth||'36%'}/>
           </TextContainer>
           <SliderContainer>
             <HorizontalContainer className={wrapperClass}>

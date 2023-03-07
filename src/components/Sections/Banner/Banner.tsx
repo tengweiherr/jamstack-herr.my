@@ -27,7 +27,7 @@ const Banner = () => {
                 <BannerContainer>
                     <IntroContainer>
                         <TextContainer className='text-center'>
-                            <h1 className="name">Teng Wei Herr</h1>
+                            <h1 className="name" style={{opacity:0}}>Teng Wei Herr</h1>
                         </TextContainer>
                     </IntroContainer>
                         <AniContainer>
