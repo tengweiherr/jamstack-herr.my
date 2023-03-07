@@ -36,9 +36,9 @@ export default function Home({projects,myData,exps}:HomeProps) {
     <>
       <Banner />
       <Quote1 />
-      <Highlight projects={projects}/>
-      <Introduction myData={myData}/>
-      <Experience exps={exps}/>
+      <Highlight projects={projects} />
+      <Introduction myData={myData} />
+      <Experience exps={exps} />
       <More />
       <Contact />
     </>

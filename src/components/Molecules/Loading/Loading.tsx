@@ -1,5 +1,11 @@
+import { NoContentWrapper } from "@/utils/styled/common.styled";
+
 export default function Loading() {
 
-    return <p>Loading...</p>
+    return (
+        <NoContentWrapper>
+            <span>Loading</span>
+        </NoContentWrapper>
+    )
     
 }

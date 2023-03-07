@@ -5,7 +5,7 @@ import Loading from "../Loading"
 import { StoriesWrapper, StoryBottomLine, StoryLeftColumn, StoryRightColumn, StoryRow } from "./TechblogCardList.styled"
 
 type TechblogProps = {
-    mediumRSSResInString: string
+    mediumRSSResInString?: string
 }
 
 const renderDate = (dateInString: string) => {
