@@ -1,11 +1,11 @@
 import Logo from "@/components/Molecules/Logo"
 import { BEHANCE_LINK, EMAIL_LINK, RESUME_LINK } from "@/utils/const"
 import animateNavbar from "@/utils/gsap/navbar"
-import { Button } from "@/utils/styled/common.styled"
+import { Button, ContainerFluid } from "@/utils/styled/common.styled"
 import gsap from "gsap"
 import Link from "next/link"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
-import { HeaderContainer } from "./Header.styled"
+import { HeaderContainer, Navbar, NavbarCollapse, NavbarItemList, NavbarToggler, NavItem } from "./Header.styled"
 
 type HeaderProps = {
     resume?: string
@@ -43,7 +43,7 @@ const Header = ({resume}:HeaderProps) => {
     //     }
     //   });
 
-    const handleNavClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         if(togglerClass === 'collapsed'){
             setNavClass('mobile-nav-expand')
             setTogglerClass('')
@@ -51,10 +51,8 @@ const Header = ({resume}:HeaderProps) => {
         } else {
             setNavClass('')
             setTogglerClass('collapsed')
-            setCollapseClass('collapsing')
-            setTimeout(() => {
-                setCollapseClass('collapse')
-            }, 500);
+            // setCollapseClass('collapsing')
+            setCollapseClass('collapse')
         }
 
     }
@@ -62,8 +60,8 @@ const Header = ({resume}:HeaderProps) => {
     return (
         <>
         <HeaderContainer ref={aniRef}>
-            <nav className={`navbar navbar-expand-lg ${navClass}`}>
-                <div className="container-fluid">
+            <Navbar className={navClass}>
+                <ContainerFluid>
                     <Link 
                         href="/" 
                         onClick={()=>setActiveTab('Home')}
@@ -72,16 +70,12 @@ const Header = ({resume}:HeaderProps) => {
                     >
                         <Logo />
                     </Link>
-                    <button onClick={handleNavClick} className={`navbar-toggler ${togglerClass}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded={togglerClass!=='collapsed'} aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon">
-                            <svg aria-label="Expand" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
-                                <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div className={`navbar-collapse ${collapseClass}`} id="navbarToggler">
-                        <ul className="navbar-nav mx-auto justify-content-around align-items-center w-100 py-3 px-5">
-                            <li className="nav-item">
+                    <NavbarToggler onClick={handleNavClick} className={togglerClass} data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded={togglerClass!=='collapsed'} aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon" />
+                    </NavbarToggler>
+                    <NavbarCollapse className={collapseClass} id="navbarToggler">
+                        <NavbarItemList>
+                            <NavItem>
                                 <Link 
                                     className={`nav-link ${activeTab==='Home' ? 'active' : ''}`} 
                                     onClick={()=>setActiveTab('Home')}
@@ -89,8 +83,8 @@ const Header = ({resume}:HeaderProps) => {
                                     aria-label="Software Eng"
                                 >Home
                                 </Link>
-                            </li>
-                            <li className="nav-item">
+                            </NavItem>
+                            <NavItem>
                                 <Link 
                                     className={`nav-link ${activeTab==='Projects' ? 'active' : ''}`} 
                                     onClick={()=>setActiveTab('Projects')}
@@ -98,8 +92,8 @@ const Header = ({resume}:HeaderProps) => {
                                     aria-label="Projects"
                                 >Projects
                                 </Link>
-                            </li>
-                            <li className="nav-item">
+                            </NavItem>
+                            <NavItem>
                                 <Link 
                                     className={`nav-link ${activeTab==='Tech blog' ? 'active' : ''}`} 
                                     onClick={()=>setActiveTab('Tech blog')}
@@ -107,7 +101,7 @@ const Header = ({resume}:HeaderProps) => {
                                     aria-label="Tech blog"
                                 >Tech blog
                                 </Link>
-                            </li>
+                            </NavItem>
                             <Link 
                                 href="/" 
                                 onClick={()=>setActiveTab('Home')}
@@ -116,19 +110,19 @@ const Header = ({resume}:HeaderProps) => {
                             >
                                 <Logo />
                             </Link>
-                            <li className="nav-item">
+                            <NavItem>
                                 <a className="nav-link" href={BEHANCE_LINK} target="_blank" aria-label="HERR Studio">HERR Studio</a>
-                            </li>
-                            <li className="nav-item">
+                            </NavItem>
+                            <NavItem>
                                 <a className="nav-link" href={`mailto:${EMAIL_LINK}`} aria-label="Contact">Contact</a>
-                            </li>
-                            <li className="nav-item resume">
+                            </NavItem>
+                            <NavItem className="resume">
                                 <Button className="nav-link button resume cyan mx-auto" href={RESUME_LINK} target="_blank" aria-label="Resume">Resume</Button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+                            </NavItem>
+                        </NavbarItemList>
+                    </NavbarCollapse>
+                </ContainerFluid>
+            </Navbar>
         </HeaderContainer>
         </>
     )

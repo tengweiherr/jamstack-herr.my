@@ -4,8 +4,8 @@ import { MutableRefObject } from "react";
 const animateNavbar = (navbarTL:MutableRefObject<gsap.core.Timeline | undefined>) => {
 
     const scrollTriggerConfig = {
-      trigger: ".navbar",
-      start: "top bottom"
+      trigger: "nav",
+      start: "top 50%"
     }
 
     navbarTL.current = gsap.timeline({

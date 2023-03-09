@@ -27,7 +27,7 @@ const Projects = ({projectsFromAPI}:ProjectsProps) => {
 
     return (
         <Section className='py-5'>
-            <TextContainer className='mx-3'>
+            <TextContainer className='px-3'>
                 <PageTitle>Projects I&apos;ve done.</PageTitle>
                 <PageSubtitle>Some side projects I&apos;ve worked on since the first day of my software engineering journey.</PageSubtitle>
             </TextContainer>

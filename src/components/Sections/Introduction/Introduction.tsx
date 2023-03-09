@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { TextContainer } from "@/utils/styled/common.styled"
-import { AboutMe, DescriptionContainer, IntroContainer, IntroductionSection, Parallax } from "./Introduction.styled"
+import { AboutMe, DescriptionContainer, IntroContainer, IntroductionSection, IntroPhotoContainer, Parallax, SkillsContainer, SkillsList, SkillsListContainer } from "./Introduction.styled"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import animateIntroduction from "@/utils/gsap/introduction"
 import gsap from "gsap/all"
@@ -83,7 +83,7 @@ const Introduction = ({myData}:IntroductionProps) => {
                 </TextContainer>
                 <AboutMe>
                     <div className="container">
-                        <div className="row mb-5">
+                        <IntroPhotoContainer>
                             <IntroContainer>
                                 <TextContainer className='my-4 mt-5 justity-content-start'>
                                     <h5 className="name cyan text-start">
@@ -114,27 +114,27 @@ const Introduction = ({myData}:IntroductionProps) => {
                                 </div>
 
                             </Parallax>
-                        </div>
+                        </IntroPhotoContainer>
 
-                        <div className="row position-relative skills">
+                        <SkillsContainer>
                             <div className="col-lg-6">
-                                <div className="text-container">
+                                <TextContainer>
                                     <h5 className="cyan"><strong>Tech I&apos;ve worked with: </strong></h5>
-                                </div>
-                                <div className="row description mt-4 px-3">
-                                    <ul className="col-6">
+                                </TextContainer>
+                                <SkillsListContainer>
+                                    <SkillsList>
                                         {skills.part_1?.map((item, index)=>(
                                             <li key={`skill-${index}`}>{item}</li>
                                         ))}
-                                    </ul>
-                                    <ul className="col-6">
+                                    </SkillsList>
+                                    <SkillsList>
                                         {skills.part_2?.map((item, index)=>(
                                             <li key={`skill-${index}`}>{item}</li>
                                         ))}
-                                    </ul>
-                                </div>
+                                    </SkillsList>
+                                </SkillsListContainer>
                             </div>
-                        </div>
+                        </SkillsContainer>
                     </div>
                 </AboutMe>
             </div>

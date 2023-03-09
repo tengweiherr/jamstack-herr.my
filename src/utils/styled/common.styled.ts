@@ -2,6 +2,11 @@ import Link from "next/link"
 import styled from "styled-components"
 import COLOR from "./color"
 
+export const ContainerFluid = styled.div.attrs(props=>({
+    className: 'container-fluid'
+}))`
+`
+
 export const TextContainer = styled.div.attrs(props=>({
     className: 'text-container justify-content-center pb-2 w-100 ' + ( props.className ? props.className : '' )
 }))`
@@ -65,6 +70,23 @@ export const ButtonContainer = styled.div`
 
     & a:last-child {
         margin-right: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+
+        a {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        a:last-child {
+            margin-bottom: 0;
+        }
     }
 `
 

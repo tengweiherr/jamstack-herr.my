@@ -31,7 +31,7 @@ export const AboutMe = styled.div.attrs(props=>({
     padding: 0 0 80px 0;
 
     @media only screen and (max-width: 768px) {
-        .container .row {
+        & .container .intro-photos {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -41,6 +41,11 @@ export const AboutMe = styled.div.attrs(props=>({
             flex-direction: column-reverse;
         }
     }
+`
+
+export const IntroPhotoContainer = styled.div.attrs(props=>({
+    className: 'row mb-5 intro-photos'
+}))`
 `
 
 export const Parallax = styled.div.attrs(props=>({
@@ -172,7 +177,21 @@ export const DescriptionContainer = styled.div.attrs(props=>({
         display: flex;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
+        flex-direction: column;
     }
+`
+
+export const SkillsContainer = styled.div.attrs(props=>({
+    className: 'row position-relative skills'
+}))`
+`
+
+export const SkillsListContainer = styled.div.attrs(props=>({
+    className: 'row mt-4 px-3 skillsListContainer'
+}))`
+`
+
+export const SkillsList = styled.ul.attrs(props=>({
+    className: 'col-6'
+}))`
 `

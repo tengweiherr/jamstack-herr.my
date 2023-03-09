@@ -70,7 +70,7 @@ const animateIntroduction = (introTL:MutableRefObject<gsap.core.Timeline | undef
             start: "top 80%"
         }
     })
-    .fromTo(".skills .description li", {
+    .fromTo(".skills .skillsListContainer li", {
         x: 50,
         opacity: 0,
         stagger: 0.08,

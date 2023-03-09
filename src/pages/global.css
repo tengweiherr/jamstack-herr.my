@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 *:hover {
   text-decoration: none !important;
 }
@@ -37,27 +38,6 @@ body {
   color: #7fffd4;
 }
 
-.gradient {
-  font-size: 4rem;
-  font-weight: 600;
-  background: -webkit-linear-gradient(45deg, #659999 30%, #f4791f 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.font-1 {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.font-2 {
-  font-family: Nimbus Roman No9 L, serif;
-}
-
-.font-nav {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 section {
   width:100%
 }
@@ -70,81 +50,15 @@ section {
   margin-left: auto;
 }
 
-.navbar {
-  background-color: none;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
 
-@media only screen and (max-width: 768px) {
-  .navbar.mobile-nav-expand {
-    background: rgba(0, 0, 0, 0.1);
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-  }
-}
 
-.navbar .logo {
-  -ms-flex-preferred-size: 40%;
-  flex-basis: 40%;
-}
 
-.navbar .logo img{
-  position: relative;
-  bottom: 100px;
-}
 
-@media only screen and (max-width: 768px) {
-  .logo img {
-    width: 40px;
-    height: auto;
-  }
-}
 
-.navbar .nav-item {
-  width: 150px;
-  margin: 5px 0;
-}
 
-.navbar .nav-item a.nav-link {
-  color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  text-align: center;
-  padding: 0 1rem;
-  position: relative;
-  bottom: 100px;
-}
 
-.navbar .nav-item a.nav-link.resume {
-  color: black;
-  border: solid 2px black;
-  padding: 8px 20px !important;
-}
 
-.navbar .nav-item a.nav-link:hover {
-  color: black;
-}
 
-.navbar .nav-item a.nav-link.active {
-  color: #0c6b66 !important;
-  font-weight: 600;
-}
-
-.navbar.fixed-top.scrolled {
-  background-color: black;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.navbar.fixed-top.scrolled .resume:hover {
-  color: white !important;
-}
-
-.navbar .navbar-collapse {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
 
 .svg-ani {
   overflow: visible;
@@ -377,9 +291,12 @@ section {
   display: none;
 }
 
+.experience .exp-desc.mobile.active {
+  display: block;
+}
+
 @media only screen and (max-width: 768px) {
   .experience .exp-desc.mobile {
-    display: block;
     width: 120%;
   }
 }
@@ -387,6 +304,22 @@ section {
 @media only screen and (max-width: 768px) and (max-width: 480px) {
   .experience .exp-desc.mobile {
     width: 105%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none !important; 
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1366px) {
+  .exp h5 {
+    font-size: 1rem;  
+  }
+
+  .exp .col-sm-9 {
+    padding-left: 2rem;
   }
 }
 

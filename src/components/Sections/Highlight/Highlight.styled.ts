@@ -122,6 +122,11 @@ export const Slide = styled.div.attrs(props=>({
         background: rgba(255,255,255,0.4);
         justify-content: center;
         align-items: center;
+
+        @media only screen and (max-width: 1024px) {
+            width: 300px;
+            min-width: 300px;
+        }
     }
 
 `
@@ -222,12 +227,13 @@ export const SlideInner = styled.div.attrs(props=>({
     justify-content: space-between;
     margin-left: 2.5rem;
 
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 768px) {
         margin-left: 0;
         height: -webkit-fit-content;
         height: -moz-fit-content;
         height: fit-content;
         margin-top: 20px;
+        min-height: 300px;
     }
 
     p.description {

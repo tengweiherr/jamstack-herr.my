@@ -123,14 +123,14 @@ const Experience = ({exps}:ExperienceProps) => {
                                     <h5>{item.endYear}</h5>
                                 </div>
                                 <div className="col-sm-9">
-                                    <h5>{item.role}</h5>
+                                    <h5 onClick={()=>setActiveIndex(index)}>{item.role}</h5>
                                     <p>{item.company}</p>
-                                    <div className="exp-desc mobile">
-                                    <div className={`row exp-desc-inner exp-desc-inner-${index+1} white ${index === 0 && 'active'}`}>
-                                        <h5>{item.role}</h5>
-                                        <p className="mb-4">{renderDuration(Number(item.yearInWorking),Number(item.monthInWorking))}</p>
-                                        <ul dangerouslySetInnerHTML={{__html:item.description}}></ul>
-                                    </div>
+                                    <div className={`exp-desc exp-desc-${index+1} mobile ${activeIndex === index && 'active'}`}>
+                                        <div className={`row exp-desc-inner exp-desc-inner-${index+1} white ${activeIndex === index && 'active'}`}>
+                                            <h5>{item.role}</h5>
+                                            <p className="mb-4">{renderDuration(Number(item.yearInWorking),Number(item.monthInWorking))}</p>
+                                            <ul dangerouslySetInnerHTML={{__html:item.description}}></ul>
+                                        </div>
                                     </div>
                                 </div>
                           </div>                                

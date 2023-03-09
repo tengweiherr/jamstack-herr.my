@@ -26,11 +26,11 @@ const Techblog = ({mediumRSSResInString}:TechblogProps) => {
     
     return (
         <Section className='py-5'>
-            <TextContainer className='mx-3'>
+            <TextContainer className='px-3'>
                 <PageTitle>My tech blog</PageTitle>
                 <PageSubtitle>Where I document what I&apos;ve learn and share them to others.</PageSubtitle>
-                <TechblogCardList mediumRSSResInString={mediumRSSResInString} />
             </TextContainer>
+            <TechblogCardList mediumRSSResInString={mediumRSSResInString} />
         </Section>
     )
 }

@@ -20,6 +20,16 @@ export const ProjectCard = styled.div.attrs(props=>({
     border-radius: 0.4rem;
     transition: all 0.3s ease;
 
+    @media only screen and (max-width: 768px) {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1399px) {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+
     &:hover {
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
         cursor: pointer;

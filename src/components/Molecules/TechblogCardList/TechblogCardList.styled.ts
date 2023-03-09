@@ -4,18 +4,29 @@ import styled from "styled-components"
 export const StoriesWrapper = styled.div.attrs(props=>({
     className: 'd-flex flex-column'
 }))`
+    width: 100%;
+    margin: 0 auto;
     margin-top: 4rem;
     border-radius: 0.4rem;
     background: ${COLOR.LIGHT_GREY};
+
+    @media only screen and (max-width: 468px) {
+        width: 90%;
+    }
 `
 
 export const StoryRow = styled.div.attrs(props=>({
-    className: 'd-flex flex-row'
+    className: 'd-flex'
 }))`
     border-radius: 0rem;
     background: ${COLOR.LIGHT_GREY};
     padding: 2rem;
     padding-bottom: 3rem;
+    flex-direction: row;
+
+    @media only screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
 
     &:hover {
         cursor: pointer;
@@ -35,9 +46,12 @@ export const StoryRow = styled.div.attrs(props=>({
 `
 
 export const StoryLeftColumn = styled.div.attrs(props=>({
-    className: ''
+    className: 'col-sm-2'
 }))`
-    flex-basis: 20%;
+
+    @media only screen and (max-width: 1024px) {
+        padding-bottom: 1rem;
+    }
 
     span {
         font-size: 0.9rem;
@@ -46,9 +60,8 @@ export const StoryLeftColumn = styled.div.attrs(props=>({
 `
 
 export const StoryRightColumn = styled.div.attrs(props=>({
-    className: ''
+    className: 'col-sm-10'
 }))`
-    flex-basis: 80%;
     
     h5 {
         font-weight: 600;
