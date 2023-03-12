@@ -75,6 +75,7 @@ const Highlight = ({projects}:HighlightProps) => {
                   {item.awardWinning && 
                     <AwardWinningBanner size='md'/>
                   }
+                  <link rel='preload' href={AWS_S3_PREFIX+item.image} as="image" />
                   <HighlightImgContainer style={{background:`url(${AWS_S3_PREFIX}${item.image}) no-repeat`}}>
                       <HoverIconContainer>
                         <a href={item.githubLink} target="_blank" aria-label="Github">
