@@ -7,11 +7,23 @@ import { Experience as Exp, MyData, Project } from '@/utils/types'
 import Experience from '@/components/Sections/Experience'
 import More from '@/components/Sections/More'
 import Contact from '@/components/Sections/Contact'
+import { GetServerSidePropsContext } from 'next'
 
 type HomeProps = {
   projects: Array<Project>
   myData: MyData
   exps: Array<Exp>
+}
+
+export async function getServerSideProps({ req, res }:GetServerSidePropsContext) {
+  res.setHeader(
+    'Cache-Control',
+    'public, max-age=31536000, immutable'
+  )
+
+  return {
+    props: {},
+  }
 }
 
 // This function gets called at build time
