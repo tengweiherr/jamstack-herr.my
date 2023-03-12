@@ -58,6 +58,16 @@ const Highlight = ({projects}:HighlightProps) => {
 
     },[highlightedProjects.length])
 
+    const preloadImages = () => {
+      return (
+        <>
+          <link rel='preload' href={AWS_S3_PREFIX+'herr-orange.webp'} as="image" />
+          <link rel='preload' href={AWS_S3_PREFIX+'myrecycle_logo.webp'} as="image" />
+          <link rel='preload' href={AWS_S3_PREFIX+'fund.webp'} as="image" />
+        </>
+      )
+    }
+
     return (
       <HighlightSection ref={aniRef}>
         <div className="highlight-inner">
@@ -70,12 +80,12 @@ const Highlight = ({projects}:HighlightProps) => {
           <SliderContainer>
             <HorizontalContainer className={wrapperClass}>
               <>
+              {preloadImages()}
               {highlightedProjects?.map((item, index)=>(
                 <Slide id={`item-${index}`} key={`item-${index}`}>
                   {item.awardWinning && 
                     <AwardWinningBanner size='md'/>
                   }
-                  <link rel='preload' href={AWS_S3_PREFIX+item.image} as="image" />
                   <HighlightImgContainer style={{background:`url(${AWS_S3_PREFIX}${item.image}) no-repeat`}}>
                       <HoverIconContainer>
                         <a href={item.githubLink} target="_blank" aria-label="Github">
