@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content="https://www.herr.my" />
       </Head>
         {/* Global site tag (gtag.js) - Google Analytics */}
-        {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-210223692-1" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-210223692-1" />
         <Script async id='gtag'>
           {`
             window.dataLayer = window.dataLayer || [];
@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
             gtag('js', new Date());
             gtag('config', 'UA-210223692-1');
           `}
-        </Script> */}
+        </Script>
       <Layout>
         <Component {...pageProps} />
       </Layout>

@@ -1,10 +1,11 @@
 import AwardWinningBanner from "@/components/Molecules/AwardWinningBanner"
-import { ICON } from "@/utils/const"
+import { AWS_S3_PREFIX, ICON } from "@/utils/const"
 import animateSlider from "@/utils/gsap/slider"
 import { Button, SeperateLine, TextContainer } from "@/utils/styled/common"
 import { ButtonContainer } from "@/utils/styled/common.styled"
 import { Project } from "@/utils/types"
 import gsap from "gsap/all"
+import { url } from "inspector"
 import Image from "next/image"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
@@ -74,7 +75,7 @@ const Highlight = ({projects}:HighlightProps) => {
                   {item.awardWinning && 
                     <AwardWinningBanner size='md'/>
                   }
-                  <HighlightImgContainer aria-label={item.image}>
+                  <HighlightImgContainer style={{background:`url(${AWS_S3_PREFIX}${item.image}) no-repeat`}}>
                       <HoverIconContainer>
                         <a href={item.githubLink} target="_blank" aria-label="Github">
                           <Image src={ICON.github} alt="Github" width={20} height={20} />
