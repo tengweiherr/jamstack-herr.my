@@ -15,27 +15,11 @@ type HomeProps = {
   exps: Array<Exp>
 }
 
-export async function getServerSideProps({ req, res }:GetServerSidePropsContext) {
-  res.setHeader(
-    'Cache-Control',
-    'public, max-age=31536000, immutable'
-  )
-
-  const projects = await fetchHighlightedProjects()
-  const myData = await fetchMyData()
-  const exps = await fetchExp()
-
-  return {
-    props: {
-      projects,
-      myData,
-      exps
-    },
-  }
-}
-
-// This function gets called at build time
-// export async function getStaticProps() {
+// export async function getServerSideProps({ req, res }:GetServerSidePropsContext) {
+//   res.setHeader(
+//     'Cache-Control',
+//     'public, max-age=31536000, immutable'
+//   )
 
 //   const projects = await fetchHighlightedProjects()
 //   const myData = await fetchMyData()
@@ -49,6 +33,22 @@ export async function getServerSideProps({ req, res }:GetServerSidePropsContext)
 //     },
 //   }
 // }
+
+// This function gets called at build time
+export async function getStaticProps() {
+
+  const projects = await fetchHighlightedProjects()
+  const myData = await fetchMyData()
+  const exps = await fetchExp()
+
+  return {
+    props: {
+      projects,
+      myData,
+      exps
+    },
+  }
+}
 
 export default function Home({projects,myData,exps}:HomeProps) {
 
