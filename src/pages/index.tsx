@@ -15,16 +15,11 @@ type HomeProps = {
 }
 
 // This function gets called at build time
-export async function getStaticProps({req,res}) {
+export async function getStaticProps() {
 
   const projects = await fetchHighlightedProjects()
   const myData = await fetchMyData()
   const exps = await fetchExp()
-
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
 
   return {
     props: {
