@@ -5,7 +5,6 @@ import { Button, SeperateLine, TextContainer } from "@/utils/styled/common"
 import { ButtonContainer } from "@/utils/styled/common.styled"
 import { Project } from "@/utils/types"
 import gsap from "gsap/all"
-import { url } from "inspector"
 import Image from "next/image"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
@@ -58,16 +57,6 @@ const Highlight = ({projects}:HighlightProps) => {
 
     },[highlightedProjects.length])
 
-    const preloadImages = () => {
-      return (
-        <>
-          <link rel='preload' href={AWS_S3_PREFIX+'herr-orange.webp'} as="image" />
-          <link rel='preload' href={AWS_S3_PREFIX+'myrecycle_logo.webp'} as="image" />
-          <link rel='preload' href={AWS_S3_PREFIX+'fund.webp'} as="image" />
-        </>
-      )
-    }
-
     return (
       <HighlightSection ref={aniRef}>
         <div className="highlight-inner">
@@ -80,7 +69,6 @@ const Highlight = ({projects}:HighlightProps) => {
           <SliderContainer>
             <HorizontalContainer className={wrapperClass}>
               <>
-              {preloadImages()}
               {highlightedProjects?.map((item, index)=>(
                 <Slide id={`item-${index}`} key={`item-${index}`}>
                   {item.awardWinning && 

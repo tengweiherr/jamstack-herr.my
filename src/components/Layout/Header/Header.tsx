@@ -70,7 +70,7 @@ const Header = ({resume}:HeaderProps) => {
                     >
                         <Logo />
                     </Link>
-                    <NavbarToggler onClick={handleNavClick} className={togglerClass} data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded={togglerClass!=='collapsed'} aria-label="Toggle navigation">
+                    <NavbarToggler onClick={handleNavClick} className={togglerClass}>
                         <span className="navbar-toggler-icon" />
                     </NavbarToggler>
                     <NavbarCollapse className={collapseClass} id="navbarToggler">
