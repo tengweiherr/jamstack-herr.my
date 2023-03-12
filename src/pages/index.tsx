@@ -21,14 +21,6 @@ export async function getServerSideProps({ req, res }:GetServerSidePropsContext)
     'public, max-age=31536000, immutable'
   )
 
-  return {
-    props: {},
-  }
-}
-
-// This function gets called at build time
-export async function getStaticProps() {
-
   const projects = await fetchHighlightedProjects()
   const myData = await fetchMyData()
   const exps = await fetchExp()
@@ -41,6 +33,22 @@ export async function getStaticProps() {
     },
   }
 }
+
+// This function gets called at build time
+// export async function getStaticProps() {
+
+//   const projects = await fetchHighlightedProjects()
+//   const myData = await fetchMyData()
+//   const exps = await fetchExp()
+
+//   return {
+//     props: {
+//       projects,
+//       myData,
+//       exps
+//     },
+//   }
+// }
 
 export default function Home({projects,myData,exps}:HomeProps) {
 
