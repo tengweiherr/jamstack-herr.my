@@ -6,7 +6,7 @@ import { ButtonContainer } from "@/utils/styled/common.styled"
 import { Project } from "@/utils/types"
 import gsap from "gsap/all"
 import Image from "next/image"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 import { H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
 
 type HighlightProps = {
