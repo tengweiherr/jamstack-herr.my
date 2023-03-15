@@ -1,7 +1,7 @@
 import animateQuote from "@/utils/gsap/quote"
 import { TextContainer } from "@/utils/styled/common"
 import gsap from "gsap/all"
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import { QuoteSection } from "./Quote.styled"
 
 const Quote = () => {

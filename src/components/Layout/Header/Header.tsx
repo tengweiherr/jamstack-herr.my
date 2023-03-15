@@ -4,7 +4,7 @@ import animateNavbar from "@/utils/gsap/navbar"
 import { Button, ContainerFluid } from "@/utils/styled/common.styled"
 import gsap from "gsap"
 import Link from "next/link"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 import { HeaderContainer, Navbar, NavbarCollapse, NavbarItemList, NavbarToggler, NavItem } from "./Header.styled"
 
 type HeaderProps = {

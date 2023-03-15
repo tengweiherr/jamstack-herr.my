@@ -1,6 +1,6 @@
 import animateBanner from "@/utils/gsap/banner"
 import gsap from "gsap"
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import BannerAnimation from "../../Molecules/BannerAnimation"
 import { AniContainer, BannerContainer, BannerSection, IntroContainer } from "./Banner.styled"
 import { TextContainer } from "@/utils/styled/common"

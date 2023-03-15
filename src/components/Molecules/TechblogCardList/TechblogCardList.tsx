@@ -1,7 +1,6 @@
 import { NoContentWrapper } from "@/utils/styled/common.styled"
 import { MediumRSSRes, MediumStory } from "@/utils/types"
 import { useEffect, useState } from "react"
-import Loading from "../Loading"
 import { StoriesWrapper, StoryBottomLine, StoryLeftColumn, StoryRightColumn, StoryRow } from "./TechblogCardList.styled"
 
 type TechblogProps = {
@@ -41,7 +40,7 @@ const TechblogCardList = ({mediumRSSResInString}:TechblogProps) => {
             <span>No blogs found.</span>
         </NoContentWrapper>
     )
-    
+
     return (
         <StoriesWrapper>
             {stories.map((item,index)=>(

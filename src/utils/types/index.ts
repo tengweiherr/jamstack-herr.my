@@ -8,6 +8,11 @@ export type MyData = {
     image2: string
 }
 
+export type MyDataSkills = {
+    part_1?: Array<string>,
+    part_2?: Array<string>
+}
+
 export type Sys = {
     id: string
 }
@@ -33,6 +38,13 @@ export type Experience = {
     endTime: string
     description: string
 }
+
+export type ExpExtraProps = {
+    startYear?: string
+    endYear?: string
+    yearInWorking?: string
+    monthInWorking?: string
+  }
 
 export type MediumStory = {
     id: string

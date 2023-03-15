@@ -1,19 +1,16 @@
 import Image from "next/image"
 import { TextContainer } from "@/utils/styled/common.styled"
 import { AboutMe, DescriptionContainer, IntroContainer, IntroductionSection, IntroPhotoContainer, Parallax, SkillsContainer, SkillsList, SkillsListContainer } from "./Introduction.styled"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef } from "react"
 import animateIntroduction from "@/utils/gsap/introduction"
 import gsap from "gsap/all"
-import { MyData } from "@/utils/types"
+import { MyData, MyDataSkills } from "@/utils/types"
 import { AWS_S3_PREFIX } from "@/utils/const"
 
 type IntroductionProps = {
     myData: MyData
-}
-
-type Skills = {
-    part_1?: Array<string>,
-    part_2?: Array<string>
+    myDataParagraphs: Array<string>
+    myDataSkills: MyDataSkills
 }
 
 const renderImage = (myData: MyData) => {
@@ -23,44 +20,17 @@ const renderImage = (myData: MyData) => {
     }
 }
 
-const Introduction = ({myData}:IntroductionProps) => {
+const Introduction = ({myData,myDataParagraphs,myDataSkills}:IntroductionProps) => {
 
     const aniRef = useRef<HTMLDivElement>(null)
     const introTL = useRef<GSAPTimeline>()
     const skillsTL = useRef<GSAPTimeline>()
 
-    const [skills, setSkills] = useState<Skills>({
-        part_1: [],
-        part_2: []
-    })
-
-    const [paragraphs, setParagraphs] = useState<Array<string>>()
-
-    useLayoutEffect(()=>{
-
-        const paraArray = [myData.paragraph1]
-        if(myData.paragraph2) paraArray.push(myData.paragraph2)
-        if(myData.paragraph3) paraArray.push(myData.paragraph3)
-
-        setParagraphs(paraArray)
-
-        if(myData.techStack){
-            const middleIndex = Math.ceil(myData.techStack?.length / 2);
-            const firstHalf = myData.techStack.slice().splice(0, middleIndex);   
-            const secondHalf = myData.techStack.slice().splice(-middleIndex);
-            setSkills({
-                part_1: firstHalf,
-                part_2: secondHalf
-            })
-        }
-  
-    },[myData.paragraph1, myData.paragraph2, myData.paragraph3, myData.techStack])
-
     useLayoutEffect(() => {
 
         let ctx:gsap.Context|undefined = undefined
 
-        const shouldStartAnimation = skills.part_1?.length !== 0 && skills.part_2?.length !== 0 && paragraphs?.length !== 0
+        const shouldStartAnimation = myDataSkills.part_1?.length !== 0 && myDataSkills.part_2?.length !== 0 && myDataParagraphs?.length !== 0
 
         if(shouldStartAnimation){
             ctx = gsap.context(()=>{
@@ -72,7 +42,7 @@ const Introduction = ({myData}:IntroductionProps) => {
             ctx ? ctx.revert() : null 
         }
 
-    }, [paragraphs?.length, skills.part_1?.length, skills.part_2?.length])
+    }, [myDataParagraphs?.length, myDataSkills.part_1?.length, myDataSkills.part_2?.length])
     
 
     return (
@@ -92,7 +62,7 @@ const Introduction = ({myData}:IntroductionProps) => {
                                 </TextContainer>
                                     <DescriptionContainer>
                                         <>
-                                        {paragraphs?.map((paragraph,index) => (
+                                        {myDataParagraphs?.map((paragraph,index) => (
                                             <TextContainer className='mb-3 text-start' key={`paragraph-${index}`}>
                                                 <p className='mb-0' dangerouslySetInnerHTML={{__html:paragraph}}></p>
                                             </TextContainer>
@@ -123,12 +93,12 @@ const Introduction = ({myData}:IntroductionProps) => {
                                 </TextContainer>
                                 <SkillsListContainer>
                                     <SkillsList>
-                                        {skills.part_1?.map((item, index)=>(
+                                        {myDataSkills.part_1?.map((item, index)=>(
                                             <li key={`skill-${index}`}>{item}</li>
                                         ))}
                                     </SkillsList>
                                     <SkillsList>
-                                        {skills.part_2?.map((item, index)=>(
+                                        {myDataSkills.part_2?.map((item, index)=>(
                                             <li key={`skill-${index}`}>{item}</li>
                                         ))}
                                     </SkillsList>

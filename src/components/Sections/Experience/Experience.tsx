@@ -1,33 +1,11 @@
 import animateExperience from "@/utils/gsap/experience"
 import { TextContainer } from "@/utils/styled/common.styled"
-import { Experience } from "@/utils/types"
+import { Experience, ExpExtraProps } from "@/utils/types"
 import gsap from "gsap/all"
-import { useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 
 type ExperienceProps = {
-    exps: Array<Experience>
-}
-
-type ExpExtraProps = {
-    startYear: string
-    endYear: string
-    yearInWorking: string
-    monthInWorking: string
-}
-
-const correctionForInvalidDate = (date:string) => {
-    return date ? new Date(date) : new Date()
-}
-
-const getTimeDifference = (firstDate:string, secondDate:string) => {
-    const duration = Number(correctionForInvalidDate(firstDate)) - Number(correctionForInvalidDate(secondDate))
-    let month = Math.floor(new Date(duration).getTime() / (1000 * 60 * 60 * 24 * 30))
-    let year = 0
-    if(month >= 12){
-      year = Math.floor(month / 12)
-      month = month - (year * 12)
-    } else year = 0
-    return { year, month } 
+    exps: Array<Experience & ExpExtraProps>
 }
 
 const renderDuration = (year:number, month:number) => {
@@ -47,40 +25,13 @@ const Experience = ({exps}:ExperienceProps) => {
     const aniRef = useRef<HTMLDivElement>(null)
     const expTL = useRef<GSAPTimeline>()
 
-    const [listOfExp, setListOfExp] = useState<Array<Experience & ExpExtraProps>>([])
     const [activeIndex, setActiveIndex] = useState<number>(0)
-
-    useLayoutEffect(() => {
-      
-        if(exps.length !== 0 && listOfExp.length === 0) {
-            let temp = exps.map(item=>{
-                const startYear = new Date(item.startTime).getFullYear().toString()
-                const endYear = item.endTime ? new Date(item.endTime).getFullYear().toString() : 'Present'
-                const { year, month } = getTimeDifference(item.endTime, item.startTime)
-                return {...item, 
-                    description: item.description, 
-                    startYear: startYear,
-                    endYear: endYear,
-                    yearInWorking: String(year),
-                    monthInWorking: String(month),
-                }
-            })
-            temp.sort(function(a,b){
-                const aToCompare = correctionForInvalidDate(a.endTime).getTime()
-                const bToCompare = new Date(b.endTime).getTime()
-                return bToCompare - aToCompare
-            });
-            setListOfExp(temp)
-        }
-
-    }, [exps, listOfExp])
     
-
     useLayoutEffect(() => {
 
         let ctx:gsap.Context|undefined = undefined
 
-        const shouldStartAnimation = listOfExp.length !== 0
+        const shouldStartAnimation = exps.length !== 0
 
         if(shouldStartAnimation){
             ctx = gsap.context(()=>{
@@ -92,7 +43,7 @@ const Experience = ({exps}:ExperienceProps) => {
             ctx ? ctx.revert() : null 
         }
 
-    }, [listOfExp.length])
+    }, [exps.length])
 
     return (
         <>
@@ -114,7 +65,7 @@ const Experience = ({exps}:ExperienceProps) => {
                             <div className="line vertical-line"></div>
                         </div>
                         <div className="col-10">
-                            {listOfExp.map((item, index)=>(
+                            {exps.map((item, index)=>(
                             <div className={`row exp exp-${index+1} ${activeIndex === index && 'active'}`} 
                                 key={`exp-${index+1}`}
                                 onClick={()=>setActiveIndex(index)}
@@ -140,7 +91,7 @@ const Experience = ({exps}:ExperienceProps) => {
         
                 </div>
                 <div className="col-sm-6 exp-desc desktop">
-                    {listOfExp.map((item,index)=>(
+                    {exps.map((item,index)=>(
                   <div className={`row exp-desc-inner exp-desc-inner-${index+1} white p-5 ${activeIndex === index && 'active'}`} key={`exp-desc-inner-${index+1}`}>
                   <h5>{item.role}</h5>
                   <p className="mb-5">{renderDuration(Number(item.yearInWorking),Number(item.monthInWorking))}</p>
