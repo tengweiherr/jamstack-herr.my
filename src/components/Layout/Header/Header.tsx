@@ -35,14 +35,6 @@ const Header = ({resume}:HeaderProps) => {
 
     },[])
 
-    // $(".navbar-toggler").click(function () {
-    //     if ($(this).hasClass('collapsed')) {
-    //       $("nav").removeClass('mobile-nav-expand');
-    //     } else {
-    //       $("nav").addClass('mobile-nav-expand');
-    //     }
-    //   });
-
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         if(togglerClass === 'collapsed'){
             setNavClass('mobile-nav-expand')
@@ -111,10 +103,10 @@ const Header = ({resume}:HeaderProps) => {
                                 <Logo />
                             </Link>
                             <NavItem>
-                                <a className="nav-link" href={BEHANCE_LINK} target="_blank" aria-label="HERR Studio">HERR Studio</a>
+                                <Link className="nav-link" href={BEHANCE_LINK} target="_blank" aria-label="HERR Studio">HERR Studio</Link>
                             </NavItem>
                             <NavItem>
-                                <a className="nav-link" href={`mailto:${EMAIL_LINK}`} aria-label="Contact">Contact</a>
+                                <Link className="nav-link" href={`mailto:${EMAIL_LINK}`} target="_blank" aria-label="Contact">Contact</Link>
                             </NavItem>
                             <NavItem className="resume">
                                 <Button className="nav-link button resume cyan mx-auto" href={RESUME_LINK} target="_blank" aria-label="Resume">Resume</Button>
