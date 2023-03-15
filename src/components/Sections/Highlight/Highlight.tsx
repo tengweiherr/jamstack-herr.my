@@ -21,27 +21,11 @@ const Highlight = ({projects}:HighlightProps) => {
     const [wrapperClass, setWrapperClass] = useState<string>('')
     const [lineWidth, setLineWidth] = useState<string>('')
 
-    const [highlightedProjects, setHighlightedProjects] = useState<Array<Project>>([])
-
-    useEffect(()=>{
-
-      if(projects && projects?.length !== 0){
-
-        projects?.sort(function(a,b){
-          return a.priority - b.priority;
-        });
-
-        setHighlightedProjects(projects)
-
-      }
-
-    },[projects])
-
     useLayoutEffect(()=>{
 
       let ctx:gsap.Context|undefined = undefined
 
-      const shouldStartAnimation = highlightedProjects.length !== 0
+      const shouldStartAnimation = projects?.length !== 0
 
       if(shouldStartAnimation){
       
@@ -55,7 +39,7 @@ const Highlight = ({projects}:HighlightProps) => {
         ctx ? ctx.revert() : null 
     }
 
-    },[highlightedProjects.length])
+    },[projects?.length])
 
     return (
       <HighlightSection ref={aniRef}>
@@ -69,7 +53,7 @@ const Highlight = ({projects}:HighlightProps) => {
           <SliderContainer>
             <HorizontalContainer className={wrapperClass}>
               <>
-              {highlightedProjects?.map((item, index)=>(
+              {projects?.map((item, index)=>(
                 <Slide id={`item-${index}`} key={`item-${index}`}>
                   {item.awardWinning && 
                     <AwardWinningBanner size='md'/>

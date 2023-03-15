@@ -7,8 +7,6 @@ import { Experience as Exp, MyData, Project } from '@/utils/types'
 import Experience from '@/components/Sections/Experience'
 import More from '@/components/Sections/More'
 import Contact from '@/components/Sections/Contact'
-import { GetServerSidePropsContext } from 'next'
-import { AWS_S3_PREFIX } from '@/utils/const'
 
 type HomeProps = {
   projects: Array<Project>
@@ -42,6 +40,14 @@ export async function getStaticProps() {
   const myData = await fetchMyData()
   const exps = await fetchExp()
 
+  if(projects && projects?.length !== 0){
+
+    projects?.sort(function(a:Project,b:Project){
+      return a.priority - b.priority;
+    });
+
+  }
+
   return {
     props: {
       projects,
@@ -51,21 +57,10 @@ export async function getStaticProps() {
   }
 }
 
-const preloadImages = () => {
-  return (
-    <>
-      <link rel='preload' href={AWS_S3_PREFIX+'herr-orange.webp'} as="image" />
-      <link rel='preload' href={AWS_S3_PREFIX+'myrecycle_logo.webp'} as="image" />
-      <link rel='preload' href={AWS_S3_PREFIX+'fund.webp'} as="image" />
-    </>
-  )
-}
-
 export default function Home({projects,myData,exps}:HomeProps) {
 
   return (
     <>
-      {preloadImages()}
       <Banner />
       <Quote1 />
       <Highlight projects={projects} />
