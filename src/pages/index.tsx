@@ -53,9 +53,13 @@ const getTimeDifference = (firstDate:string, secondDate:string) => {
 // This function gets called at build time
 export async function getStaticProps() {
 
-  const projects = await fetchHighlightedProjects()
-  const myData = await fetchMyData()
-  const exps = await fetchExp()
+  const [projects, myData, exps] = await Promise.all(
+  [
+    fetchHighlightedProjects(),
+    fetchMyData(),
+    fetchExp(),
+  ],
+)
 
   //projects data clean up
   if(projects && projects?.length !== 0){
