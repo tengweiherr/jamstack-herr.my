@@ -6,6 +6,7 @@ import { ButtonContainer } from "@/utils/styled/common.styled"
 import { Project } from "@/utils/types"
 import gsap from "gsap/all"
 import Image from "next/image"
+import Link from "next/link"
 import { useLayoutEffect, useRef, useState } from "react"
 import { H2, H3, HighlightImgContainer, HighlightSection, HorizontalContainer, HoverIconBG, HoverIconContainer, RoleTools, Slide, SlideInner, SliderContainer } from "./Highlight.styled"
 
@@ -60,12 +61,12 @@ const Highlight = ({projects}:HighlightProps) => {
                   }
                   <HighlightImgContainer>
                       <HoverIconContainer>
-                        <a href={item.githubLink} target="_blank" aria-label="Github">
+                        <Link href={item.githubLink} target="_blank" aria-label="Github">
                           <Image src={ICON.github} alt="Github" width={20} height={20} />
-                        </a>
+                        </Link>
                       </HoverIconContainer>
                       <HoverIconBG />
-                      <Image src={AWS_S3_PREFIX + item.image} alt='highlightImg' height={250} width={250}/>
+                      <Image src={AWS_S3_PREFIX + item.image} alt='highlightImg' height={250} width={250} />
                   </HighlightImgContainer>
                   <SlideInner>
                     <H3>{item.title}</H3>

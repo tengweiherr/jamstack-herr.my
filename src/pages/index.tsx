@@ -124,6 +124,7 @@ export async function getStaticProps() {
       myDataSkills,
       exps
     },
+    revalidate: 3628800
   }
 }
 

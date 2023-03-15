@@ -16,6 +16,7 @@ export async function getStaticProps() {
       props: {
         projectsFromAPI
       },
+      revalidate: 3628800
     }
 }
 
