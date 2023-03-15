@@ -134,7 +134,6 @@ export const Slide = styled.div.attrs(props=>({
 export const HighlightImgContainer = styled.div.attrs(props=>({
     className: 'highlight-img-div'
 }))`
-    background: url(${AWS_S3_PREFIX}${props => props["aria-label"]}) no-repeat;
     width: 250px;
     min-width: 250px;
     height: 250px;

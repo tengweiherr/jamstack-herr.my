@@ -22,7 +22,8 @@ const nextConfig = {
         port: '',
         pathname: '/assets.herr.my/**',
       }
-    ]
+    ],
+    minimumCacheTTL: 604800
   },
   transpilePackages: ['gsap']
 }
