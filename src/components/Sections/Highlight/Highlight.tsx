@@ -86,8 +86,7 @@ const Highlight = ({projects}:HighlightProps) => {
                   <SlideInner>
                     <H3>{item.title}</H3>
                       <RoleTools>
-                            <p className="mb-0">Role: <strong>{item.role}</strong></p>
-                            <p>Tools: <strong>{item.tools}</strong></p>
+                            <p><strong>{item.tools}</strong></p>
                       </RoleTools>
                     <p className="description" dangerouslySetInnerHTML={{__html:item.description}}></p>
                     <ButtonContainer>
