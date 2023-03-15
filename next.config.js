@@ -25,21 +25,7 @@ const nextConfig = {
     ],
     minimumCacheTTL: 604800
   },
-  transpilePackages: ['gsap'],
-  async headers() {
-    return [
-      {
-        source: '/:all*(svg|webp)',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=9999999999, immutable',
-          }
-        ],
-      },
-    ]
-  },
+  transpilePackages: ['gsap']
 }
 
 module.exports = nextConfig
