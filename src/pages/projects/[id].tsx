@@ -5,6 +5,8 @@ import { GetStaticPropsContext, GetStaticPropsResult } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+export const config = { runtime: 'nodejs' };
+
 type ProjectPageProps = {
     projectById: Project
 }

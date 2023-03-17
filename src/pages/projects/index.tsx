@@ -4,6 +4,8 @@ import { PageSubtitle, PageTitle, Section, TextContainer } from "@/utils/styled/
 import { Project } from "@/utils/types"
 import dynamic from "next/dynamic"
 
+export const config = { runtime: 'nodejs' };
+
 type ProjectsProps = {
     projectsFromAPI: Array<Project>
 }
