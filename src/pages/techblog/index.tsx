@@ -3,8 +3,6 @@ import { fetchAllStories } from "@/utils/api/medium"
 import { PageSubtitle, PageTitle, Section, TextContainer } from "@/utils/styled/common.styled"
 import dynamic from "next/dynamic"
 
-export const config = { runtime: 'nodejs' };
-
 type TechblogProps = {
     mediumRSSResInString: string
 }

@@ -8,8 +8,6 @@ import Experience from '@/components/Sections/Experience'
 import More from '@/components/Sections/More'
 import Contact from '@/components/Sections/Contact'
 
-export const config = { runtime: 'nodejs' };
-
 type HomeProps = {
   projects: Array<Project>
   myData: MyData

@@ -1,11 +1,9 @@
 import { fetchAllProjects, fetchProjectById } from "@/utils/api/contentful";
 import { Section } from "@/utils/styled/common.styled";
 import { Project } from "@/utils/types";
-import { GetStaticPropsContext, GetStaticPropsResult } from "next";
+import { GetStaticPropsContext } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
-export const config = { runtime: 'nodejs' };
 
 type ProjectPageProps = {
     projectById: Project
