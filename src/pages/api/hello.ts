@@ -6,6 +6,8 @@ export const config = {
   runtime: 'edge',
 }
 
-export default function handler(req: NextRequest) {
-  return new Response(JSON.stringify({ name: 'John Doe' }))
-}
+const errorResponse = () => new Response("Error message", {
+  status: 400,
+});
+
+export default errorResponse
