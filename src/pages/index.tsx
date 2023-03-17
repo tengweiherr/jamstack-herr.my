@@ -95,6 +95,7 @@ export async function getStaticProps() {
     }
   }
 
+  let expsToModify:Array<Exp & ExpExtraProps> = []
   //exp data clean up
   if(exps.length !== 0) {
     let temp:Array<Exp & ExpExtraProps> = exps.map((item:Exp)=>{
@@ -114,6 +115,7 @@ export async function getStaticProps() {
         const bToCompare = new Date(b.endTime).getTime()
         return bToCompare - aToCompare
     });
+    expsToModify = temp
 }
 
   return {
@@ -122,7 +124,7 @@ export async function getStaticProps() {
       myData,
       myDataParagraphs,
       myDataSkills,
-      exps
+      exps: expsToModify
     },
     revalidate: 3628800
   }
