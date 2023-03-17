@@ -22,8 +22,6 @@ const renderDuration = (year:number, month:number) => {
 
 const Experience = ({exps}:ExperienceProps) => {
 
-      console.log(exps)
-
     const aniRef = useRef<HTMLDivElement>(null)
     const expTL = useRef<GSAPTimeline>()
 
