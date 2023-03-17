@@ -6,7 +6,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import SotmAward from '@/components/Molecules/SotmAward'
-import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -49,6 +49,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </Script> */}
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
       <SotmAward />
     </>

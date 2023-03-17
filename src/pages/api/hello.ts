@@ -1,12 +1,5 @@
-// Next.js Edge API Routes: https://nextjs.org/docs/api-routes/edge-api-routes
+import { NextApiRequest, NextApiResponse } from "next";
 
-import type { NextRequest } from 'next/server'
-
-export const config = {
-    runtime: "edge",
-};
-  
-
-export function onRequest(req: NextRequest) {
-    return new Response("Hello, world!")
+export default function handler(req:NextApiRequest, res:NextApiResponse) {
+    res.status(200).json({ name: 'John Doe' })
 }
