@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    runtime: 'experimental-edge',
+  },
+  swcMinify: true,
   compiler: {
     // see https://styled-components.com/docs/tooling#babel-plugin for more info on the options.
     styledComponents: {
@@ -9,7 +13,6 @@ const nextConfig = {
     },
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
