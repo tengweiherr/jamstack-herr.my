@@ -30,10 +30,15 @@ async function fetchMyData () {
     }`
 
     const fetchOptions = getOptions(query)
-    const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
-    const resInJSON = await res.json()
-    const myDataData = await resInJSON.data.aboutCollection.items[0]
-    return myDataData
+    try {
+        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
+        const resInJSON = await res.json()
+        const myDataData = await resInJSON.data.aboutCollection.items[0]
+        return myDataData
+    } catch (error) {
+        return 
+    }
+
 }
 
 async function fetchAllProjects () {
@@ -57,10 +62,15 @@ async function fetchAllProjects () {
     }`
 
     const fetchOptions = getOptions(query)
-    const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
-    const resInJSON = await res.json()
-    const projects = await resInJSON.data.projectsCollection.items
-    return projects
+    try {
+        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
+        const resInJSON = await res.json()
+        const projects = await resInJSON.data.projectsCollection.items
+        return projects
+    } catch (error) {
+        return []
+    }
+
 }
 
 async function fetchProjectById (id:string) {
@@ -82,10 +92,16 @@ async function fetchProjectById (id:string) {
     }`
 
     const fetchOptions = getOptions(query)
-    const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
-    const resInJSON = await res.json()
-    const projectById = await resInJSON.data.projects
-    return projectById
+    try {
+        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
+        const resInJSON = await res.json()
+        const projectById = await resInJSON.data.projects
+        return projectById
+    } catch (error) {
+        return 
+    }
+
+    
 }
 
 async function fetchHighlightedProjects () {
@@ -111,10 +127,15 @@ async function fetchHighlightedProjects () {
     }`
 
     const fetchOptions = getOptions(query)
-    const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
-    const resInJSON = await res.json()
-    const projects = await resInJSON.data.projectsCollection.items
-    return projects
+    try {
+        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
+        const resInJSON = await res.json()
+        const projects = await resInJSON.data.projectsCollection.items
+        return projects
+    } catch (error) {
+        return []
+    }
+
 }
 
 async function fetchExp () {
@@ -132,10 +153,15 @@ async function fetchExp () {
     }`
 
     const fetchOptions = getOptions(query)
-    const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
-    const resInJSON = await res.json()
-    const exps = await resInJSON.data.experienceCollection.items
-    return exps
+    try {
+        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
+        const resInJSON = await res.json()
+        const exps = await resInJSON.data.experienceCollection.items
+        return exps
+    } catch (error) {
+        return []
+    }
+
 }
 
 export {

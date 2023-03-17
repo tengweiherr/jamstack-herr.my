@@ -97,7 +97,7 @@ export async function getStaticProps() {
 
   let expsToModify:Array<Exp & ExpExtraProps> = []
   //exp data clean up
-  if(exps.length !== 0) {
+  if(exps && exps.length !== 0) {
     let temp:Array<Exp & ExpExtraProps> = exps.map((item:Exp)=>{
         const startYear = new Date(item.startTime).getFullYear().toString()
         const endYear = item.endTime ? new Date(item.endTime).getFullYear().toString() : 'Present'

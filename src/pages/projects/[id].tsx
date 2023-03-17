@@ -28,7 +28,7 @@ export async function getStaticPaths(){
 
     const projects = await fetchAllProjects()
 
-    if(projects.length === 0) return
+    if(projects && projects.length === 0) return
 
     const paths = projects.map((item:Project)=>{
         return {
