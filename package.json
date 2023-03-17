@@ -5,6 +5,7 @@
   "scripts": {
     "start:dev": "next dev",
     "build": "next build",
+    "build:cf" : "npx @cloudflare/next-on-pages --experimental-minify",
     "start": "next start",
     "lint": "next lint"
   },
