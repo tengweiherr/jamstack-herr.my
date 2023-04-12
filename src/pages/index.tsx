@@ -94,6 +94,7 @@ export async function getStaticProps() {
     temp.sort(function(a:Exp,b:Exp){
         const aToCompare = correctionForInvalidDate(a.endTime).getTime()
         const bToCompare = correctionForInvalidDate(b.endTime).getTime()
+        if(aToCompare === bToCompare) return correctionForInvalidDate(b.startTime).getTime() - correctionForInvalidDate(a.startTime).getTime()
         return bToCompare - aToCompare
     });
     expsToModify = temp
