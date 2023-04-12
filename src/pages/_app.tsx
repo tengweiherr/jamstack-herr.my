@@ -37,16 +37,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:description" content="Software Engineer, Freelance Motion Graphic Designer and Photographer in Malaysia. Open to freelance or any new opportunities." />
         <meta name="twitter:image" content="https://www.herr.my" />
       </Head>
-        {/* Global site tag (gtag.js) - Google Analytics */}
-        {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-210223692-1" />
-        <Script async id='gtag'>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-210223692-1');
-          `}
-        </Script> */}
       <Layout>
         <Component {...pageProps} />
         <Analytics />

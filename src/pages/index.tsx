@@ -16,27 +16,8 @@ type HomeProps = {
   exps: Array<Exp>
 }
 
-// export async function getServerSideProps({ req, res }:GetServerSidePropsContext) {
-//   res.setHeader(
-//     'Cache-Control',
-//     'public, max-age=31536000, immutable'
-//   )
-
-//   const projects = await fetchHighlightedProjects()
-//   const myData = await fetchMyData()
-//   const exps = await fetchExp()
-
-//   return {
-//     props: {
-//       projects,
-//       myData,
-//       exps
-//     },
-//   }
-// }
-
-const correctionForInvalidDate = (date:string) => {
-  return date ? new Date(date) : new Date()
+const correctionForInvalidDate = (date:string|null) => {
+  return date !== null ? new Date(date) : new Date()
 }
 
 const getTimeDifference = (firstDate:string, secondDate:string) => {
@@ -112,7 +93,7 @@ export async function getStaticProps() {
     })
     temp.sort(function(a:Exp,b:Exp){
         const aToCompare = correctionForInvalidDate(a.endTime).getTime()
-        const bToCompare = new Date(b.endTime).getTime()
+        const bToCompare = correctionForInvalidDate(b.endTime).getTime()
         return bToCompare - aToCompare
     });
     expsToModify = temp
