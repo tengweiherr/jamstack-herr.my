@@ -2,28 +2,19 @@ import Loading from "@/components/Molecules/Loading"
 import { fetchAllStories } from "@/utils/api/medium"
 import { PageSubtitle, PageTitle, Section, TextContainer } from "@/utils/styled/common.styled"
 import dynamic from "next/dynamic"
-
-type TechblogProps = {
-    mediumRSSResInString: string
-}
-
-export async function getStaticProps() {
-
-    const mediumRSSResInString = await fetchAllStories()
-  
-    return {
-      props: {
-        mediumRSSResInString
-      },
-      revalidate: 3628800
-    }
-}
+import { useEffect, useState } from "react"
 
 const TechblogCardList = dynamic(() => import('../../components/Molecules/TechblogCardList'), {
     loading: () => <Loading />,
 })
 
-const Techblog = ({mediumRSSResInString}:TechblogProps) => {
+const Techblog = () => {
+
+    const [mediumRes, setMediumRes] = useState<string>()
+
+    useEffect(()=>{
+        fetchAllStories().then(res => setMediumRes(res)).catch(err => console.log(err))
+    },[])
     
     return (
         <Section className='py-5'>
@@ -31,7 +22,7 @@ const Techblog = ({mediumRSSResInString}:TechblogProps) => {
                 <PageTitle>My tech blog</PageTitle>
                 <PageSubtitle>Where I document what I&apos;ve learn and share them to others.</PageSubtitle>
             </TextContainer>
-            <TechblogCardList mediumRSSResInString={mediumRSSResInString} />
+            <TechblogCardList mediumRSSResInString={mediumRes} />
         </Section>
     )
 }
