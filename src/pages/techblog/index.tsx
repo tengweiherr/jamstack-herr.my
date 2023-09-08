@@ -8,21 +8,7 @@ import {
 } from '@/utils/styled/common.styled'
 import { MediumStory } from '@/utils/types'
 import dynamic from 'next/dynamic'
-
-type TechblogProps = {
-  mediumStories?: MediumStory[]
-}
-
-export async function getStaticProps() {
-  const mediumStories = await fetchAllStories()
-
-  return {
-    props: {
-      mediumStories,
-    },
-    revalidate: 3628800,
-  }
-}
+import { useEffect, useState } from 'react'
 
 const TechblogCardList = dynamic(
   () => import('../../components/Molecules/TechblogCardList'),
@@ -31,7 +17,15 @@ const TechblogCardList = dynamic(
   }
 )
 
-const Techblog = ({ mediumStories }: TechblogProps) => {
+const Techblog = () => {
+  const [mediumStories, setMediumStories] = useState<MediumStory[]>()
+
+  useEffect(() => {
+    fetchAllStories()
+      .then((res) => setMediumStories(res))
+      .catch(() => null)
+  }, [])
+
   return (
     <Section className="py-5">
       <TextContainer className="px-3">

@@ -6,7 +6,7 @@ const nextConfig = {
     // see https://styled-components.com/docs/tooling#babel-plugin for more info on the options.
     styledComponents: {
       displayName: true,
-      ssr: true
+      ssr: true,
     },
   },
   images: {
@@ -22,11 +22,11 @@ const nextConfig = {
         hostname: 's3.amazonaws.com',
         port: '',
         pathname: '/assets.herr.my/**',
-      }
+      },
     ],
-    minimumCacheTTL: 604800
+    minimumCacheTTL: 604800,
   },
-  transpilePackages: ['gsap']
+  transpilePackages: ['gsap'],
 }
 
 module.exports = nextConfig

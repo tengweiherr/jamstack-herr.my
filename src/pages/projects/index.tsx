@@ -8,7 +8,6 @@ import {
 } from '@/utils/styled/common.styled'
 import { Project } from '@/utils/types'
 import dynamic from 'next/dynamic'
-import Skeleton from 'react-loading-skeleton'
 
 type ProjectsProps = {
   projectsFromAPI: Array<Project>
