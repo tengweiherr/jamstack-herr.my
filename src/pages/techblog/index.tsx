@@ -1,4 +1,4 @@
-import Loading from '@/components/Molecules/Loading'
+import TechblogCardList from '@/components/Molecules/TechblogCardList'
 import { fetchAllStories } from '@/utils/api/medium'
 import {
   PageSubtitle,
@@ -7,15 +7,7 @@ import {
   TextContainer,
 } from '@/utils/styled/common.styled'
 import { MediumStory } from '@/utils/types'
-import dynamic from 'next/dynamic'
 import { useEffect, useState } from 'react'
-
-const TechblogCardList = dynamic(
-  () => import('../../components/Molecules/TechblogCardList'),
-  {
-    loading: () => <Loading />,
-  }
-)
 
 const Techblog = () => {
   const [mediumStories, setMediumStories] = useState<MediumStory[]>()
