@@ -3,7 +3,7 @@
   "version": "1.0.0-beta.2",
   "private": true,
   "scripts": {
-    "start:dev": "next dev",
+    "dev": "next dev",
     "build": "next build",
     "build:static": "next build && next export",
     "build:edge": "npx @cloudflare/next-on-pages --experimental-minify",
