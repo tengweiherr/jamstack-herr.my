@@ -4,7 +4,7 @@ import animateNavbar from '@/utils/gsap/navbar'
 import { Button, ContainerFluid } from '@/utils/styled/common.styled'
 import gsap from 'gsap'
 import Link from 'next/link'
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
   HeaderContainer,
   Navbar,
@@ -13,14 +13,11 @@ import {
   NavbarToggler,
   NavItem,
 } from './Header.styled'
-
-type HeaderProps = {
-  resume?: string
-}
+import { useRouter } from 'next/router'
 
 type Tabs = 'Home' | 'Projects' | 'Tech blog'
 
-const Header = ({ resume }: HeaderProps) => {
+const Header = () => {
   const [navClass, setNavClass] = useState<string>('')
   const [togglerClass, setTogglerClass] = useState<string>('collapsed')
   const [collapseClass, setCollapseClass] = useState<string>('collapse')
@@ -28,6 +25,18 @@ const Header = ({ resume }: HeaderProps) => {
   const navbarTL = useRef<GSAPTimeline>()
 
   const [activeTab, setActiveTab] = useState<Tabs>('Home')
+
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.pathname === '/') {
+      setActiveTab('Home')
+    } else if (router.pathname === '/projects') {
+      setActiveTab('Projects')
+    } else if (router.pathname === '/techblog') {
+      setActiveTab('Tech blog')
+    }
+  }, [router.pathname])
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
