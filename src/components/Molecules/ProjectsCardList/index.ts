@@ -1,3 +1,3 @@
-import ProjectsCardList from "./ProjectsCardList"
+import ProjectsCardList from './ProjectsCardList'
 
 export default ProjectsCardList

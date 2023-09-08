@@ -1,17 +1,17 @@
-import { Copyright, FooterContainer, MyName } from "./Footer.styled"
+import { Copyright, FooterContainer, MyName } from './Footer.styled'
 
 const Footer = () => {
-    return (
+  return (
     <FooterContainer>
-        <div className="container">
-            <div className="row">
-                <Copyright>
-                    Designed & Built by <MyName>Teng Wei Herr</MyName>
-                </Copyright>
-            </div>
+      <div className="container">
+        <div className="row">
+          <Copyright>
+            Designed & Built by <MyName>Teng Wei Herr</MyName>
+          </Copyright>
         </div>
+      </div>
     </FooterContainer>
-    )
+  )
 }
 
 export default Footer

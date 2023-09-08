@@ -1,14 +1,10 @@
-import { ReactNode } from "react"
-import { BodyContainer } from "./Body.styled"
+import { ReactNode } from 'react'
+import { BodyContainer } from './Body.styled'
 
 type BodyProps = {
-    children: ReactNode
+  children: ReactNode
 }
 
-export default function Body({ children }:BodyProps) {
-    return (
-        <BodyContainer>
-          {children}
-        </BodyContainer>
-    )
+export default function Body({ children }: BodyProps) {
+  return <BodyContainer>{children}</BodyContainer>
 }

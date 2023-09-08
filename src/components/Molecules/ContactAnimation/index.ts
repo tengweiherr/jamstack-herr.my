@@ -1,3 +1,3 @@
-import ContactAnimation from "./ContactAnimation"
+import ContactAnimation from './ContactAnimation'
 
 export default ContactAnimation

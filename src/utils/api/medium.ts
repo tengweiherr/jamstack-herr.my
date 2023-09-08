@@ -1,16 +1,7 @@
-import parse from "rss-to-json";
+import { MediumStory } from '../types'
 
-async function fetchAllStories () {
-
-    const res = parse('https://medium.com/feed/@tengweiherr')
-    .then(rss => {
-        return JSON.stringify(rss,null,3);
-    })
-
-    return res
-
-}
-
-export {
-    fetchAllStories
+export const fetchAllStories = async (): Promise<MediumStory[] | undefined> => {
+  const res = await fetch('http://localhost:3000/api/medium')
+  const resInJSON = await res.json()
+  return resInJSON?.items
 }

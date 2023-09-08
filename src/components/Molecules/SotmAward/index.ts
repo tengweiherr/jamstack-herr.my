@@ -1,3 +1,3 @@
-import SotmAward from "./SotmAward"
+import SotmAward from './SotmAward'
 
 export default SotmAward

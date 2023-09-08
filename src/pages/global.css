@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *:hover {
   text-decoration: none !important;
@@ -39,7 +39,7 @@ body {
 }
 
 section {
-  width:100%
+  width: 100%;
 }
 
 .container {
@@ -49,16 +49,6 @@ section {
   margin-right: auto;
   margin-left: auto;
 }
-
-
-
-
-
-
-
-
-
-
 
 .svg-ani {
   overflow: visible;
@@ -100,19 +90,6 @@ section {
     margin: 0 0 20px 0;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .experience {
   background: #e8ece6;
@@ -156,7 +133,7 @@ section {
 }
 
 .experience .exp:before {
-  content: "";
+  content: '';
   width: 35px;
   height: 1px;
   margin-left: -45px;
@@ -309,13 +286,13 @@ section {
 
 @media only screen and (min-width: 768px) {
   .mobile {
-    display: none !important; 
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1366px) {
   .exp h5 {
-    font-size: 1rem;  
+    font-size: 1rem;
   }
 
   .exp .col-sm-9 {
@@ -337,20 +314,6 @@ section {
     color: #e8ece6 !important;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 section.contact {
   padding: 40px 0 100px 0;

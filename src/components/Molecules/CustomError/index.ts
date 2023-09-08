@@ -1,3 +1,3 @@
-import CustomError from "./CustomError"
+import CustomError from './CustomError'
 
 export default CustomError

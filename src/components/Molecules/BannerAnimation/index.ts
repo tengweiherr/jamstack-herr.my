@@ -1,3 +1,3 @@
-import BannerAnimation from "./BannerAnimation"
+import BannerAnimation from './BannerAnimation'
 
 export default BannerAnimation

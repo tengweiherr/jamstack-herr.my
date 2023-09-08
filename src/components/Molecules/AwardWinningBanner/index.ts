@@ -1,3 +1,3 @@
-import AwardWinningBanner from "./AwardWinningBanner"
+import AwardWinningBanner from './AwardWinningBanner'
 
 export default AwardWinningBanner
