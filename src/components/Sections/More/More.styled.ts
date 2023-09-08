@@ -55,13 +55,6 @@ export const SingleMoreCard = styled.div.attrs((props) => ({
     object-fit: cover;
     width: 100%;
     height: 100%;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
-
-  &:hover img {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
   }
 
   &:hover h3 {
@@ -120,6 +113,5 @@ export const H4 = styled.h4.attrs((props) => ({
 
   .more-single:hover & {
     color: white;
-    font-size: 1.6rem;
   }
 `

@@ -70,6 +70,7 @@ const Highlight = ({ projects }: HighlightProps) => {
                         href={item.githubLink}
                         target="_blank"
                         aria-label="Github"
+                        tabIndex={-1}
                       >
                         <Image
                           src={ICON.github}
@@ -105,6 +106,7 @@ const Highlight = ({ projects }: HighlightProps) => {
                           target="_blank"
                           aria-label="ProjectLink"
                           className="cyan read-more"
+                          tabIndex={-1}
                         >
                           Visit project
                         </Button>
@@ -114,6 +116,7 @@ const Highlight = ({ projects }: HighlightProps) => {
                         target="_blank"
                         aria-label="Github"
                         className="cyan read-more"
+                        tabIndex={-1}
                       >
                         Read more on Github
                       </Button>
@@ -128,6 +131,7 @@ const Highlight = ({ projects }: HighlightProps) => {
                     href="/projects"
                     aria-label="My projects"
                     className="cyan read-more"
+                    tabIndex={-1}
                   >
                     Visit more
                   </Button>
