@@ -47,6 +47,7 @@ const Highlight = ({ projects }: HighlightProps) => {
     return () => {
       ctx ? ctx.revert() : null
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projects?.length])
 
   return (

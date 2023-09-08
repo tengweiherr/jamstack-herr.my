@@ -6,19 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "build:static": "next build && next export",
-    "build:edge": "npx @cloudflare/next-on-pages --experimental-minify",
+    "build:edge": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "@types/node": "18.14.1",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "@vercel/analytics": "^0.1.11",
     "bootstrap": "^5.2.3",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.2.1",
     "gsap": "^3.11.4",
     "next": "13.2.1",
     "react": "18.2.0",
@@ -26,11 +19,17 @@
     "react-is": "^18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "rss-to-json": "^2.1.1",
-    "styled-components": "^5.3.6",
-    "typescript": "4.9.5"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@popperjs/core": "^2.11.6",
+    "@types/node": "18.14.1",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.2.1",
+    "typescript": "4.9.5"
   },
   "resolutions": {
     "styled-components": "^5"
