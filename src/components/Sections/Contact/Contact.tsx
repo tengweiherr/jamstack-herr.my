@@ -27,7 +27,7 @@ const Contact = () => {
   }, [])
 
   return (
-    <section className="contact my-5" ref={aniRef}>
+    <section className="contact" ref={aniRef}>
       <div className="container contact-inner">
         <div className="row">
           <div className="col-lg-6">

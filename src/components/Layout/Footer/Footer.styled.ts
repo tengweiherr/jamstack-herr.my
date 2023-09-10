@@ -2,6 +2,7 @@ import COLOR from '@/utils/styled/color'
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
+  margin-top: 3rem;
   background: ${COLOR.LIGHT_GREY};
 `
 

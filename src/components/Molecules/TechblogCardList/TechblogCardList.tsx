@@ -32,23 +32,22 @@ const renderSubtitle = (content?: string) => {
 }
 
 const TechblogCardList = ({ mediumStories }: TechblogProps) => {
-  if (!mediumStories || mediumStories.length === 0)
-    return (
-      <div style={{ marginTop: '4rem' }}>
-        <Skeleton
-          height={180}
-          width="100%"
-          baseColor={COLOR.LIGHT_GREY}
-          highlightColor={COLOR.WHITE}
-          borderRadius="0.4rem"
-          count={3}
-        />
-      </div>
-    )
+  // if (!mediumStories || mediumStories.length === 0)
+  //   return (
+  //     <StoriesWrapper>
+  //       <Skeleton
+  //         height={180}
+  //         width="100%"
+  //         baseColor={COLOR.LIGHT_GREY}
+  //         highlightColor={COLOR.WHITE}
+  //         count={3}
+  //       />
+  //     </StoriesWrapper>
+  //   )
 
   return (
     <StoriesWrapper>
-      {!!mediumStories.length &&
+      {!!mediumStories && mediumStories.length ? (
         mediumStories.map((item, index) => (
           <div key={`medium-story-${index}`}>
             <StoryRow
@@ -70,7 +69,16 @@ const TechblogCardList = ({ mediumStories }: TechblogProps) => {
             </StoryRow>
             {mediumStories.length !== index + 1 && <StoryBottomLine />}
           </div>
-        ))}
+        ))
+      ) : (
+        <Skeleton
+          height={150}
+          width="100%"
+          baseColor={COLOR.LIGHT_GREY}
+          highlightColor={COLOR.WHITE}
+          count={3}
+        />
+      )}
     </StoriesWrapper>
   )
 }

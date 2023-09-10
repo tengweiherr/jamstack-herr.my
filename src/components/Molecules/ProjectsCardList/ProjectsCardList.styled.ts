@@ -9,7 +9,7 @@ export const ProjectsWrapper = styled.div.attrs((props) => ({
 `
 
 export const ProjectCard = styled.div.attrs((props) => ({
-  className: 'mb-5 mx-3',
+  className: 'mx-3',
 }))`
   padding: 2rem;
   position: relative;

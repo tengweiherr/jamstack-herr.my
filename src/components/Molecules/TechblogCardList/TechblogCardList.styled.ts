@@ -2,11 +2,10 @@ import COLOR from '@/utils/styled/color'
 import styled from 'styled-components'
 
 export const StoriesWrapper = styled.div.attrs((props) => ({
-  className: 'd-flex flex-column',
+  className: 'd-flex flex-column mx-3',
 }))`
-  width: 100%;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 3rem;
   border-radius: 0.4rem;
   background: ${COLOR.LIGHT_GREY};
 
@@ -85,7 +84,7 @@ export const StoryRightColumn = styled.div.attrs((props) => ({
 `
 
 export const StoryBottomLine = styled.hr`
-  width: 95%;
+  width: 100%;
   height: 1px;
   color: rgba(0, 0, 0, 0.3);
   margin: 0 auto;
