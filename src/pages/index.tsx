@@ -119,7 +119,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects,
-      myData: myData || null,
+      myData,
       myDataParagraphs,
       myDataSkills,
       exps: expsToModify,
