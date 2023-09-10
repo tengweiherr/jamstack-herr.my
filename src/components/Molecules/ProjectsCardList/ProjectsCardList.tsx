@@ -1,5 +1,4 @@
 import AwardWinningBanner from '@/components/Molecules/AwardWinningBanner'
-import { NoContentWrapper } from '@/utils/styled/common.styled'
 import { Project } from '@/utils/types'
 import { useEffect, useState } from 'react'
 import {
