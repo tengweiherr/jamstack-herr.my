@@ -20,7 +20,7 @@ import Contact from '@/components/Sections/Contact'
 
 type HomeProps = {
   projects: Array<Project>
-  myData: MyData
+  myData: string
   myDataParagraphs: Array<string>
   myDataSkills: MyDataSkills
   exps: Array<Exp>
@@ -119,7 +119,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects,
-      myData,
+      myData: JSON.stringify(myData),
       myDataParagraphs,
       myDataSkills,
       exps: expsToModify,
@@ -141,7 +141,7 @@ export default function Home({
       <Quote1 />
       <Highlight projects={projects} />
       <Introduction
-        myData={myData}
+        myData={JSON.parse(myData)}
         myDataParagraphs={myDataParagraphs}
         myDataSkills={myDataSkills}
       />
