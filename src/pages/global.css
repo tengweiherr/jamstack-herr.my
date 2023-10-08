@@ -42,12 +42,7 @@ section {
   width: 100%;
 }
 
-a {
-  color: #008b8b;
-  transition: all 0.3s ease;
-}
-
-a:hover {
+a.cyan:hover {
   color: #0c6b66;
 }
 

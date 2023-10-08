@@ -26,8 +26,11 @@ const Techblog = () => {
         <PageTitle>Tech blog</PageTitle>
         <PageSubtitle>
           Where I document what I&apos;ve learned and share it to others.
-          Presently, my <Link href={MEDIUM_LINK}>Medium</Link> platform receives
-          approximately 2,000 monthly views.
+          Presently, my{' '}
+          <Link className="cyan" href={MEDIUM_LINK}>
+            Medium
+          </Link>{' '}
+          platform receives approximately 2,000 monthly views.
         </PageSubtitle>
       </TextContainer>
       <TechblogCardList mediumStories={mediumStories} />
