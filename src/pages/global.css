@@ -42,8 +42,8 @@ section {
   width: 100%;
 }
 
-a.orange:hover {
-  color: #e47712;
+a.cyan:hover {
+  color: #0c6b66;
 }
 
 *:focus {
