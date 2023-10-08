@@ -7,3 +7,7 @@ declare global {
     }
   }
 }
+
+declare type PageParams = {
+  id: string
+}

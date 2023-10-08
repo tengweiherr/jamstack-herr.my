@@ -3,6 +3,7 @@ import Body from './Body'
 import Footer from './Footer'
 import Header from './Header'
 import Script from 'next/script'
+import COLOR from '@/utils/styled/color'
 
 type LayoutProps = {
   children: ReactNode
@@ -13,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
     window.kofiWidgetOverlay.draw('tengweiherr', {
       type: 'floating-chat',
       'floating-chat.donateButton.text': 'Tip Me',
-      'floating-chat.donateButton.background-color': '#0c6b66',
+      'floating-chat.donateButton.background-color': COLOR.CYAN,
       'floating-chat.donateButton.text-color': '#fff',
     })
   }

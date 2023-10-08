@@ -32,8 +32,8 @@ const More = () => {
                 height={200}
               />
               <MoreCardContent>
-                <H4>My other projects</H4>
-                <Button href="/projects">Visit more</Button>
+                <H4>Other Projects</H4>
+                <Button href="/projects">Visit More</Button>
                 <h3 className="display-1 white position-absolute">01</h3>
               </MoreCardContent>
             </SingleMoreCard>
@@ -49,8 +49,8 @@ const More = () => {
                 height={200}
               />
               <MoreCardContent>
-                <H4>My tech blog</H4>
-                <Button href="/techblog">tengweiherr.medium.com</Button>
+                <H4>Tech Blog</H4>
+                <Button href="/techblog">Read More</Button>
                 <h3 className="display-1 white position-absolute">02</h3>
               </MoreCardContent>
             </SingleMoreCard>

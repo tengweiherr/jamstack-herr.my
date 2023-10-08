@@ -62,7 +62,7 @@ export const Parallax = styled.div.attrs((props) => ({
     object-fit: cover;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     img {
       position: relative;
       width: 100%;
@@ -74,7 +74,7 @@ export const Parallax = styled.div.attrs((props) => ({
     right: 20px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     .layer-1 img {
       display: none;
     }
@@ -85,13 +85,13 @@ export const Parallax = styled.div.attrs((props) => ({
     left: 0px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     .layer-2 img {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     .mobile {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -117,7 +117,7 @@ export const Parallax = styled.div.attrs((props) => ({
     display: none;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     .mobile img {
       display: block;
       width: 49%;
@@ -135,7 +135,7 @@ export const Parallax = styled.div.attrs((props) => ({
     display: none;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 992px) {
     .mobile img.ipad {
       display: block;
     }
