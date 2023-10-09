@@ -4,7 +4,9 @@
 
 ## :trophy: Awards
 
-1. **MWA - Site of the Month (Personal category, Feb 2022)** <sub>_Issued by Malaysia Website Award (MWA) by Exabytes 2022_</sub>
+1. **MWA - Prestigious Award - Site of the Year (Personal category, 2022)** <sub>_Issued by Malaysia Website Award (MWA) by Exabytes 2022_</sub>
+2. **MWA - Site of the Month (Personal category, Feb 2022)** <sub>_Issued by Malaysia Website Award (MWA) by Exabytes 2022_</sub>
+
 
 ## :rocket: Project Background
 
