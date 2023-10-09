@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
-import SotmAward from '@/components/Molecules/SotmAward'
+import SotyAward from '@/components/Molecules/SotyAward'
 import { Profiler } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -63,7 +63,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-        <SotmAward />
+        <SotyAward />
       </Profiler>
     </>
   )

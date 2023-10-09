@@ -1,13 +1,13 @@
 import { AWS_S3_PREFIX } from '@/utils/const'
 import Image from 'next/image'
-import { AwardContainer, AwardLink } from './SotmAward.styled'
+import { AwardContainer, AwardLink } from './SotyAward.styled'
 
-const ribbonImage = AWS_S3_PREFIX + 'mwa-sotm-ribbon.webp'
+const ribbonImage = AWS_S3_PREFIX + 'mwa-soty-ribbon.webp'
 
-const SotmAward = () => {
+const SotyAward = () => {
   return (
     <AwardContainer>
-      <AwardLink href="https://www.mwa.my/2022" target="_blank">
+      <AwardLink href="https://www.mwa.my/2023" target="_blank">
         <Image
           src={ribbonImage}
           alt="mwa-sotm-ribbon"
@@ -20,4 +20,4 @@ const SotmAward = () => {
   )
 }
 
-export default SotmAward
+export default SotyAward
