@@ -22,6 +22,12 @@ const nextConfig = {
         port: '',
         pathname: '/assets.herr.my/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'dzhcg7398kr2k.cloudfront.net',
+        port: '',
+        pathname: '/**',
+      },
     ],
     minimumCacheTTL: 604800,
   },
