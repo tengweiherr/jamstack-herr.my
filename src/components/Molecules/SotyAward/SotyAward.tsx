@@ -10,7 +10,7 @@ const SotyAward = () => {
       <AwardLink href="https://www.mwa.my/2023" target="_blank">
         <Image
           src={ribbonImage}
-          alt="mwa-sotm-ribbon"
+          alt="mwa-soty-ribbon"
           width={68}
           height={100}
           priority
