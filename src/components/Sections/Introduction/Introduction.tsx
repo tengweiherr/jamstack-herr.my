@@ -15,7 +15,7 @@ import { useLayoutEffect, useRef } from 'react'
 import animateIntroduction from '@/utils/gsap/introduction'
 import gsap from 'gsap/all'
 import { MyData, MyDataSkills } from '@/utils/types'
-import { AWS_S3_PREFIX } from '@/utils/const'
+import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
 
 type IntroductionProps = {
   myData: MyData
@@ -25,8 +25,8 @@ type IntroductionProps = {
 
 const renderImage = (myData: MyData) => {
   return {
-    image1: AWS_S3_PREFIX + myData.image1,
-    image2: AWS_S3_PREFIX + myData.image2,
+    image1: AWS_CLOUDFRONT_PREFIX + myData.image1,
+    image2: AWS_CLOUDFRONT_PREFIX + myData.image2,
   }
 }
 

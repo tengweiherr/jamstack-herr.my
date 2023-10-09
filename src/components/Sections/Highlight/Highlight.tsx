@@ -1,5 +1,5 @@
 import AwardWinningBanner from '@/components/Molecules/AwardWinningBanner'
-import { AWS_S3_PREFIX, ICON } from '@/utils/const'
+import { AWS_CLOUDFRONT_PREFIX, ICON } from '@/utils/const'
 import animateSlider from '@/utils/gsap/slider'
 import { Button, SeperateLine, TextContainer } from '@/utils/styled/common'
 import { ButtonContainer } from '@/utils/styled/common.styled'
@@ -83,7 +83,7 @@ const Highlight = ({ projects }: HighlightProps) => {
                     </HoverIconContainer>
                     <HoverIconBG />
                     <Image
-                      src={AWS_S3_PREFIX + item.image}
+                      src={AWS_CLOUDFRONT_PREFIX + item.image}
                       alt="highlightImg"
                       height={250}
                       width={250}

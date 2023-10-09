@@ -9,11 +9,11 @@ import {
   MoreInnerContainer,
   SingleMoreCard,
 } from './More.styled'
-import { AWS_S3_PREFIX } from '@/utils/const'
+import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
 
 const renderImage = {
-  more_bg_1: AWS_S3_PREFIX + 'more-bg-1.webp',
-  more_bg_2: AWS_S3_PREFIX + 'more-bg-2.webp',
+  more_bg_1: AWS_CLOUDFRONT_PREFIX + 'more-bg-1.webp',
+  more_bg_2: AWS_CLOUDFRONT_PREFIX + 'more-bg-2.webp',
 }
 
 const More = () => {

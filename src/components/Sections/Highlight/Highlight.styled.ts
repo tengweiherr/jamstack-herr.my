@@ -1,4 +1,4 @@
-import { AWS_S3_PREFIX } from '@/utils/const'
+import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
 import COLOR from '@/utils/styled/color'
 import styled from 'styled-components'
 

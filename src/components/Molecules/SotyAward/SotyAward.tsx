@@ -1,8 +1,8 @@
-import { AWS_S3_PREFIX } from '@/utils/const'
+import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
 import Image from 'next/image'
 import { AwardContainer, AwardLink } from './SotyAward.styled'
 
-const ribbonImage = AWS_S3_PREFIX + 'mwa-soty-ribbon.webp'
+const ribbonImage = AWS_CLOUDFRONT_PREFIX + 'mwa-soty-ribbon.webp'
 
 const SotyAward = () => {
   return (
