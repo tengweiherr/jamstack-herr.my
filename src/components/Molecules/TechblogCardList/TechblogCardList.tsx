@@ -1,4 +1,3 @@
-import { NoContentWrapper } from '@/utils/styled/common.styled'
 import { MediumStory } from '@/utils/types'
 import {
   StoriesWrapper,
