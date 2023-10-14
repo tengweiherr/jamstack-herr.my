@@ -27,7 +27,7 @@ const Techblog = () => {
         <PageSubtitle>
           Where I document what I&apos;ve learned and share it to others.
           Presently, my{' '}
-          <Link className="cyan" href={MEDIUM_LINK}>
+          <Link className="cyan" href={MEDIUM_LINK} target="_blank">
             Medium
           </Link>{' '}
           platform receives approximately 2,000 monthly views.
