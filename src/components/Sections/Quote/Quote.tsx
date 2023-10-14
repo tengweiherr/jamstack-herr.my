@@ -23,7 +23,7 @@ const Quote = () => {
           <h2>Software Engineer.</h2>
         </TextContainer>
         <TextContainer className="text-center">
-          <p>Also a motion graphic designer and photographer.</p>
+          <p>Also a tech writer, motion designer and photographer.</p>
         </TextContainer>
       </div>
     </QuoteSection>
