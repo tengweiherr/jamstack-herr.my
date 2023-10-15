@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
   console.log(req.headers.get('referer'))
+  console.log(process.env.BASE_FETCH_URL)
   if (
     req.headers.get('referer') === null ||
     !req.headers.get('referer')?.includes(String(process.env.BASE_FETCH_URL))
