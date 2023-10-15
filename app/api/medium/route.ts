@@ -4,9 +4,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
   if (
-    req.headers.get('referer') === null ||
-    !req.headers.get('referer')?.includes('herr.my') ||
-    !req.headers.get('referer')?.includes('localhost')
+    process.env.NODE_ENV !== 'development' &&
+    (req.headers.get('referer') === null ||
+      !req.headers.get('referer')?.includes('herr.my'))
   ) {
     return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
   }
