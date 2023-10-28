@@ -10,7 +10,7 @@ export const HighlightSection = styled.section.attrs((props) => ({
   background: -webkit-linear-gradient(0deg, #659999, #f4791f);
 `
 
-export const H2 = styled.h2.attrs((props) => ({
+export const H2 = styled.h2.attrs(() => ({
   className: 'white text-break pe-3',
 }))`
   white-space: nowrap;

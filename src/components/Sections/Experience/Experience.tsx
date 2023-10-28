@@ -79,7 +79,7 @@ const Experience = ({ exps }: ExperienceProps) => {
                         onClick={() => setActiveIndex(index)}
                       >
                         <div className="col-sm-3">
-                          <h5>{item.endYear}</h5>
+                          <h6>{item.endYear}</h6>
                         </div>
                         <div className="col-sm-9">
                           <h5 onClick={() => setActiveIndex(index)}>

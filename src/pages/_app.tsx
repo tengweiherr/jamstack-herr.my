@@ -8,12 +8,80 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import SotyAward from '@/components/Molecules/SotyAward'
 import { Profiler } from 'react'
+import { createGlobalStyle } from 'styled-components'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-Thin.otf') format('otf');
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-UltraLight.otf') format('otf');
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-Light.otf') format('otf');
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-Regular.otf') format('otf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-Medium.otf') format('otf');
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-SemiBold.otf') format('otf');
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-Bold.otf') format('otf');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-Black.otf') format('otf');
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist-UltraBlack.otf') format('otf');
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+  }
+`
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <GlobalStyle />
       <Profiler id="app" onRender={() => {}}>
         <Head>
           <title>
