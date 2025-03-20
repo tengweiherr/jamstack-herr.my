@@ -58,7 +58,7 @@ const Experience = ({ exps }: ExperienceProps) => {
               <TextContainer className="mb-5">
                 <h2 className="display-1">@works</h2>
               </TextContainer>
-              <div className="text-container pt-2">
+              <div className="text-container">
                 <h5 className="cyan">
                   <strong>Where I&apos;ve worked & volunteered:</strong>
                 </h5>

@@ -26,7 +26,7 @@ export const AboutMe = styled.div.attrs((props) => ({
   className: 'about-me',
 }))`
   background-color: #e8ece6;
-  padding-top: 60px;
+  padding-top: 30px;
 
   .container {
     display: grid;

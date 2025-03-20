@@ -8,10 +8,6 @@ export const StoriesWrapper = styled.div.attrs((props) => ({
   margin-top: 3rem;
   border-radius: 0.4rem;
   background: ${COLOR.LIGHT_GREY};
-
-  @media only screen and (max-width: 468px) {
-    width: 90%;
-  }
 `
 
 export const StoryRow = styled.div.attrs((props) => ({
@@ -21,6 +17,10 @@ export const StoryRow = styled.div.attrs((props) => ({
   background: ${COLOR.LIGHT_GREY};
   padding: 2rem;
   flex-direction: row;
+
+  @media only screen and (max-width: 468px) {
+    padding: 1rem 1.5rem;
+  }
 
   @media only screen and (max-width: 1024px) {
     flex-direction: column;
