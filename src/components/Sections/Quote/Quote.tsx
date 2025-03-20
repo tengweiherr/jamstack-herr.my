@@ -25,7 +25,7 @@ const Quote = () => {
         </TextContainer>
         <TextContainer className="text-center">
           <p><span style={{
-            fontWeight: 500,
+            fontWeight: 600,
             color: COLOR.CYAN
           }}>@deprecated</span> motion graphic designer and photographer.</p>
         </TextContainer>
