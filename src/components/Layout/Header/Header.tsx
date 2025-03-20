@@ -1,5 +1,5 @@
 import Logo from '@/components/Molecules/Logo'
-import { BEHANCE_LINK, EMAIL_LINK, RESUME_LINK } from '@/utils/const'
+import { BEHANCE_LINK, EMAIL_LINK, GITHUB_LINK, MEDIUM_LINK, RESUME_LINK } from '@/utils/const'
 import animateNavbar from '@/utils/gsap/navbar'
 import { Button, ContainerFluid } from '@/utils/styled/common.styled'
 import gsap from 'gsap'
@@ -84,18 +84,19 @@ const Header = () => {
                     }`}
                     onClick={() => setActiveTab('Home')}
                     href="/"
-                    aria-label="Software Eng"
+                    aria-label="Home"
+                    style={{
+                      fontSize: '1.2rem',
+                    }}
                   >
-                    Home
+                    @this
                   </Link>
                 </NavItem>
                 <NavItem>
                   <Link
-                    className={`nav-link ${
-                      activeTab === 'Projects' ? 'active' : ''
-                    }`}
-                    onClick={() => setActiveTab('Projects')}
-                    href="/projects"
+                    className='nav-link'
+                    href={GITHUB_LINK}
+                    target="_blank"
                     aria-label="Projects"
                   >
                     Projects
@@ -103,11 +104,9 @@ const Header = () => {
                 </NavItem>
                 <NavItem>
                   <Link
-                    className={`nav-link ${
-                      activeTab === 'Tech blog' ? 'active' : ''
-                    }`}
-                    onClick={() => setActiveTab('Tech blog')}
-                    href="/techblog"
+                    className='nav-link'
+                    href={MEDIUM_LINK}
+                    target="_blank"
                     aria-label="Tech blog"
                   >
                     Tech blog

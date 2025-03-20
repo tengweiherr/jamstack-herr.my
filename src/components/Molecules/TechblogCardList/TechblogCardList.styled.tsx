@@ -2,7 +2,7 @@ import COLOR from '@/utils/styled/color'
 import styled from 'styled-components'
 
 export const StoriesWrapper = styled.div.attrs((props) => ({
-  className: 'd-flex flex-column mx-3',
+  className: 'd-flex flex-column',
 }))`
   margin: 0 auto;
   margin-top: 3rem;
@@ -20,7 +20,6 @@ export const StoryRow = styled.div.attrs((props) => ({
   border-radius: 0rem;
   background: ${COLOR.LIGHT_GREY};
   padding: 2rem;
-  padding-bottom: 3rem;
   flex-direction: row;
 
   @media only screen and (max-width: 1024px) {
@@ -45,7 +44,7 @@ export const StoryRow = styled.div.attrs((props) => ({
 `
 
 export const StoryLeftColumn = styled.div.attrs((props) => ({
-  className: 'col-sm-2',
+  className: 'col-3 col-sm-2',
 }))`
   @media only screen and (max-width: 1024px) {
     padding-bottom: 1rem;
@@ -58,7 +57,7 @@ export const StoryLeftColumn = styled.div.attrs((props) => ({
 `
 
 export const StoryRightColumn = styled.div.attrs((props) => ({
-  className: 'col-sm-10',
+  className: 'col-9 col-sm-10',
 }))`
   h5 {
     font-weight: 600;

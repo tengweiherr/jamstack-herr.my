@@ -7,14 +7,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import SotyAward from '@/components/Molecules/SotyAward'
-import { Profiler } from 'react'
+import { Chakra_Petch } from 'next/font/google'
 
 gsap.registerPlugin(ScrollTrigger)
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Profiler id="app" onRender={() => {}}>
         <Head>
           <title>
             Teng Wei Herr - Software Engineer, Tech Writer, Designer and
@@ -67,7 +67,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Layout>
         <SotyAward />
-      </Profiler>
     </>
   )
 }

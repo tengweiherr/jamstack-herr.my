@@ -16,7 +16,7 @@ const animateExperience = (expTL:MutableRefObject<gsap.core.Timeline | undefined
     })
     // .from(".experience .vertical-line", {height:0}, 0)
     .fromTo(".exp", { opacity: 0, stagger: 0.3 },{ opacity: 1, stagger: 0.3 }, 0)
-    .fromTo(".experience .exp-desc", { x: 100, opacity: 0 },{ x: 0, opacity: 1 }, "-=1");
+    // .fromTo(".experience .exp-desc", { x: 100, opacity: 0 },{ x: 0, opacity: 1 }, "-=1");
 
 }
 

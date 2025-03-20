@@ -32,7 +32,6 @@ const nextConfig = {
     minimumCacheTTL: 604800,
   },
   transpilePackages: ['gsap'],
-  runtime: 'edge',
 }
 
 module.exports = nextConfig

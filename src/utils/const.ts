@@ -1,3 +1,8 @@
+import ICON_LINKEDIN from 'public/linked.svg'
+import ICON_GITHUB from 'public/github.svg'
+import ICON_BEHANCE from 'public/behance.svg'
+import ICON_INSTAGRAM from 'public/ig.svg'
+
 const CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID
 const CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 const CONTENTFUL_PREVIEW_ACCESS_TOKEN =
@@ -8,11 +13,10 @@ const AWS_S3_PREFIX = 'https://s3.amazonaws.com/assets.herr.my/'
 const AWS_CLOUDFRONT_PREFIX = 'https://dzhcg7398kr2k.cloudfront.net/'
 
 const ICON = {
-  linkedIn: AWS_CLOUDFRONT_PREFIX + 'linked.svg',
-  github: AWS_CLOUDFRONT_PREFIX + 'github.svg',
-  behance: AWS_CLOUDFRONT_PREFIX + 'behance.svg',
-  facebook: AWS_CLOUDFRONT_PREFIX + 'facebook.svg',
-  instagram: AWS_CLOUDFRONT_PREFIX + 'ig.svg',
+  linkedIn: ICON_LINKEDIN,
+  github: ICON_GITHUB,
+  behance: ICON_BEHANCE,
+  instagram: ICON_INSTAGRAM,
 }
 
 const EMAIL_LINK = 'weiherrteng@gmail.com'

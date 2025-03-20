@@ -92,18 +92,6 @@ const Contact = () => {
                   />
                 </a>
                 <a
-                  href="https://www.facebook.com/weiherrteng"
-                  target="_blank"
-                  aria-label="Facebook"
-                >
-                  <Image
-                    src={ICON.facebook}
-                    alt="Facebook"
-                    width={20}
-                    height={20}
-                  />
-                </a>
-                <a
                   href="https://www.instagram.com/herr_studio/"
                   target="_blank"
                   aria-label="Instagram"

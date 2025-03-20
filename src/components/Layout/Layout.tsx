@@ -1,9 +1,11 @@
-import { ReactNode, useEffect } from 'react'
-import Body from './Body'
+import { ReactNode } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import Script from 'next/script'
 import COLOR from '@/utils/styled/color'
+import { Chakra_Petch } from 'next/font/google'
+
+const font = Chakra_Petch({ subsets: ['latin'], weight: ["300", "400", "500", "600", "700"] })
 
 type LayoutProps = {
   children: ReactNode
@@ -21,9 +23,11 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Header />
-      <Body>{children}</Body>
-      <Footer />
+      <main className={font.className}>
+        <Header />
+        {children}
+        <Footer />
+      </main>
       <Script
         src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"
         strategy="afterInteractive"

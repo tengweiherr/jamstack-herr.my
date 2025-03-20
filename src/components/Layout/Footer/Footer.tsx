@@ -5,7 +5,7 @@ const Footer = () => {
     <FooterContainer>
       <div className="container">
         <div className="row">
-          <Copyright>
+          <Copyright className="m-0 p-3">
             Designed & Built by <MyName>Teng Wei Herr</MyName>
           </Copyright>
         </div>

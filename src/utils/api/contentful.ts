@@ -33,6 +33,7 @@ async function fetchMyData () {
     try {
         const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/master`, fetchOptions)
         const resInJSON = await res.json()
+        console.log(resInJSON)
         const myDataData = await resInJSON.data.aboutCollection.items[0]
         return myDataData
     } catch (error) {

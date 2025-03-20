@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 *:hover {
   text-decoration: none !important;
 }
@@ -10,8 +8,23 @@ html {
 
 body {
   background-color: #e8ece6 !important;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
+}
+
+h1 {
+  letter-spacing: -1.5px !important;
+}
+
+h2 {
+  letter-spacing: -1px !important;
+}
+
+h3 {
+  letter-spacing: -1px !important;
+}
+
+h5 {
+  letter-spacing: -0.3px !important;
 }
 
 .white {
@@ -101,7 +114,12 @@ a.cyan:hover {
 
 .experience {
   background: #e8ece6;
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.experience h6 {
+  line-height: 1.5;
 }
 
 .experience h2.display-1 {
@@ -133,6 +151,7 @@ a.cyan:hover {
 }
 
 .experience .exp h5,
+.experience .exp h6,
 .experience .exp p {
   color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -140,31 +159,16 @@ a.cyan:hover {
   transition: all 0.3s ease;
 }
 
-.experience .exp:before {
-  content: '';
-  width: 35px;
-  height: 1px;
-  margin-left: -45px;
-  margin-top: 12px;
-  background: rgba(0, 0, 0, 0.3);
-}
-
 .experience .exp:hover h5,
+.experience .exp:hover h6,
 .experience .exp:hover p {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.experience .exp:hover:before {
-  background: rgba(0, 0, 0, 0.4);
-}
-
 .experience .exp.active h5,
+.experience .exp.active h6,
 .experience .exp.active p {
   color: black;
-}
-
-.experience .exp.active:before {
-  background: black;
 }
 
 .experience .exp-desc {
@@ -195,7 +199,7 @@ a.cyan:hover {
 .experience .exp-desc .exp-desc-inner h5 {
   color: white;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .experience .exp-desc .exp-desc-inner .img-container {
@@ -280,17 +284,17 @@ a.cyan:hover {
   display: block;
 }
 
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
   .experience .exp-desc.mobile {
     width: 120%;
   }
-}
+} */
 
-@media only screen and (max-width: 992px) and (max-width: 480px) {
+/* @media only screen and (max-width: 992px) and (max-width: 480px) {
   .experience .exp-desc.mobile {
     width: 105%;
   }
-}
+} */
 
 @media only screen and (min-width: 992px) {
   .mobile {
@@ -316,6 +320,7 @@ a.cyan:hover {
   }
   .experience .exp-desc.mobile .exp-desc-inner.active {
     display: block;
+    margin: 0 auto;
   }
   .experience .exp-desc.mobile .exp-desc-inner h5,
   .experience .exp-desc.mobile .exp-desc-inner p {

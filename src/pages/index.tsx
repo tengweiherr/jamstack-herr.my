@@ -17,6 +17,9 @@ import {
 import Experience from '@/components/Sections/Experience'
 import More from '@/components/Sections/More'
 import Contact from '@/components/Sections/Contact'
+import TechblogCardList from '@/components/Molecules/TechblogCardList'
+import { TextContainer } from '@/utils/styled/common.styled'
+import { Articles } from '@/components/Sections/Articles'
 
 type HomeProps = {
   projects: Array<Project>
@@ -52,6 +55,8 @@ export async function getStaticProps() {
     fetchMyData(),
     fetchExp(),
   ])
+
+  console.log(myData)
 
   //projects data clean up
   if (projects && projects?.length !== 0) {
@@ -129,8 +134,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({
-  projects,
-  myData,
   myDataParagraphs,
   myDataSkills,
   exps,
@@ -139,14 +142,14 @@ export default function Home({
     <>
       <Banner />
       <Quote1 />
-      <Highlight projects={projects} />
+      {/* <Highlight projects={projects} /> */}
       <Introduction
-        myData={myData}
         myDataParagraphs={myDataParagraphs}
         myDataSkills={myDataSkills}
       />
       <Experience exps={exps} />
-      <More />
+      <Articles />
+      {/* <More /> */}
       <Contact />
     </>
   )

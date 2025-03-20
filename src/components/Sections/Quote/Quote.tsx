@@ -3,6 +3,7 @@ import { TextContainer } from '@/utils/styled/common'
 import gsap from 'gsap/all'
 import { useLayoutEffect, useRef } from 'react'
 import { QuoteSection } from './Quote.styled'
+import COLOR from '@/utils/styled/color'
 
 const Quote = () => {
   const aniRef = useRef<HTMLDivElement>(null)
@@ -23,7 +24,10 @@ const Quote = () => {
           <h2>Software Engineer.</h2>
         </TextContainer>
         <TextContainer className="text-center">
-          <p>Also a tech writer, motion designer and photographer.</p>
+          <p><span style={{
+            fontWeight: 500,
+            color: COLOR.CYAN
+          }}>@deprecated</span> motion graphic designer and photographer.</p>
         </TextContainer>
       </div>
     </QuoteSection>

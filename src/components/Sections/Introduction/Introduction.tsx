@@ -1,16 +1,13 @@
-import Image from 'next/image'
 import { TextContainer } from '@/utils/styled/common.styled'
 import {
   AboutMe,
   DescriptionContainer,
   IntroContainer,
   IntroductionSection,
-  IntroPhotoContainer,
-  Parallax,
   SkillsContainer,
   SkillsList,
   SkillsListContainer,
-} from './Introduction.styled'
+} from '././Introduction.styled'
 import { useLayoutEffect, useRef } from 'react'
 import animateIntroduction from '@/utils/gsap/introduction'
 import gsap from 'gsap/all'
@@ -18,7 +15,6 @@ import { MyData, MyDataSkills } from '@/utils/types'
 import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
 
 type IntroductionProps = {
-  myData: MyData
   myDataParagraphs: Array<string>
   myDataSkills: MyDataSkills
 }
@@ -31,7 +27,6 @@ const renderImage = (myData: MyData) => {
 }
 
 const Introduction = ({
-  myData,
   myDataParagraphs,
   myDataSkills,
 }: IntroductionProps) => {
@@ -66,13 +61,13 @@ const Introduction = ({
     <IntroductionSection ref={aniRef}>
       <div className="introducing">
         <TextContainer className="container">
-          <h2 className="display-1 text-start">Introducing</h2>
+          <h2 className="display-1 text-start">@author</h2>
         </TextContainer>
         <AboutMe>
           <div className="container">
-            <IntroPhotoContainer>
+            <div>
               <IntroContainer>
-                <TextContainer className="my-4 mt-5 justity-content-start">
+                <TextContainer className="justity-content-start">
                   <h5 className="name cyan text-start">
                     <strong>Teng Wei Herr</strong>
                   </h5>
@@ -93,44 +88,10 @@ const Introduction = ({
                   </>
                 </DescriptionContainer>
               </IntroContainer>
-
-              <Parallax>
-                <div className="layer layer-1">
-                  <Image
-                    src={renderImage(myData).image1}
-                    width={200}
-                    height={200}
-                    alt="Teng Wei Herr"
-                  />
-                </div>
-                <div className="layer layer-2">
-                  <Image
-                    src={renderImage(myData).image2}
-                    width={200}
-                    height={200}
-                    alt="Teng Wei Herr"
-                  />
-                </div>
-                <div className="mobile">
-                  <Image
-                    src={renderImage(myData).image2}
-                    width={200}
-                    height={200}
-                    alt="Teng Wei Herr"
-                  />
-                  <Image
-                    className="ipad"
-                    src={renderImage(myData).image1}
-                    width={200}
-                    height={200}
-                    alt="Teng Wei Herr"
-                  />
-                </div>
-              </Parallax>
-            </IntroPhotoContainer>
+            </div>
 
             <SkillsContainer>
-              <div className="col-lg-6">
+              <div>
                 <TextContainer>
                   <h5 className="cyan">
                     <strong>Tech I&apos;ve worked with: </strong>

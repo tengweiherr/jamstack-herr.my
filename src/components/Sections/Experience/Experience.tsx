@@ -1,6 +1,7 @@
 import animateExperience from '@/utils/gsap/experience'
+import COLOR from '@/utils/styled/color'
 import { TextContainer } from '@/utils/styled/common.styled'
-import { Experience, ExpExtraProps } from '@/utils/types'
+import type { Experience, ExpExtraProps } from '@/utils/types'
 import gsap from 'gsap/all'
 import { useLayoutEffect, useRef, useState } from 'react'
 
@@ -52,10 +53,10 @@ const Experience = ({ exps }: ExperienceProps) => {
     <>
       <section ref={aniRef}>
         <div className="container experience">
-          <div className="row">
+          <div>
             <div className="col-sm-12 position-relative">
               <TextContainer className="mb-5">
-                <h2 className="display-1">Experience speaks louder.</h2>
+                <h2 className="display-1">@works</h2>
               </TextContainer>
               <div className="text-container pt-2">
                 <h5 className="cyan">
@@ -66,10 +67,7 @@ const Experience = ({ exps }: ExperienceProps) => {
             <div className="row description mt-4">
               <div className="col-lg-6 exp-title">
                 <div className="row">
-                  <div className="col-2">
-                    <div className="line vertical-line"></div>
-                  </div>
-                  <div className="col-10">
+                  <div>
                     {exps.map((item, index) => (
                       <div
                         className={`row exp exp-${index + 1} ${
@@ -78,14 +76,19 @@ const Experience = ({ exps }: ExperienceProps) => {
                         key={`exp-${index + 1}`}
                         onClick={() => setActiveIndex(index)}
                       >
-                        <div className="col-sm-3">
-                          <h5>{item.endYear}</h5>
+                        <div className="col-sm-2">
+                          <h6>{item.endYear}</h6>
                         </div>
-                        <div className="col-sm-9">
-                          <h5 onClick={() => setActiveIndex(index)}>
-                            {item.role}
-                          </h5>
-                          <p>{item.company}</p>
+                        <div className="col-sm-10">
+                          <div style={activeIndex === index ? {
+                            borderLeft: '2px solid ' + COLOR.CYAN,
+                            paddingLeft: '16px',
+                          }: undefined}>
+                            <h5 onClick={() => setActiveIndex(index)}>
+                              {item.role}
+                            </h5>
+                            <p>{item.company}</p>
+                          </div>
                           <div
                             className={`exp-desc exp-desc-${index + 1} mobile ${
                               activeIndex === index && 'active'
