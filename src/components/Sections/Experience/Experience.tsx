@@ -49,6 +49,14 @@ const Experience = ({ exps }: ExperienceProps) => {
     }
   }, [exps.length])
 
+  const renderStartEndYear = (startYear?: string, endYear?: string) => {
+    if (endYear === startYear) {
+      return <h6>{endYear}</h6>
+    }
+
+    return <h6>{startYear} - <br />{endYear}</h6>
+  }
+
   return (
     <>
       <section ref={aniRef}>
@@ -77,7 +85,9 @@ const Experience = ({ exps }: ExperienceProps) => {
                         onClick={() => setActiveIndex(index)}
                       >
                         <div className="col-sm-2">
-                          <h6>{item.endYear}</h6>
+                          <div>
+                            {renderStartEndYear(item.startYear, item.endYear)}
+                          </div>
                         </div>
                         <div className="col-sm-10">
                           <div style={activeIndex === index ? {
@@ -124,7 +134,7 @@ const Experience = ({ exps }: ExperienceProps) => {
                   <div
                     className={`row exp-desc-inner exp-desc-inner-${
                       index + 1
-                    } white p-5 ${activeIndex === index && 'active'}`}
+                    } white px-3 py-4 ${activeIndex === index && 'active'}`}
                     key={`exp-desc-inner-${index + 1}`}
                   >
                     <h5>{item.role}</h5>

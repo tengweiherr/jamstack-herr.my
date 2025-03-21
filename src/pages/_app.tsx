@@ -7,7 +7,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import SotyAward from '@/components/Molecules/SotyAward'
-import { Chakra_Petch } from 'next/font/google'
 
 gsap.registerPlugin(ScrollTrigger)
 

@@ -56,8 +56,6 @@ export async function getStaticProps() {
     fetchExp(),
   ])
 
-  console.log(myData)
-
   //projects data clean up
   if (projects && projects?.length !== 0) {
     projects?.sort(function (a: Project, b: Project) {
