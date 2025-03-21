@@ -44,7 +44,7 @@ export const StoryRow = styled.div.attrs((props) => ({
 `
 
 export const StoryLeftColumn = styled.div.attrs((props) => ({
-  className: 'col-3 col-sm-2',
+  className: 'col-12 col-lg-2',
 }))`
   @media only screen and (max-width: 1024px) {
     padding-bottom: 1rem;
@@ -57,7 +57,7 @@ export const StoryLeftColumn = styled.div.attrs((props) => ({
 `
 
 export const StoryRightColumn = styled.div.attrs((props) => ({
-  className: 'col-9 col-sm-10',
+  className: 'col-12 col-lg-10',
 }))`
   h5 {
     font-weight: 600;

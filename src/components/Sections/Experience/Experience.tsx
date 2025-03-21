@@ -54,7 +54,7 @@ const Experience = ({ exps }: ExperienceProps) => {
       return <h6>{endYear}</h6>
     }
 
-    return <h6>{startYear} - <br />{endYear}</h6>
+    return <h6>{startYear} - {endYear}</h6>
   }
 
   return (
@@ -110,7 +110,7 @@ const Experience = ({ exps }: ExperienceProps) => {
                               } white ${activeIndex === index && 'active'}`}
                             >
                               <h5>{item.role}</h5>
-                              <p className="mb-4">
+                              <p className="mb-3">
                                 {renderDuration(
                                   Number(item.yearInWorking),
                                   Number(item.monthInWorking)
@@ -138,7 +138,7 @@ const Experience = ({ exps }: ExperienceProps) => {
                     key={`exp-desc-inner-${index + 1}`}
                   >
                     <h5>{item.role}</h5>
-                    <p className="mb-5">
+                    <p className="mb-4">
                       {renderDuration(
                         Number(item.yearInWorking),
                         Number(item.monthInWorking)
