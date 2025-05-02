@@ -7,6 +7,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import SotyAward from '@/components/Molecules/SotyAward'
+import MeInOrangeBg from 'public/herr-orange.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <meta name="author" content="Teng Wei Herr" />
           <meta
             name="image"
-            content="https://www.herr.my/asset/herr-orange.jpg"
+            content={MeInOrangeBg.src}
           />
           <meta name="robots" content="index, follow" />
           <meta
@@ -45,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
           />
           <meta
             property="og:image"
-            content="https://www.herr.my/asset/herr-orange.jpg"
+            content={MeInOrangeBg.src}
           />
           <meta property="og:url" content="https://www.herr.my/" />
           <meta property="og:type" content="website" />
@@ -60,6 +61,8 @@ export default function App({ Component, pageProps }: AppProps) {
             content="Software Engineer, Freelance Motion Graphic Designer and Photographer in Malaysia. Open to freelance or any new opportunities."
           />
           <meta name="twitter:image" content="https://www.herr.my" />
+          <meta name="twitter:site" content="@tengweiherr" />
+          <meta name="twitter:creator" content="@tengweiherr" />
         </Head>
         <Layout>
           <Component {...pageProps} />
