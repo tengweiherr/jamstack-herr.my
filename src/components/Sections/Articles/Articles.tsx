@@ -1,35 +1,10 @@
 import TechblogCardList from '@/components/Molecules/TechblogCardList'
 import { MEDIUM_LINK } from '@/utils/const'
-import animateExperience from '@/utils/gsap/experience'
 import COLOR from '@/utils/styled/color'
 import { TextContainer } from '@/utils/styled/common.styled'
-import type { Experience } from '@/utils/types'
-import gsap from 'gsap/all'
 import Link from 'next/link'
-import { useLayoutEffect, useRef, useState } from 'react'
 
 export const Articles = () => {
-  // const aniRef = useRef<HTMLDivElement>(null)
-  // const expTL = useRef<GSAPTimeline>()
-
-  // const [activeIndex, setActiveIndex] = useState<number>(0)
-
-  // useLayoutEffect(() => {
-  //   let ctx: gsap.Context | undefined = undefined
-
-  //   const shouldStartAnimation = exps.length !== 0
-
-  //   if (shouldStartAnimation) {
-  //     ctx = gsap.context(() => {
-  //       animateExperience(expTL)
-  //     }, aniRef)
-  //   }
-
-  //   return () => {
-  //     ctx ? ctx.revert() : null
-  //   }
-  // }, [exps.length])
-
   return (
     <>
       <section className='my-5'>
@@ -42,6 +17,12 @@ export const Articles = () => {
           }}>@published</h2>
         </TextContainer>
         <TechblogCardList mediumStories={[
+            {
+              title: "React Internals: Which useEffect runs first?",
+              subtitle: "It's not particularly obvious, but a child's useEffect will run before a parent's will. Let's look at why.",
+              date: "2025-04-28",
+              link: "https://frontendmasters.com/blog/react-internals-which-useeffect-runs-first"
+            },
             {
               title: "Adaptive Video Streaming With Dash.js In React",
               subtitle: "A complete guide to build a ABR video player in React starting with a MP4 video",

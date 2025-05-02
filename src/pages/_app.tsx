@@ -10,7 +10,6 @@ import SotyAward from '@/components/Molecules/SotyAward'
 
 gsap.registerPlugin(ScrollTrigger)
 
-
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
