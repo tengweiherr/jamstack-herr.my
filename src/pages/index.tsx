@@ -45,7 +45,7 @@ export async function getStaticProps() {
   let expsToModify: Array<Exp & ExpExtraProps> = []
   if (exps && exps.length !== 0) {
     expsToModify = exps
-      .map((item: Exp) => {
+      .map((item: Omit<Exp, 'companyLogoUrl'> & { companyLogoUrl?: { url?: string } | string | null }) => {
         const formatMonthYear = (date: Date) =>
           date.toLocaleString('en-US', { month: 'short', year: 'numeric' })
         const startYear = formatMonthYear(new Date(item.startTime))
@@ -53,8 +53,13 @@ export async function getStaticProps() {
           ? formatMonthYear(new Date(item.endTime))
           : 'Present'
         const { year, month } = getTimeDifference(item.endTime, item.startTime)
+        const companyLogoUrl =
+          typeof item.companyLogoUrl === 'string'
+            ? item.companyLogoUrl
+            : item.companyLogoUrl?.url ?? null
         return {
           ...item,
+          companyLogoUrl,
           startYear,
           endYear,
           yearInWorking: String(year),

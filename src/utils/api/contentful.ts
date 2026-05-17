@@ -42,6 +42,9 @@ async function fetchExp() {
                 role
                 company
                 companyUrl
+                companyLogoUrl: companyLogo {
+                    url
+                }
                 startTime
                 endTime
                 description

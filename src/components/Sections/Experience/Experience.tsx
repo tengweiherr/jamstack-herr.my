@@ -1,6 +1,7 @@
 import animateExperience from '@/utils/gsap/experience'
 import type { Experience, ExpExtraProps } from '@/utils/types'
 import gsap from 'gsap/all'
+import Image from 'next/image'
 import { useLayoutEffect, useRef } from 'react'
 
 type ExperienceProps = {
@@ -71,12 +72,26 @@ const Experience = ({ exps }: ExperienceProps) => {
                         className={`row exp exp-${index + 1} active`}
                         key={`exp-${index + 1}`}
                       >
-                        <div className="col-sm-12">
+                        <div
+                          className="col-sm-12"
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            gap: '12px',
+                            alignItems: 'center',
+                          }}
+                        >
+                          {!!item.companyLogoUrl && (
+                            <div className="exp-logo">
+                              <Image src={item.companyLogoUrl} alt={`${item.company} logo`} width={40} height={40} />
+                            </div>
+                          )}
                           <div
                             style={{
                               display: 'flex',
                               flexDirection: 'column',
                               gap: '4px',
+                              flex: 1,
                             }}
                           >
                             <div style={{ display: 'flex', flexDirection: 'row', gap: '4px' }}>
