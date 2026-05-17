@@ -1,0 +1,73 @@
+.navbar {
+  background-color: none;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar.mobileNavExpand {
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+  }
+}
+
+.navbar :global(.logo) {
+  flex-basis: 40%;
+}
+
+.navbar :global(.logo) img {
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar :global(.logo) img {
+    width: 40px;
+    height: auto;
+  }
+}
+
+.navbarToggler {
+  border: none;
+}
+
+.navbarCollapse {
+  justify-content: flex-end;
+}
+
+.navbarItemList {
+  padding: 1rem 3rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navbarItemList {
+    padding: 1rem 0;
+  }
+}
+
+.navItem {
+  width: 150px;
+  margin: 5px 0;
+}
+
+.navItem :global(a.nav-link) {
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  bottom: 100px;
+}
+
+.navItem :global(a.nav-link.resume) {
+  color: black;
+  border: solid 2px black;
+  padding: 8px 20px !important;
+}
+
+.navItem :global(a.nav-link):hover {
+  color: black;
+}
+
+.navItem :global(a.nav-link.active) {
+  color: #0c6b66 !important;
+  font-weight: 600;
+}

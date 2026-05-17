@@ -1,0 +1,58 @@
+.introductionSection {
+  padding-top: 60px;
+}
+
+.introductionSection h2 {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .introductionSection h2 {
+    padding-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .introductionSection section:global(.introducing) h2 {
+    text-align: center;
+    padding-bottom: 0px;
+  }
+}
+
+.aboutMe {
+  background-color: #e8ece6;
+  padding-top: 30px;
+}
+
+.aboutMe :global(.container) {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  column-gap: 46px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutMe :global(.container) {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .aboutMe :global(.container .intro-photos) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+  .descriptionContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}

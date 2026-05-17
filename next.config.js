@@ -2,12 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  compiler: {
-    styledComponents: {
-      displayName: true,
-      ssr: true,
-    },
-  },
   images: {
     remotePatterns: [
       {

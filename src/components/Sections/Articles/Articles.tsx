@@ -1,6 +1,7 @@
 import TechblogCardList from '@/components/Molecules/TechblogCardList'
 import { MEDIUM_LINK } from '@/utils/const'
-import { TextContainer } from '@/utils/styled/common.styled'
+import commonStyles from '@/utils/styles/common.module.css'
+import { cx } from '@/utils/styles/cx'
 import Link from 'next/link'
 
 export const Articles = () => {
@@ -8,13 +9,18 @@ export const Articles = () => {
     <>
       <section className='my-5'>
       <div className="container">
-        <TextContainer className="mb-5">
+        <div
+          className={cx(
+            'text-container justify-content-center pb-2 w-100 mb-5',
+            commonStyles.textContainer
+          )}
+        >
           <h2 style={{
             fontSize: 60,
             fontWeight: 600,
             position: "relative",
           }}>@published</h2>
-        </TextContainer>
+        </div>
         <TechblogCardList mediumStories={[
             {
               title: "React Internals: Which useEffect runs first?",

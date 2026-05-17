@@ -1,9 +1,23 @@
-import CustomError from '@/components/Molecules/CustomError'
 import { NextPageContext } from 'next'
 import { ErrorProps } from 'next/error'
 
+const renderErrorTitle = (statusCode?: number) => {
+  if (statusCode === 404) return 'Sorry, page not found.'
+  if (statusCode) return `An error ${statusCode} occurred on server.`
+  return 'An error occurred on client.'
+}
+
 const ErrorPage = ({ statusCode }: ErrorProps) => {
-  return <CustomError statusCode={statusCode} />
+  return (
+    <section
+      className="d-flex flex-column justify-content-center align-items-center w-100"
+      style={{ minHeight: '60vh', padding: '4rem 2rem' }}
+    >
+      <h2 className="display-5" style={{ fontWeight: 600 }}>
+        {renderErrorTitle(statusCode)}
+      </h2>
+    </section>
+  )
 }
 
 ErrorPage.getInitialProps = ({ res, err }: NextPageContext) => {

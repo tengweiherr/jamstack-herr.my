@@ -1,0 +1,16 @@
+.footer {
+  margin-top: 3rem;
+  background: #dee2dc;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.myName {
+  background: linear-gradient(45deg, #659999 30%, #f4791f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

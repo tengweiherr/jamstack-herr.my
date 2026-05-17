@@ -1,20 +1,18 @@
 import Logo from '@/components/Molecules/Logo'
-import { BEHANCE_LINK, EMAIL_LINK, GITHUB_LINK, MEDIUM_LINK, RESUME_LINK } from '@/utils/const'
+import {
+  BEHANCE_LINK,
+  EMAIL_LINK,
+  GITHUB_LINK,
+  MEDIUM_LINK,
+  RESUME_LINK,
+} from '@/utils/const'
 import animateNavbar from '@/utils/gsap/navbar'
-import { Button, ContainerFluid } from '@/utils/styled/common.styled'
+import { cx } from '@/utils/styles/cx'
+import commonStyles from '@/utils/styles/common.module.css'
 import gsap from 'gsap'
 import Link from 'next/link'
 import { useLayoutEffect, useRef, useState } from 'react'
-import {
-  HeaderContainer,
-  Navbar,
-  NavbarCollapse,
-  NavbarItemList,
-  NavbarToggler,
-  NavItem,
-} from './Header.styled'
-
-type Tabs = 'Home' | 'Projects' | 'Tech blog'
+import styles from './Header.module.css'
 
 const Header = () => {
   const [navClass, setNavClass] = useState<string>('')
@@ -23,90 +21,91 @@ const Header = () => {
   const aniRef = useRef<HTMLDivElement>(null)
   const navbarTL = useRef<GSAPTimeline>()
 
-  const [activeTab, setActiveTab] = useState<Tabs>('Home')
-
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       animateNavbar(navbarTL)
     }, aniRef)
 
     return () => ctx.revert()
   }, [])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleNavClick = () => {
     if (togglerClass === 'collapsed') {
-      setNavClass('mobile-nav-expand')
+      setNavClass(styles.mobileNavExpand)
       setTogglerClass('')
       setCollapseClass('collapse show')
     } else {
       setNavClass('')
       setTogglerClass('collapsed')
-      // setCollapseClass('collapsing')
       setCollapseClass('collapse')
     }
   }
 
   return (
-    <HeaderContainer ref={aniRef}>
-      <Navbar className={navClass}>
-        <ContainerFluid>
+    <header ref={aniRef}>
+      <nav className={cx('navbar navbar-expand-lg', styles.navbar, navClass)}>
+        <div className="container-fluid">
           <Link
             href="/"
-            onClick={() => setActiveTab('Home')}
             className="navbar-brand d-lg-none px-2 logo"
             aria-label="Logo"
           >
             <Logo />
           </Link>
-          <NavbarToggler onClick={handleNavClick} className={togglerClass}>
+          <a
+            onClick={handleNavClick}
+            className={cx('navbar-toggler', styles.navbarToggler, togglerClass)}
+          >
             <span className="navbar-toggler-icon" />
-          </NavbarToggler>
-          <NavbarCollapse className={collapseClass} id="navbarToggler">
-            <NavbarItemList>
-              <NavItem>
+          </a>
+          <div
+            className={cx('navbar-collapse', styles.navbarCollapse, collapseClass)}
+            id="navbarToggler"
+          >
+            <ul
+              className={cx(
+                'navbar-nav mx-auto justify-content-around align-items-center w-100',
+                styles.navbarItemList
+              )}
+            >
+              <li className={cx('nav-item', styles.navItem)}>
                 <Link
-                  className={`nav-link ${
-                    activeTab === 'Home' ? 'active' : ''
-                  }`}
-                  onClick={() => setActiveTab('Home')}
+                  className="nav-link active"
                   href="/"
                   aria-label="Home"
-                  style={{
-                    fontSize: '1.2rem',
-                  }}
+                  style={{ fontSize: '1.2rem' }}
                 >
                   @this
                 </Link>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className={cx('nav-item', styles.navItem)}>
                 <Link
-                  className='nav-link'
+                  className="nav-link"
                   href={GITHUB_LINK}
                   target="_blank"
                   aria-label="Projects"
                 >
                   Projects
                 </Link>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className={cx('nav-item', styles.navItem)}>
                 <Link
-                  className='nav-link'
+                  className="nav-link"
                   href={MEDIUM_LINK}
                   target="_blank"
                   aria-label="Tech blog"
                 >
                   Tech blog
                 </Link>
-              </NavItem>
+              </li>
               <Link
                 href="/"
-                onClick={() => setActiveTab('Home')}
                 className="d-none d-lg-block text-center logo"
                 aria-label="Logo"
               >
                 <Logo />
               </Link>
-              <NavItem>
+              <li className={cx('nav-item', styles.navItem)}>
                 <Link
                   className="nav-link"
                   href={BEHANCE_LINK}
@@ -115,8 +114,8 @@ const Header = () => {
                 >
                   HERR Studio
                 </Link>
-              </NavItem>
-              <NavItem>
+              </li>
+              <li className={cx('nav-item', styles.navItem)}>
                 <Link
                   className="nav-link"
                   href={`mailto:${EMAIL_LINK}`}
@@ -125,22 +124,25 @@ const Header = () => {
                 >
                   Contact
                 </Link>
-              </NavItem>
-              <NavItem className="resume">
-                <Button
-                  className="nav-link button resume cyan mx-auto"
+              </li>
+              <li className={cx('nav-item resume', styles.navItem)}>
+                <Link
+                  className={cx(
+                    'nav-link button resume cyan mx-auto',
+                    commonStyles.button
+                  )}
                   href={RESUME_LINK}
                   target="_blank"
                   aria-label="Resume"
                 >
                   Resume
-                </Button>
-              </NavItem>
-            </NavbarItemList>
-          </NavbarCollapse>
-        </ContainerFluid>
-      </Navbar>
-    </HeaderContainer>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
   )
 }
 

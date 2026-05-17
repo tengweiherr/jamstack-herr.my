@@ -1,0 +1,50 @@
+.quoteSection {
+  width: 100%;
+  padding-bottom: 50px;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .quoteSection {
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .quoteSection {
+    margin-top: 0px;
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .quoteSection {
+    margin-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+.quoteSection h2 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  position: relative;
+  bottom: -50px;
+}
+
+@media only screen and (max-width: 480px) {
+  .quoteSection h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.quoteSection p {
+  font-size: 1.2rem;
+  position: relative;
+  bottom: -20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .quoteSection p {
+    font-size: 1rem;
+  }
+}

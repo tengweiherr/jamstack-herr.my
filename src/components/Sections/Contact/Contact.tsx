@@ -1,29 +1,23 @@
 import ContactAnimation from '@/components/Molecules/ContactAnimation'
 import Image from 'next/image'
-import { Button, TextContainer } from '@/utils/styled/common.styled'
+import Link from 'next/link'
 import { useLayoutEffect, useRef } from 'react'
 import animateContact from '@/utils/gsap/contact'
 import gsap from 'gsap/all'
 import { ICON } from '@/utils/const'
+import commonStyles from '@/utils/styles/common.module.css'
+import { cx } from '@/utils/styles/cx'
 
 const Contact = () => {
   const aniRef = useRef<HTMLDivElement>(null)
   const catTL = useRef<GSAPTimeline>()
 
   useLayoutEffect(() => {
-    let ctx: gsap.Context | undefined = undefined
+    const ctx = gsap.context(() => {
+      animateContact(catTL)
+    }, aniRef)
 
-    const shouldStartAnimation = true
-
-    if (shouldStartAnimation) {
-      ctx = gsap.context(() => {
-        animateContact(catTL)
-      }, aniRef)
-    }
-
-    return () => {
-      ctx ? ctx.revert() : null
-    }
+    return () => ctx.revert()
   }, [])
 
   return (
@@ -37,23 +31,33 @@ const Contact = () => {
           </div>
           <div className="col-lg-6">
             <div className="d-flex flex-column justify-content-center h-100">
-              <TextContainer>
+              <div
+                className={cx(
+                  'text-container justify-content-center pb-2 w-100',
+                  commonStyles.textContainer
+                )}
+              >
                 <h2 className="display-1">Get in touch</h2>
-              </TextContainer>
-              <TextContainer>
+              </div>
+              <div
+                className={cx(
+                  'text-container justify-content-center pb-2 w-100',
+                  commonStyles.textContainer
+                )}
+              >
                 <p className="description py-2">
                   Drop me a message if you have any questions or just want to
                   say hi. <br />
                   Any collaborations and opportunities are welcomed.
                 </p>
-              </TextContainer>
-              <Button
+              </div>
+              <Link
                 href="mailto:herrartwork@gmail.com"
-                className="button text-center cyan mt-2"
+                className={cx('button text-center cyan mt-2', commonStyles.button)}
                 aria-label="Contact"
               >
                 Say Hello
-              </Button>
+              </Link>
               <div className="social-media-icon row d-flex flex-row justify-content-between align-items-center mt-4">
                 <a
                   href="https://www.linkedin.com/in/teng-wei-herr-15a7891a9/"

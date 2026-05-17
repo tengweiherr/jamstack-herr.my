@@ -1,0 +1,54 @@
+.bannerSection {
+  width: 100%;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 480px) {
+  .bannerSection {
+    height: 100%;
+  }
+}
+
+.bannerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: visible;
+  flex: 1;
+}
+
+.bannerContainer p {
+  font-size: 0.9rem;
+}
+
+.introContainer {
+  margin-top: 1.5rem;
+}
+
+.introContainer h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #659999 30%, #f4791f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  bottom: -200px;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .introContainer h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .introContainer h1 {
+    font-size: 2rem;
+  }
+}
+
+.aniContainer {
+  overflow: visible;
+}

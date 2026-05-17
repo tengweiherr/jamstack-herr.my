@@ -1,13 +1,19 @@
 import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
 import Image from 'next/image'
-import { AwardContainer, AwardLink } from './SotyAward.styled'
+import styles from './SotyAward.module.css'
 
 const ribbonImage = AWS_CLOUDFRONT_PREFIX + 'mwa-soty-ribbon.webp'
 
 const SotyAward = () => {
   return (
-    <AwardContainer>
-      <AwardLink href="https://www.mwa.my/2023" target="_blank" tabIndex={-1} aria-hidden="true">
+    <div className={styles.awardContainer}>
+      <a
+        href="https://www.mwa.my/2023"
+        target="_blank"
+        tabIndex={-1}
+        aria-hidden="true"
+        className={styles.awardLink}
+      >
         <Image
           src={ribbonImage}
           alt="mwa-soty-ribbon"
@@ -15,8 +21,8 @@ const SotyAward = () => {
           height={100}
           priority
         />
-      </AwardLink>
-    </AwardContainer>
+      </a>
+    </div>
   )
 }
 

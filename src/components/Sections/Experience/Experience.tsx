@@ -32,16 +32,14 @@ const Experience = ({ exps }: ExperienceProps) => {
   useLayoutEffect(() => {
     let ctx: gsap.Context | undefined = undefined
 
-    const shouldStartAnimation = exps.length !== 0
-
-    if (shouldStartAnimation) {
+    if (exps.length !== 0) {
       ctx = gsap.context(() => {
         animateExperience(expTL)
       }, aniRef)
     }
 
     return () => {
-      ctx ? ctx.revert() : null
+      ctx?.revert()
     }
   }, [exps.length])
 
@@ -122,7 +120,6 @@ const Experience = ({ exps }: ExperienceProps) => {
                                 index + 1
                               } white`}
                             >
-                              <h5>{item.role}</h5>
                               <p className="mb-3">
                                 {renderDuration(
                                   Number(item.yearInWorking),

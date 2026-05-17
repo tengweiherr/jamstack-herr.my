@@ -1,0 +1,40 @@
+.textContainer {
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.button {
+  border: solid 2px #000000;
+  padding: 8px 20px !important;
+  width: fit-content;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button a {
+  background: none;
+  color: white;
+  border: none;
+  text-decoration: none;
+}
+
+.button:hover {
+  border: solid 2px #e8ece6;
+  color: white !important;
+  background: linear-gradient(45deg, #659999 30%, #f4791f 100%);
+}
+
+.button:global(.cyan) {
+  border-color: #000000;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.button:global(.cyan):hover {
+  color: white !important;
+  background: linear-gradient(45deg, #659999 30%, #f4791f 100%);
+}

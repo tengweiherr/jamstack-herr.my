@@ -2,12 +2,10 @@
   "name": "portfolio-website-v2",
   "version": "1.0.0",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:static": "next build && next export",
-    "build:edge": "next-on-pages",
-    "start:edge": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat --port=4000",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,26 +14,16 @@
     "gsap": "^3.11.4",
     "next": "^13.4.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-is": "^18.2.0",
-    "react-loading-skeleton": "^3.3.1",
-    "rss-to-json": "^2.1.1",
-    "styled-components": "5.3.6"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.6.0",
     "@popperjs/core": "^2.11.6",
     "@types/node": "18.14.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@types/styled-components": "5.1.26",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.1",
     "typescript": "4.9.5",
-    "vercel": "^32.2.0",
-    "wrangler": "^3.7.0"
-  },
-  "resolutions": {
-    "styled-components": "^5"
+    "vercel": "^32.2.0"
   }
 }

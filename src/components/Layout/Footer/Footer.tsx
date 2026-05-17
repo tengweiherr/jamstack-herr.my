@@ -1,16 +1,16 @@
-import { Copyright, FooterContainer, MyName } from './Footer.styled'
+import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <footer className={styles.footer}>
       <div className="container">
         <div className="row">
-          <Copyright className="m-0 p-3">
-            Designed & Built by <MyName>Teng Wei Herr</MyName>
-          </Copyright>
+          <p className={`m-0 p-3 ${styles.copyright}`}>
+            Designed & Built by <strong className={styles.myName}>Teng Wei Herr</strong>
+          </p>
         </div>
       </div>
-    </FooterContainer>
+    </footer>
   )
 }
 

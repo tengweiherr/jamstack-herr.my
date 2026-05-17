@@ -1,0 +1,71 @@
+.storiesWrapper {
+  margin: 0 auto;
+  margin-top: 3rem;
+  border-radius: 0.4rem;
+  background: #dee2dc;
+}
+
+.storyRow {
+  border-radius: 0rem;
+  background: #dee2dc;
+  padding: 2rem;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 468px) {
+  .storyRow {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .storyRow {
+    flex-direction: column;
+  }
+}
+
+.storyRow:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.storyRow:first-child {
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.storyRow:last-child {
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.storyRow:last-child hr {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .storyLeftColumn {
+    padding-bottom: 1rem;
+  }
+}
+
+.storyLeftColumn span {
+  font-size: 0.9rem;
+  color: #686868b5;
+}
+
+.storyRightColumn h5 {
+  font-weight: 600;
+  color: #0c6b66;
+}
+
+.storyRightColumn p {
+  font-size: 0.9rem;
+  color: #000000;
+  padding-top: 0.5rem;
+}
+
+.storyBottomLine {
+  width: 100%;
+  height: 1px;
+  color: rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}

@@ -408,18 +408,6 @@ a.underline:focus-visible .external-arrow {
   display: block;
 }
 
-/* @media only screen and (max-width: 992px) {
-  .experience .exp-desc.mobile {
-    width: 120%;
-  }
-} */
-
-/* @media only screen and (max-width: 992px) and (max-width: 480px) {
-  .experience .exp-desc.mobile {
-    width: 105%;
-  }
-} */
-
 @media only screen and (min-width: 992px) {
   .mobile {
     display: none !important;
