@@ -45,19 +45,17 @@ const Header = () => {
     <header ref={aniRef}>
       <nav className={cx('navbar navbar-expand-lg', styles.navbar, navClass)}>
         <div className="container-fluid">
-          <Link
-            href="/"
-            className="navbar-brand d-lg-none px-2 logo"
-            aria-label="Logo"
-          >
+          <div className="navbar-brand d-lg-none px-2 logo">
             <Logo />
-          </Link>
-          <a
+          </div>
+          <div
+            role="button"
+            aria-label="Toggle navigation"
             onClick={handleNavClick}
             className={cx('navbar-toggler', styles.navbarToggler, togglerClass)}
           >
             <span className="navbar-toggler-icon" />
-          </a>
+          </div>
           <div
             className={cx('navbar-collapse', styles.navbarCollapse, collapseClass)}
             id="navbarToggler"
@@ -98,13 +96,9 @@ const Header = () => {
                   Tech blog
                 </Link>
               </li>
-              <Link
-                href="/"
-                className="d-none d-lg-block text-center logo"
-                aria-label="Logo"
-              >
+              <div className="d-none d-lg-block text-center logo">
                 <Logo />
-              </Link>
+              </div>
               <li className={cx('nav-item', styles.navItem)}>
                 <Link
                   className="nav-link"
