@@ -82,8 +82,7 @@ const Experience = ({ exps }: ExperienceProps) => {
                             <div style={{ display: 'flex', flexDirection: 'row', gap: '4px' }}>
                             <h5>{item.role}</h5>
                             <h5>
-                              {' '}
-                              at{' '}
+                              {' '}<span className="exp-at">at</span>{' '}
                               <a
                                 href={item.companyUrl}
                                 target="_blank"

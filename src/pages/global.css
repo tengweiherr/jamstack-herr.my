@@ -246,11 +246,18 @@ textarea:focus-visible {
   color: black;
 }
 
+.experience .exp h5 .exp-at,
+.experience .exp.active h5 .exp-at {
+  color: #757575;
+}
+
 a.underline {
   position: relative;
   display: inline-block;
   color: #757575;
-  text-decoration: none;
+  text-decoration: underline dotted #757575;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 a.underline:focus,

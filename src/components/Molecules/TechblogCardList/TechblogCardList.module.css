@@ -8,7 +8,7 @@
 .storyRow {
   border-radius: 0rem;
   background: #dee2dc;
-  padding: 2rem;
+  padding: 1.75rem 1.5rem;
   flex-direction: row;
 }
 
@@ -53,6 +53,7 @@
 }
 
 .storyRightColumn h5 {
+  font-size: 1rem;
   font-weight: 600;
   color: #0c6b66;
 }
@@ -60,7 +61,8 @@
 .storyRightColumn p {
   font-size: 0.9rem;
   color: #000000;
-  padding-top: 0.5rem;
+  padding-top: 0.25rem;
+  margin-bottom: 0;
 }
 
 .storyBottomLine {
