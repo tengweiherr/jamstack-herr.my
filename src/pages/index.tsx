@@ -46,9 +46,11 @@ export async function getStaticProps() {
   if (exps && exps.length !== 0) {
     expsToModify = exps
       .map((item: Exp) => {
-        const startYear = new Date(item.startTime).getFullYear().toString()
+        const formatMonthYear = (date: Date) =>
+          date.toLocaleString('en-US', { month: 'short', year: 'numeric' })
+        const startYear = formatMonthYear(new Date(item.startTime))
         const endYear = item.endTime
-          ? new Date(item.endTime).getFullYear().toString()
+          ? formatMonthYear(new Date(item.endTime))
           : 'Present'
         const { year, month } = getTimeDifference(item.endTime, item.startTime)
         return {
