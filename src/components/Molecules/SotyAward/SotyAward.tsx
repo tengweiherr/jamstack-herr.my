@@ -7,7 +7,7 @@ const ribbonImage = AWS_CLOUDFRONT_PREFIX + 'mwa-soty-ribbon.webp'
 const SotyAward = () => {
   return (
     <AwardContainer>
-      <AwardLink href="https://www.mwa.my/2023" target="_blank">
+      <AwardLink href="https://www.mwa.my/2023" target="_blank" tabIndex={-1} aria-hidden="true">
         <Image
           src={ribbonImage}
           alt="mwa-soty-ribbon"

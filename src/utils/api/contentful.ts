@@ -146,6 +146,7 @@ async function fetchExp () {
             items {
                 role
                 company
+                companyUrl
                 startTime
                 endTime
                 description

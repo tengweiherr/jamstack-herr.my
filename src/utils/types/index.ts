@@ -33,6 +33,7 @@ export type Project = {
 
 export type Experience = {
     role: string
+    companyUrl: string
     company: string
     startTime: string
     endTime: string

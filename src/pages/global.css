@@ -59,8 +59,72 @@ a.cyan:hover {
   color: #0c6b66;
 }
 
-*:focus {
+html {
+  accent-color: #e47712;
+  -webkit-tap-highlight-color: rgba(228, 119, 18, 0.2);
+}
+
+* {
   outline-color: #e47712;
+}
+
+*:focus {
+  outline: 2px solid #e47712;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #e47712;
+  outline-offset: 2px;
+}
+
+
+.btn:focus,
+.btn:focus-visible,
+.btn-check:focus + .btn,
+.btn-check:focus-visible + .btn,
+.nav-link:focus,
+.nav-link:focus-visible {
+  outline: 2px solid #e47712 !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.btn:focus:not(:focus-visible),
+.nav-link:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+.form-control:focus,
+.form-control:focus-visible,
+.form-select:focus,
+.form-select:focus-visible,
+.form-check-input:focus,
+.form-check-input:focus-visible,
+.page-link:focus,
+.page-link:focus-visible,
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible,
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+::selection {
+  background-color: #e47712;
+  color: #ffffff;
 }
 
 .container {
@@ -114,7 +178,6 @@ a.cyan:hover {
 
 .experience {
   background: #e8ece6;
-  padding-top: 60px;
   padding-bottom: 60px;
 }
 
@@ -139,7 +202,8 @@ a.cyan:hover {
 }
 
 .experience .exp {
-  margin-top: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .experience .exp .col-sm-3 {
@@ -148,13 +212,25 @@ a.cyan:hover {
 
 .experience .exp p {
   font-size: 0.9rem;
+  margin-bottom: 0px;
+}
+
+.experience .exp h5 {
+  font-size: 1rem;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+.experience .exp h6 {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868b5;
 }
 
 .experience .exp h5,
-.experience .exp h6,
 .experience .exp p {
   color: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -166,9 +242,57 @@ a.cyan:hover {
 }
 
 .experience .exp.active h5,
-.experience .exp.active h6,
 .experience .exp.active p {
   color: black;
+}
+
+a.underline {
+  position: relative;
+  display: inline-block;
+  color: #757575;
+  text-decoration: none;
+}
+
+a.underline:focus,
+a.underline:focus-visible {
+  outline: none;
+}
+
+a.underline::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: -webkit-linear-gradient(45deg, #659999 30%, #f4791f 100%);
+  background: linear-gradient(45deg, #659999 30%, #f4791f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+a.underline:hover::before,
+a.underline:focus::before,
+a.underline:focus-visible::before {
+  opacity: 1;
+}
+
+a.underline .external-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: baseline;
+  color: #757575;
+  -webkit-transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a.underline:hover .external-arrow,
+a.underline:focus .external-arrow,
+a.underline:focus-visible .external-arrow {
+  color: #f4791f;
 }
 
 .experience .exp-desc {

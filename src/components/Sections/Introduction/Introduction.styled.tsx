@@ -30,13 +30,15 @@ export const AboutMe = styled.div.attrs((props) => ({
 
   .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 7fr 5fr;
+    column-gap: 46px;
     width: 100%;
   }
 
   @media only screen and (max-width: 768px) {
     .container {
       grid-template-columns: 1fr;
+      row-gap: 32px;
     }
 
     & .container .intro-photos {
@@ -61,9 +63,9 @@ export const IntroContainer = styled.div.attrs((props) => ({
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 `
 
 export const DescriptionContainer = styled.div.attrs((props) => ({

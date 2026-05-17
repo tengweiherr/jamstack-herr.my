@@ -11,7 +11,7 @@ const animateExperience = (expTL:MutableRefObject<gsap.core.Timeline | undefined
     expTL.current = gsap.timeline({
     scrollTrigger: {
         trigger: ".experience",
-        start: "top center"
+        start: "top 70%",
     }
     })
     // .from(".experience .vertical-line", {height:0}, 0)

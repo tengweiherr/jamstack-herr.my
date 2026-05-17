@@ -5,7 +5,6 @@ import {
 } from '@/utils/api/contentful'
 import Banner from '@/components/Sections/Banner'
 import Quote1 from '@/components/Sections/Quote'
-import Highlight from '@/components/Sections/Highlight'
 import Introduction from '@/components/Sections/Introduction'
 import {
   Experience as Exp,
@@ -14,11 +13,7 @@ import {
   MyDataSkills,
   Project,
 } from '@/utils/types'
-import Experience from '@/components/Sections/Experience'
-import More from '@/components/Sections/More'
 import Contact from '@/components/Sections/Contact'
-import TechblogCardList from '@/components/Molecules/TechblogCardList'
-import { TextContainer } from '@/utils/styled/common.styled'
 import { Articles } from '@/components/Sections/Articles'
 
 type HomeProps = {
@@ -144,8 +139,8 @@ export default function Home({
       <Introduction
         myDataParagraphs={myDataParagraphs}
         myDataSkills={myDataSkills}
+        exps={exps}
       />
-      <Experience exps={exps} />
       <Articles />
       {/* <More /> */}
       <Contact />

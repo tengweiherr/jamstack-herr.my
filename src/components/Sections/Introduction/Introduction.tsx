@@ -4,19 +4,23 @@ import {
   DescriptionContainer,
   IntroContainer,
   IntroductionSection,
-  SkillsContainer,
-  SkillsList,
-  SkillsListContainer,
 } from '././Introduction.styled'
 import { useLayoutEffect, useRef } from 'react'
 import animateIntroduction from '@/utils/gsap/introduction'
 import gsap from 'gsap/all'
-import { MyData, MyDataSkills } from '@/utils/types'
+import {
+  Experience as Exp,
+  ExpExtraProps,
+  MyData,
+  MyDataSkills,
+} from '@/utils/types'
 import { AWS_CLOUDFRONT_PREFIX } from '@/utils/const'
+import Experience from '@/components/Sections/Experience'
 
 type IntroductionProps = {
   myDataParagraphs: Array<string>
   myDataSkills: MyDataSkills
+  exps: Array<Exp & ExpExtraProps>
 }
 
 const renderImage = (myData: MyData) => {
@@ -29,6 +33,7 @@ const renderImage = (myData: MyData) => {
 const Introduction = ({
   myDataParagraphs,
   myDataSkills,
+  exps,
 }: IntroductionProps) => {
   const aniRef = useRef<HTMLDivElement>(null)
   const introTL = useRef<GSAPTimeline>()
@@ -60,10 +65,12 @@ const Introduction = ({
   return (
     <IntroductionSection ref={aniRef}>
       <div className="introducing">
-        <TextContainer className="container">
-          <h2 className="display-1 text-start">@author</h2>
-        </TextContainer>
         <AboutMe>
+          <div className="container mb-4">
+          <div>
+            <h2 className="display-1 text-start">@author</h2>
+          </div>
+          </div>
           <div className="container">
             <div>
               <IntroContainer>
@@ -73,44 +80,23 @@ const Introduction = ({
                   </h5>
                 </TextContainer>
                 <DescriptionContainer>
-                  <>
-                    {myDataParagraphs?.map((paragraph, index) => (
-                      <TextContainer
-                        className="mb-3 text-start"
-                        key={`paragraph-${index}`}
-                      >
-                        <p
-                          className="mb-0"
-                          dangerouslySetInnerHTML={{ __html: paragraph }}
-                        ></p>
-                      </TextContainer>
-                    ))}
-                  </>
+                  {myDataParagraphs?.map((paragraph, index) => (
+                    <TextContainer
+                      className="mb-3 text-start"
+                      key={`paragraph-${index}`}
+                    >
+                      <p
+                        className="mb-0"
+                        dangerouslySetInnerHTML={{ __html: paragraph }}
+                      ></p>
+                    </TextContainer>
+                  ))}
                 </DescriptionContainer>
               </IntroContainer>
             </div>
-
-            <SkillsContainer>
-              <div>
-                <TextContainer>
-                  <h5 className="cyan">
-                    <strong>Tech I&apos;ve worked with: </strong>
-                  </h5>
-                </TextContainer>
-                <SkillsListContainer>
-                  <SkillsList>
-                    {myDataSkills.part_1?.map((item, index) => (
-                      <li key={`skill-${index}`}>{item}</li>
-                    ))}
-                  </SkillsList>
-                  <SkillsList>
-                    {myDataSkills.part_2?.map((item, index) => (
-                      <li key={`skill-${index}`}>{item}</li>
-                    ))}
-                  </SkillsList>
-                </SkillsListContainer>
-              </div>
-            </SkillsContainer>
+            <div>
+              <Experience exps={exps} />
+            </div>
           </div>
         </AboutMe>
       </div>

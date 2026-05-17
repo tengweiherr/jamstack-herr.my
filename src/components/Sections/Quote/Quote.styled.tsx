@@ -16,7 +16,7 @@ export const QuoteSection = styled.section`
 
   @media only screen and (max-width: 480px) {
     margin-top: 0px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
   }
 
   & h2 {

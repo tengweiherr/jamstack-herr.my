@@ -1,6 +1,5 @@
 import TechblogCardList from '@/components/Molecules/TechblogCardList'
 import { MEDIUM_LINK } from '@/utils/const'
-import COLOR from '@/utils/styled/color'
 import { TextContainer } from '@/utils/styled/common.styled'
 import Link from 'next/link'
 
@@ -60,10 +59,34 @@ export const Articles = () => {
               link: "https://levelup.gitconnected.com/next-js-middleware-server-side-a-b-testing-for-enhanced-performance-f13ed0aa0b40?sk=d5375beaa554e3122818c1d3a6eac53d"
             }
           ]} />
-          <p className='mt-3'>View more at <Link href={MEDIUM_LINK} target='_blank' style={{
-            color: COLOR.BLACK,
-            textDecorationColor: COLOR.BLACK
-          }}>Medium</Link></p>
+          <p className='mt-3'>
+            View more at{' '}
+            <Link
+              href={MEDIUM_LINK}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline'
+              data-text='Medium'
+              style={{ fontWeight: 500 }}
+            >
+              Medium
+              <svg
+                className='external-arrow'
+                width='12'
+                height='12'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                aria-hidden='true'
+              >
+                <path d='M7 17L17 7' />
+                <path d='M8 7h9v9' />
+              </svg>
+            </Link>
+          </p>
         </div>
       </section>
     </>
