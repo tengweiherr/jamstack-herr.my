@@ -28,12 +28,5 @@
     "eslint-config-next": "15.5.26",
     "typescript": "5.9.3",
     "wrangler": "^4.145.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp",
-      "workerd"
-    ]
   }
 }

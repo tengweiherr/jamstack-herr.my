@@ -1,0 +1,5 @@
+# Dependencies allowed to run install scripts (needed by Next.js and Wrangler)
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
