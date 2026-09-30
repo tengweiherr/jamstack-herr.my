@@ -83,7 +83,6 @@ export async function getStaticProps() {
       myDataParagraphs,
       exps: expsToModify,
     },
-    revalidate: 3628800,
   }
 }
 

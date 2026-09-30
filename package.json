@@ -1,29 +1,39 @@
 {
-  "name": "portfolio-website-v2",
+  "name": "jamstack-herr.my",
   "version": "1.0.0",
   "private": true,
   "sideEffects": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.7",
     "bootstrap": "^5.2.3",
     "gsap": "^3.11.4",
-    "next": "^13.4.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^15.5.26",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.6",
-    "@types/node": "18.14.1",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.2.1",
-    "typescript": "4.9.5",
-    "vercel": "^32.2.0"
+    "@types/node": "22.20.4",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "eslint": "8.57.1",
+    "eslint-config-next": "15.5.26",
+    "typescript": "5.9.3",
+    "wrangler": "^4.145.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
   }
 }
