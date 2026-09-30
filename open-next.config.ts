@@ -5,7 +5,11 @@ import staticAssetsIncrementalCache from '@opennextjs/cloudflare/overrides/incre
 // Content from Contentful refreshes on each deploy. To enable runtime ISR
 // (`revalidate`), switch to the R2 incremental cache:
 // https://opennext.js.org/cloudflare/caching
-export default defineCloudflareConfig({
-  incrementalCache: staticAssetsIncrementalCache,
-  enableCacheInterception: true,
-})
+export default {
+  ...defineCloudflareConfig({
+    incrementalCache: staticAssetsIncrementalCache,
+    enableCacheInterception: true,
+  }),
+  // `pnpm build` runs the OpenNext build, so call Next.js directly to avoid recursion
+  buildCommand: 'pnpm exec next build',
+}
